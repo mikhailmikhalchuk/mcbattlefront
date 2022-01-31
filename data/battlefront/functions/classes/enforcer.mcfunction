@@ -1,0 +1,49 @@
+execute if entity @s[scores={defeated=2}] run clear @s
+
+#death trooper
+execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s armor.head with minecraft:player_head{display:{Name:'{"text":"Death Trooper Helmet","italic":false}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],SkullOwner:{Id:[I;-90715765,-679982941,-1607850321,460207700],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWM1ZTJhNzdjYjI2Y2YwZDVkYTEyYTI4YjNmMzFiMGYwNDliZDJjOTNiNGFmOWFkMzRlZGRiNjcxNzc0ZiJ9fX0="}]}},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s armor.chest with minecraft:leather_chestplate{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:1908001},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s armor.legs with minecraft:leather_leggings{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:1908001},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s armor.feet with minecraft:leather_boots{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:1908001},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=EMP] run give @s minecraft:crossbow{display:{Name:'{"text":"E-11D blaster","italic":false}'},Enchantments:[{id:"quick_charge",lvl:2}],Unbreakable:1} 1
+execute if entity @s[scores={defeated=2},team=EMP] run give @s minecraft:lingering_potion{Potion:"minecraft:night_vision",CustomModelData:53,CustomPotionColor:1,display:{Name:'{"text":"Sonic Imploder","color":"red","italic":false}'},HideFlags:32} 1
+execute if entity @s[scores={defeated=2},team=EMP] run give @s minecraft:arrow{display:{Name:'{"text":"Blaster Bolt","italic":false}'}} 64
+
+#wookiee warrior
+execute if entity @s[scores={defeated=2},team=REB] run item replace entity @s armor.head with minecraft:player_head{display:{Name:'{"text":"Wookiee Head","italic":false}'},SkullOwner:{Id:[I;-1358258456,-1955969204,-1083161275,505351078],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjY5OTEyODc0YTI2ODdkNTAxYjI3OGQ3OTg1MTk5MzgyOTZiNjJkZTg3YmJlMTU2ZTZlNmIwOWZmNDczMzI5ZSJ9fX0="}]}},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=REB] run item replace entity @s armor.chest with minecraft:leather_chestplate{display:{Name:'{"text":"Armor","color":"yellow","italic":false}'},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=REB] run item replace entity @s armor.legs with minecraft:leather_leggings{display:{Name:'{"text":"Armor","color":"yellow","italic":false}'},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=REB] run item replace entity @s armor.feet with minecraft:leather_boots{display:{Name:'{"text":"Armor","color":"yellow","italic":false}'},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=REB] run give @s minecraft:crossbow{display:{Name:'{"text":"Bowcaster","italic":false}'},Unbreakable:1,Tags:["bowcast"]} 1
+execute if entity @s[scores={defeated=2},team=REB] run give @s minecraft:tipped_arrow{Potion:"minecraft:water",CustomPotionColor:12397074,display:{Name:'{"text":"Bowcaster Bolt","italic":false}'},HideFlags:32} 64
+
+#praetorian guard
+execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.head with minecraft:player_head{display:{Name:'{"text":"Praetorian Guard Helmet"}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],SkullOwner:{Id:[I;1154760920,1181372274,-1235680490,538871679],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjhmNmUzOTU4MTJjNzMyYzA3NGJlYzdlN2I5NzU2YmE1MWUxMDE2Yjc4ZTZjNjE5MWUxZTJiMGE5NzAzN2JmOSJ9fX0="}]}},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.chest with minecraft:leather_chestplate{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:11546150},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.legs with minecraft:leather_leggings{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:11546150},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.feet with minecraft:leather_boots{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:11546150},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s weapon.offhand with minecraft:shield{display:{Name:'{"text":"Shield","color":"red","italic":false}'},Enchantments:[{id:"feather_falling",lvl:1}],HideFlags:1,BlockEntityTag:{Base:14}} 1
+execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:fishing_rod{display:{Name:'{"text":"Electro-chain whip","color":"red","italic":false}'},Enchantments:[{id:"feather_falling",lvl:1}],Unbreakable:1,HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:golden_axe{display:{Name:'{"text":"Vibro-arbir blade","color":"red","italic":false}'},Enchantments:[{id:"feather_falling",lvl:1}],Unbreakable:1,HideFlags:1} 1
+
+#b2-rp droid
+execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.head with minecraft:player_head{display:{Name:'{"text":"B2 Super Battle Droid Head"}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],SkullOwner:{Id:[I;-1313747275,1709130169,-1727420512,-965264263],Properties:{textures:[{Value:"ewogICJ0aW1lc3RhbXAiIDogMTYxMTY4OTA4MjU5MywKICAicHJvZmlsZUlkIiA6ICJiMWIxY2ViNTY1ZGY0MWI5OTkwOWE3YTBjNjc3M2M3OSIsCiAgInByb2ZpbGVOYW1lIiA6ICJNaWtoYWlsTUNyYWZ0IiwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzgwMDNlZWU1MTMxNWUwNWFmMjI2MjBjZDQxOTg0YzFhNmYwZDYzMmZlNDQ2ODJlODFlMjhiZGZlYzM0MWJjNzgiCiAgICB9CiAgfQp9"}]}},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.chest with minecraft:leather_chestplate{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:7567221},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.legs with minecraft:leather_leggings{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:7567221},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.feet with minecraft:leather_boots{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:7567221},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:bow{display:{Name:'{"text":"Twin Wrist-Blaster","italic":false}'},Unbreakable:1,Enchantments:[{id:"infinity",lvl:1}]} 1
+execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:carrot_on_a_stick{custom_model_data:19,display:{Name:'{"text":"Wrist Rocket","color":"red","italic":false}'},HideFlags:32,Unbreakable:1,Tags:["wristrocket"]} 1
+execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:arrow{display:{Name:'{"text":"Blaster Bolt","italic":false}'},HideFlags:32} 1
+
+#clone commando
+execute if entity @s[scores={defeated=2},team=REP] run item replace entity @s armor.head with minecraft:player_head{display:{Name:'{"text":"Clone Commando Helmet"}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],SkullOwner:{Id:[I;-673333705,1945128843,-1428971264,449723011],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTM5NjhmOTMwYmVmYTEzODc5ZjQ5MWM4OWNkOGYwZDc2ODFiYWJiNDZlNzQ1ZWZkODE1NzJlMmE3NDA2YTVjMCJ9fX0="}]}},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=REP] run item replace entity @s armor.chest with minecraft:leather_chestplate{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:16383998},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=REP] run item replace entity @s armor.legs with minecraft:leather_leggings{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:16383998},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=REP] run item replace entity @s armor.feet with minecraft:leather_boots{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:16383998},HideFlags:1} 1
+execute if entity @s[scores={defeated=2},team=REP] run give @s minecraft:carrot_on_a_stick{custom_model_data:7,display:{Name:'{"text":"DC-17m repeating blaster rifle","color":"red","italic":false}'},HideFlags:32,Unbreakable:1,Tags:["repeater"]} 1
+execute if entity @s[scores={defeated=2},team=REP] run give @s minecraft:carrot_on_a_stick{custom_model_data:27,display:{Name:'{"text":"Battle Focus","color":"blue","italic":false}',Lore:['{"text":"Reduces the damage you and nearby allies take","italic":false}']},HideFlags:32,Unbreakable:1,Tags:["battlefocus"]} 1
+
+execute if entity @s[scores={defeated=2}] run give @s minecraft:carrot_on_a_stick{custom_model_data:4,display:{Name:'{"text":"Fortify","color":"blue","italic":false}',Lore:['{"text":"Temporarily boosts the Enforcer\'s health","italic":false}']},HideFlags:32,Unbreakable:1,Tags:["fortify"]} 1
+execute unless entity @s[scores={defeated=2}] run tellraw @s {"text":"Nice try...\nYou can only spawn in as a new class if you have been defeated!","color":"red"}
+execute if score @s respawnTick < @s respawnTime run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
+execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime run function battlefront:classes/spawnplayer

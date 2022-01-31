@@ -1,0 +1,4 @@
+execute at @e[type=item,nbt={Item:{tag:{Tags:["def1"]}}}] if data entity @e[type=item,nbt={Item:{tag:{Tags:["def1"]}}},limit=1] Thrower run give @p minecraft:bow{display:{Name:'{"text":"Defender Pistol Alternate Fire","color":"red","italic":false}'},Enchantments:[{id:"minecraft:infinity",lvl:1},{id:"minecraft:power",lvl:1}],Unbreakable:1,HideFlags:1,Tags:["def2"]} 1
+execute as @e[type=item,nbt={Item:{tag:{Tags:["def1"]}}}] run kill @s
+execute at @e[type=item,nbt={Item:{tag:{Tags:["def2"]}}}] if data entity @e[type=item,nbt={Item:{tag:{Tags:["def2"]}}},limit=1] Thrower run give @p minecraft:bow{display:{Name:'{"text":"Princess Leia\'s Defender Pistol","color":"red","italic":false}'},Enchantments:[{id:"minecraft:infinity",lvl:1},{id:"minecraft:power",lvl:1}],Unbreakable:1,HideFlags:1,Tags:["def1"]} 1
+execute as @e[type=item,nbt={Item:{tag:{Tags:["def2"]}}}] run kill @s
