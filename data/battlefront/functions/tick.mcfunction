@@ -58,7 +58,7 @@ execute as @a[scores={killedPlayer=1..,CIShero=1}] run effect give @s minecraft:
 #flame particle on jumppack use
 execute at @a[nbt={Inventory:[{Slot:102b,Count:1b,id:"minecraft:leather_chestplate",tag:{Tags:["actualjumppack"]}}],ActiveEffects:[{Id:25b}]}] rotated ~ 0 positioned ^ ^ ^-0.3 run particle minecraft:flame ~ ~1 ~ 0 0 0 0 0
 
-#run arrow effects
+#run arrow explosion effects
 execute at @e[type=arrow,nbt={inGround:1b,Color:12397074}] run summon minecraft:creeper ~ ~ ~ {powered:0,Fuse:0,ignited:1,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:1}
 
 #kill arrows in ground

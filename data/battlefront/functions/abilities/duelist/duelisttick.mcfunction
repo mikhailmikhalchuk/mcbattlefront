@@ -1,7 +1,7 @@
 execute as @a[scores={clickStick=1,duelCooldown=1..},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"duelCooldown"},"color":"red"},{"text":" of 1000 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,duelCooldown=1..},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] run scoreboard players set @s clickStick 0
-execute as @a[scores={clickStick=1,retrDuration=1..},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
-execute as @a[scores={clickStick=1,retrDuration=1..},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run scoreboard players set @s clickStick 0
+execute as @a[scores={clickStick=1,abilitiesBlocked=1..},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
+execute as @a[scores={clickStick=1,abilitiesBlocked=1..},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] at @s unless block ~ ~-1 ~ air run attribute @s minecraft:generic.attack_speed base set 8.0
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] at @s unless block ~ ~-1 ~ air run scoreboard players set @s duelCooldown 1
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] at @s unless block ~ ~-1 ~ air run scoreboard players set @s duelDuration 1

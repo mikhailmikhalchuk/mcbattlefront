@@ -1,5 +1,7 @@
 execute as @a[scores={clickStick=1,bcomCooldown=1..},nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"bcomCooldown"},"color":"red"},{"text":" of 1000 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,bcomCooldown=1..},nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run scoreboard players set @s clickStick 0
+execute as @a[scores={clickStick=1,abilitiesBlocked=1..},nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
+execute as @a[scores={clickStick=1,abilitiesBlocked=1..},nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run scoreboard players set @s clickStick 0
 execute at @a[scores={clickStick=1},team=FO,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run effect give @a[distance=1..7,team=FO] absorption 15 2 true
 execute at @a[scores={clickStick=1},team=RES,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run effect give @a[distance=1..7,team=RES] absorption 15 2 true
 execute at @a[scores={clickStick=1},team=EMP,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run effect give @a[distance=1..7,team=EMP] absorption 15 2 true

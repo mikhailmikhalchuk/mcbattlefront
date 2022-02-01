@@ -1,7 +1,7 @@
 execute as @a[scores={clickStick=1,weakCooldown=1..},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"weakCooldown"},"color":"red"},{"text":" of 750 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,weakCooldown=1..},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run scoreboard players set @s clickStick 0
-execute as @a[scores={clickStick=1,retrDuration=1..},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
-execute as @a[scores={clickStick=1,retrDuration=1..},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run scoreboard players set @s clickStick 0
+execute as @a[scores={clickStick=1,abilitiesBlocked=1..},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
+execute as @a[scores={clickStick=1,abilitiesBlocked=1..},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run scoreboard players set @s clickStick 0
 execute at @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] unless block ~ ~-1 ~ air run effect give @p[team=REP,distance=..6] weakness 10 0 true
 execute at @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] unless block ~ ~-1 ~ air run tellraw @p[team=REP,distance=..6] {"text":"Hit by Count Dooku's expose weakness!","color":"red"}
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] at @s unless block ~ ~-1 ~ air run tellraw @s ["",{"text":"Afflicted ","color":"green"},{"selector":"@p[team=REP,distance=..6]"},{"text":" with expose weakness.","color":"green"}]

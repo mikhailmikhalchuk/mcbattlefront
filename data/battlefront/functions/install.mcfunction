@@ -27,7 +27,7 @@ scoreboard objectives add duelCooldown dummy
 scoreboard objectives add passCooldown dummy
 scoreboard objectives add domiCooldown dummy
 scoreboard objectives add wrisCooldown dummy
-scoreboard objectives add retrCooldown dummy
+scoreboard objectives add restrCooldown dummy
 scoreboard objectives add helmCooldown dummy
 scoreboard objectives add thermCooldown dummy
 scoreboard objectives add frezCooldown dummy
@@ -39,7 +39,6 @@ scoreboard objectives add helmGlowing dummy
 scoreboard objectives add abilitiesBlocked dummy
 scoreboard objectives add stCooldown dummy
 scoreboard objectives add duelDuration dummy
-scoreboard objectives add retrDuration dummy
 scoreboard objectives add insigDuration dummy
 scoreboard objectives add chokeDuration dummy
 scoreboard objectives add respawnTime dummy

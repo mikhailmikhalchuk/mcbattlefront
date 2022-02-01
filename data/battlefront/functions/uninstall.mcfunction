@@ -35,6 +35,7 @@ scoreboard objectives remove thermCooldown
 scoreboard objectives remove helmGlowing
 scoreboard objectives remove insigCooldown
 scoreboard objectives remove thrustCooldown
+scoreboard objectives remove restrCooldown
 scoreboard objectives remove stCooldown
 scoreboard objectives remove abilitiesBlocked
 scoreboard objectives remove respawnTime

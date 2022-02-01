@@ -6,6 +6,7 @@ execute at @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] at @s unless block ~ ~-1 ~ air run tellraw @s ["",{"text":"Afflicted ","color":"green"},{"selector":"@a[distance=..5,team=FO]"},{"text":" with mind trick.","color":"green"}]
 execute at @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] unless block ~ ~-1 ~ air run title @a[distance=..5,team=FO] title {"text":"iAMthesenatenotyet","obfuscated":true}
 execute at @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] unless block ~ ~-1 ~ air run title @a[distance=..5,team=FO] subtitle {"text":"itstreasonthen","obfuscated":true}
+execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] at @s unless block ~ ~-1 ~ air run scoreboard players set @p[team=FO,distance=..5] abilitiesBlocked 1
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] unless block ~ ~-1 ~ air run scoreboard players set @s mindCooldown 1
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={mindCooldown=1..}] run scoreboard players add @s mindCooldown 1

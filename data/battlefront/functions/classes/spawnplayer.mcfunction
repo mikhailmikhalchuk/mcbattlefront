@@ -13,7 +13,7 @@ scoreboard players set @s duelCooldown 0
 scoreboard players set @s weakCooldown 0
 scoreboard players set @s domiCooldown 0
 scoreboard players set @s wrisCooldown 0
-scoreboard players set @s retrCooldown 0
+scoreboard players set @s restrCooldown 0
 scoreboard players set @s helmCooldown 0
 scoreboard players set @s frezCooldown 0
 scoreboard players set @s insiCooldown 0
