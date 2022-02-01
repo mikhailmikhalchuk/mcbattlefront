@@ -1,12 +1,10 @@
 #run nested functions
-function battlefront:weapons/projlauncher/projlaunchertick
 function battlefront:weapons/grenade/grenadetick
 function battlefront:weapons/pblaster/pblastertick
 function battlefront:weapons/sonic/sonictick
 function battlefront:weapons/minigun/miniguntick
 function battlefront:weapons/stblaster/stblastertick
 function battlefront:weapons/quarrel/quarreltick
-function battlefront:weapons/bowcaster/bowcastertick
 function battlefront:weapons/trunch/trunchtick
 function battlefront:weapons/pbaton/pbatontick
 function battlefront:weapons/vibrosword/vibroswordtick
@@ -46,6 +44,7 @@ function battlefront:posts/postctick
 function battlefront:posts/postdtick
 function battlefront:posts/postetick
 
+#knockback setter
 execute as @a run attribute @s minecraft:generic.knockback_resistance base set 1.0
 
 #apply hero effects

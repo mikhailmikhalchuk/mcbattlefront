@@ -4,5 +4,5 @@ execute as @a[scores={useSpin=1..,spinCooldown=0}] run clear @s trident
 execute as @a[scores={useSpin=1..,spinCooldown=0}] run scoreboard players set @s spinCooldown 1
 execute as @a[scores={useSpin=1..,spinCooldown=1}] run scoreboard players set @s useSpin 0
 execute as @a[scores={spinCooldown=1..}] run scoreboard players add @s spinCooldown 1
-execute as @a[scores={spinCooldown=200..,defeated=0}] run give @s minecraft:trident{display:{Name:'{"text":"Sheev Spin","color":"blue","italic":false}',Lore:['{"text":"Right-click while sneaking to dash into the enemy, dealing damage","italic":false}']},HideFlags:1,Enchantments:[{id:"minecraft:riptide",lvl:1}],Unbreakable:1,Tags:["spin"],AttributeModifiers:[{AttributeName:"generic.attack_damage", Name:"generic.attack_damage",Amount:0,Operation:0}]} 1
+execute as @a[scores={spinCooldown=200..,defeated=0}] run give @s minecraft:trident{display:{Name:'{"text":"Sheev Spin","color":"blue","italic":false}',Lore:['{"text":"Right-click while sneaking to","italic":false}','{"text":"dash into the enemy, dealing damage","italic":false}']},HideFlags:1,Enchantments:[{id:"minecraft:riptide",lvl:1}],Unbreakable:1,Tags:["spin"],AttributeModifiers:[{AttributeName:"generic.attack_damage", Name:"generic.attack_damage",Amount:0,Operation:0}]} 1
 execute as @a[scores={spinCooldown=200..}] run scoreboard players set @s spinCooldown 0
