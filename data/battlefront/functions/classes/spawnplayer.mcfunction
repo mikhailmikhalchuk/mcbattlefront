@@ -1,31 +1,49 @@
+#reset stats
 scoreboard players set @s defeated 0
+
+#cooldowns
 scoreboard players set @s fortCooldown 0
 scoreboard players set @s mindCooldown 0
 scoreboard players set @s jumpCooldown 0
 scoreboard players set @s quarCooldown 0
 scoreboard players set @s bcomCooldown 0
 scoreboard players set @s bfocCooldown 0
-scoreboard players set @s thermCooldown 0
-scoreboard players set @s mineCooldown 0
-scoreboard players set @s tranCooldown 0
+scoreboard players set @s trunCooldown 0
+scoreboard players set @s rushCooldown 0
 scoreboard players set @s seekCooldown 0
-scoreboard players set @s duelCooldown 0
+scoreboard players set @s tranCooldown 0
+scoreboard players set @s pbatCooldown 0
+scoreboard players set @s survCooldown 0
+scoreboard players set @s spinCooldown 0
+scoreboard players set @s elecCooldown 0
 scoreboard players set @s weakCooldown 0
+scoreboard players set @s duelCooldown 0
+scoreboard players set @s passCooldown 0
 scoreboard players set @s domiCooldown 0
 scoreboard players set @s wrisCooldown 0
 scoreboard players set @s restrCooldown 0
 scoreboard players set @s helmCooldown 0
+scoreboard players set @s thermCooldown 0
 scoreboard players set @s frezCooldown 0
-scoreboard players set @s insiCooldown 0
+scoreboard players set @s insigCooldown 0
 scoreboard players set @s chokeCooldown 0
 scoreboard players set @s vibroCooldown 0
 scoreboard players set @s thrustCooldown 0
+scoreboard players set @s mineCooldown 0
+scoreboard players set @s stCooldown 0
+
+#misc
 scoreboard players set @s damageTaken 0
 scoreboard players set @s useTruncheon 0
 scoreboard players set @s usePBaton 0
-scoreboard players set @s jetpacks-fuel 0
+scoreboard players set @s hoverpackFuel 0
 scoreboard players set @s respawnTick 0
+scoreboard players set @s abilitiesBlocked 0
+
+#set adventure
 gamemode adventure @s
+
+#spawn player at spawnpoint
 execute if entity @s[team=FO] unless entity @e[type=armor_stand,tag=FOspawn] run tellraw @s ["",{"text":"Could not find a valid First Order spawnpoint to spawn you at.\nTo set a First Order spawnpoint, run the command","color":"red"},{"text":" \"/function battlefront:setteamspawn/fo\"","color":"red","clickEvent":{"action":"suggest_command","value":"/function battlefront:setteamspawn/fo"},"hoverEvent":{"action":"show_text","contents":{"text":"Click to enter command"}}}]
 execute if entity @s[team=FO] at @e[type=armor_stand,tag=FOspawn] run tp @s ~ ~ ~
 execute if entity @s[team=RES] unless entity @e[type=armor_stand,tag=RESspawn] run tellraw @s ["",{"text":"Could not find a valid Resistance spawnpoint to spawn you at.\nTo set a Resistance spawnpoint, run the command","color":"red"},{"text":" \"/function battlefront:setteamspawn/res\"","color":"red","clickEvent":{"action":"suggest_command","value":"/function battlefront:setteamspawn/res"},"hoverEvent":{"action":"show_text","contents":{"text":"Click to enter command"}}}]
@@ -38,5 +56,7 @@ execute if entity @s[team=REP] unless entity @e[type=armor_stand,tag=REPspawn] r
 execute if entity @s[team=REP] at @e[type=armor_stand,tag=REPspawn] run tp @s ~ ~ ~
 execute if entity @s[team=CIS] unless entity @e[type=armor_stand,tag=CISspawn] run tellraw @s ["",{"text":"Could not find a valid Confederacy spawnpoint to spawn you at.\nTo set a Confederacy spawnpoint, run the command","color":"red"},{"text":" \"/function battlefront:setteamspawn/cis\"","color":"red","clickEvent":{"action":"suggest_command","value":"/function battlefront:setteamspawn/cis"},"hoverEvent":{"action":"show_text","contents":{"text":"Click to enter command"}}}]
 execute if entity @s[team=CIS] at @e[type=armor_stand,tag=CISspawn] run tp @s ~ ~ ~
+
+#give spawnprot
 effect give @s minecraft:instant_health 1 20 true
 effect give @s minecraft:resistance 3 255 true

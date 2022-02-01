@@ -1,13 +1,14 @@
 #init the thousand scoreboard objectives
+
+#FO jetpack
 scoreboard objectives add hoverpackEquipped dummy
 scoreboard objectives add hoverpackFuel dummy
 scoreboard objectives add hoverpackDead dummy
 scoreboard objectives add hoverpackTick dummy
-scoreboard objectives add mineCooldown dummy
-scoreboard objectives add tick-fuel dummy
-scoreboard objectives add sound-tick dummy
+scoreboard objectives add soundTick dummy
 scoreboard objectives add sound-enabled dummy
-scoreboard objectives add grenadeReload dummy
+
+#cooldowns
 scoreboard objectives add fortCooldown dummy
 scoreboard objectives add mindCooldown dummy
 scoreboard objectives add jumpCooldown dummy
@@ -35,26 +36,26 @@ scoreboard objectives add insigCooldown dummy
 scoreboard objectives add chokeCooldown dummy
 scoreboard objectives add vibroCooldown dummy
 scoreboard objectives add thrustCooldown dummy
-scoreboard objectives add helmGlowing dummy
-scoreboard objectives add abilitiesBlocked dummy
+scoreboard objectives add mineCooldown dummy
 scoreboard objectives add stCooldown dummy
-scoreboard objectives add duelDuration dummy
-scoreboard objectives add insigDuration dummy
-scoreboard objectives add chokeDuration dummy
-scoreboard objectives add respawnTime dummy
-scoreboard objectives add respawnTick dummy
+
+#posts
 scoreboard objectives add postA dummy
 scoreboard objectives add postB dummy
 scoreboard objectives add postC dummy
 scoreboard objectives add postD dummy
 scoreboard objectives add postE dummy
+scoreboard objectives add postReadable dummy
+
+#heroes
 scoreboard objectives add FOhero dummy
 scoreboard objectives add REShero dummy
 scoreboard objectives add REBhero dummy
 scoreboard objectives add EMPhero dummy
 scoreboard objectives add REPhero dummy
 scoreboard objectives add CIShero dummy
-scoreboard objectives add postReadable dummy
+
+#statistic
 scoreboard objectives add jump minecraft.custom:minecraft.jump
 scoreboard objectives add sneak minecraft.custom:minecraft.sneak_time
 scoreboard objectives add sprint minecraft.custom:minecraft.sprint_one_cm
@@ -68,14 +69,24 @@ scoreboard objectives add useSpin minecraft.used:minecraft.trident
 scoreboard objectives add defeated minecraft.custom:minecraft.deaths
 scoreboard objectives add killedPlayer minecraft.custom:minecraft.player_kills
 scoreboard objectives add damageTaken minecraft.custom:damage_taken
-scoreboard players set @a jetpacks-fuel 0
+
+#misc
+scoreboard objectives add helmGlowing dummy
+scoreboard objectives add abilitiesBlocked dummy
+scoreboard objectives add duelDuration dummy
+scoreboard objectives add insigDuration dummy
+scoreboard objectives add chokeDuration dummy
+scoreboard objectives add respawnTime dummy
+scoreboard objectives add respawnTick dummy
+
+#init objective default values
+scoreboard players set @a hoverpackFuel 0
 scoreboard players set @a stCooldown 0
 scoreboard players set @a trunCooldown 0
 scoreboard players set @a vibroCooldown 0
 scoreboard players set @a pbatCooldown 0
 scoreboard players set @a passCooldown 0
 scoreboard players set @a spinCooldown 0
-scoreboard players set @a timer 9600
 execute if score @p respawnTime matches 0 run scoreboard players set @a respawnTime 20
 
 #init teams
