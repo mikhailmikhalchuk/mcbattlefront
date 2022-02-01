@@ -24,7 +24,7 @@ function battlefront:abilities/spin/spintick
 function battlefront:abilities/lightning/lightningtick
 function battlefront:abilities/expose/exposetick
 function battlefront:abilities/duelist/duelisttick
-function battlefront:abilities/dominance/dominancetick
+function battlefront:abilities/pulldom/pulldomtick
 function battlefront:abilities/wristrocket/wristrockettick
 function battlefront:abilities/restrict/restricttick
 function battlefront:abilities/helmscan/helmscantick

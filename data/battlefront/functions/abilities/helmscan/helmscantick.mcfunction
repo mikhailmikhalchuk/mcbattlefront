@@ -7,8 +7,13 @@ execute at @a[scores={helmGlowing=20}] run effect give @a[team=CIS,distance=..25
 execute at @a[scores={helmGlowing=60}] run effect give @a[team=CIS,distance=..25] glowing 1 0 true
 execute at @a[scores={helmGlowing=100}] run effect give @a[team=CIS,distance=..25] glowing 1 0 true
 execute at @a[scores={helmGlowing=140}] run effect give @a[team=CIS,distance=..25] glowing 1 0 true
-execute at @a[scores={helmGlowing=200}] run effect give @a[team=CIS,distance=..25] glowing 1 0 true
+execute at @a[scores={helmGlowing=180}] run effect give @a[team=CIS,distance=..25] glowing 1 0 true
+execute as @a[scores={helmGlowing=20}] at @s run playsound minecraft:block.bell.resonate master @s ~ ~50 ~ 999 2
+execute as @a[scores={helmGlowing=60}] at @s run playsound minecraft:block.bell.resonate master @s ~ ~50 ~ 999 2
+execute as @a[scores={helmGlowing=100}] at @s run playsound minecraft:block.bell.resonate master @s ~ ~50 ~ 999 2
+execute as @a[scores={helmGlowing=140}] at @s run playsound minecraft:block.bell.resonate master @s ~ ~50 ~ 999 2
+execute as @a[scores={helmGlowing=180}] at @s run playsound minecraft:block.bell.resonate master @s ~ ~50 ~ 999 2
 execute as @a[scores={helmCooldown=1..}] run scoreboard players add @s helmCooldown 1
 execute as @a[scores={helmGlowing=1..}] run scoreboard players add @s helmGlowing 1
-execute as @a[scores={helmGlowing=201..}] run scoreboard players set @s helmGlowing 0
+execute as @a[scores={helmGlowing=181..}] run scoreboard players set @s helmGlowing 0
 execute as @a[scores={helmCooldown=750..}] run scoreboard players set @s helmCooldown 0
