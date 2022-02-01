@@ -1,8 +1,8 @@
 #init the thousand scoreboard objectives
-scoreboard objectives add jetpacks-iron dummy
-scoreboard objectives add jetpacks-fuel dummy
-scoreboard objectives add jetpacks-dead dummy
-scoreboard objectives add jetpacks-tick dummy
+scoreboard objectives add hoverpackEquipped dummy
+scoreboard objectives add hoverpackFuel dummy
+scoreboard objectives add hoverpackDead dummy
+scoreboard objectives add hoverpackTick dummy
 scoreboard objectives add mineCooldown dummy
 scoreboard objectives add tick-fuel dummy
 scoreboard objectives add sound-tick dummy

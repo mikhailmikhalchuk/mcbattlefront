@@ -19,6 +19,7 @@ scoreboard players set @s frezCooldown 0
 scoreboard players set @s insiCooldown 0
 scoreboard players set @s chokeCooldown 0
 scoreboard players set @s vibroCooldown 0
+scoreboard players set @s thrustCooldown 0
 scoreboard players set @s damageTaken 0
 scoreboard players set @s useTruncheon 0
 scoreboard players set @s usePBaton 0
