@@ -5,7 +5,9 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["retribution"]
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["retribution"]}}}] at @s unless block ~ ~-1 ~ air if entity @a[team=CIS,distance=..10] run effect give @s slowness 3 7 true
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["retribution"]}}}] at @s unless block ~ ~-1 ~ air if entity @a[team=CIS,distance=..10] run summon armor_stand ~ ~ ~ {Tags:["retribCircleGen"]}
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["retribution"]}}}] at @s unless block ~ ~-1 ~ air if entity @a[team=CIS,distance=..10] run effect give @s resistance 3 3 true
-execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["retribution"]}}}] at @s unless block ~ ~-1 ~ air if entity @a[team=CIS,distance=..10] run effect give @a[team=CIS,distance=..10] wither 3 10 true
+execute as @a[scores={retribDuration=1},nbt={SelectedItem:{tag:{Tags:["retribution"]}}}] at @s unless block ~ ~-1 ~ air if entity @a[team=CIS,distance=..10] run effect give @a[team=CIS,distance=..10] instant_damage 1 0 true
+execute as @a[scores={retribDuration=21},nbt={SelectedItem:{tag:{Tags:["retribution"]}}}] at @s unless block ~ ~-1 ~ air if entity @a[team=CIS,distance=..10] run effect give @a[team=CIS,distance=..10] instant_damage 1 0 true
+execute as @a[scores={retribDuration=41},nbt={SelectedItem:{tag:{Tags:["retribution"]}}}] at @s unless block ~ ~-1 ~ air if entity @a[team=CIS,distance=..10] run effect give @a[team=CIS,distance=..10] instant_damage 1 0 true
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["retribution"]}}}] at @s unless block ~ ~-1 ~ air if entity @a[team=CIS,distance=..10] run effect give @a[team=CIS,distance=..10] slowness 3 7 true
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["retribution"]}}}] at @s unless block ~ ~-1 ~ air if entity @a[team=CIS,distance=..10] run scoreboard players set @s clickStick 0
 execute as @e[type=armor_stand,tag=retribCircleGen] at @s run tp @s ~ ~ ~ ~10 ~

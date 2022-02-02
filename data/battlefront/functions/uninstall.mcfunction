@@ -76,8 +76,11 @@ scoreboard objectives remove abilitiesBlocked
 scoreboard objectives remove duelDuration
 scoreboard objectives remove insigDuration
 scoreboard objectives remove chokeDuration
+scoreboard objectives remove retribDuration
 scoreboard objectives remove respawnTime
 scoreboard objectives remove respawnTick
+scoreboard objectives remove nearGround
+scoreboard objectives remove fuelTick
 
 #team
 team remove EMP

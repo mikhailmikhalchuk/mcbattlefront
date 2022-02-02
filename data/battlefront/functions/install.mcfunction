@@ -76,8 +76,11 @@ scoreboard objectives add abilitiesBlocked dummy
 scoreboard objectives add duelDuration dummy
 scoreboard objectives add insigDuration dummy
 scoreboard objectives add chokeDuration dummy
+scoreboard objectives add retribDuration dummy
 scoreboard objectives add respawnTime dummy
 scoreboard objectives add respawnTick dummy
+scoreboard objectives add nearGround dummy
+scoreboard objectives add fuelTick dummy
 
 #init objective default values
 scoreboard players set @a hoverpackFuel 0
