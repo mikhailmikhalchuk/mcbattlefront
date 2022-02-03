@@ -1,7 +1,7 @@
 execute as @a[scores={clickStick=1,mineCooldown=1..},nbt={SelectedItem:{tag:{Tags:["trip"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"mineCooldown"},"color":"red"},{"text":" of 800 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,mineCooldown=1..},nbt={SelectedItem:{tag:{Tags:["trip"]}}}] run scoreboard players set @s clickStick 0
-execute as @a[scores={clickStick=1,abilitiesBlocked=1..},nbt={SelectedItem:{tag:{Tags:["trip"]}}}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
-execute as @a[scores={clickStick=1,abilitiesBlocked=1..},nbt={SelectedItem:{tag:{Tags:["trip"]}}}] run scoreboard players set @s clickStick 0
+execute as @a[scores={clickStick=1,abilitiesBlocked=2..},nbt={SelectedItem:{tag:{Tags:["trip"]}}}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
+execute as @a[scores={clickStick=1,abilitiesBlocked=2..},nbt={SelectedItem:{tag:{Tags:["trip"]}}}] run scoreboard players set @s clickStick 0
 execute at @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["trip"]}}}] run summon creeper ~ ~ ~ {Tags:["tripmine"],Fuse:5,CustomName:'{"text":"Trip Mine","color":"blue"}',CustomNameVisible:0b,DeathLootTable:"minecraft:empty",Silent:1,Health:10}
 execute at @a[scores={clickStick=1},team=FO,nbt={SelectedItem:{tag:{Tags:["trip"]}}}] run team join FO @e[type=creeper,tag=tripmine,distance=..2]
 execute at @a[scores={clickStick=1},team=RES,nbt={SelectedItem:{tag:{Tags:["trip"]}}}] run team join RES @e[type=creeper,tag=tripmine,distance=..2]

@@ -47,7 +47,7 @@ execute at @a[scores={hoverpackDead=1,hoverpackEquipped=1,sound-enabled=1,soundT
 execute as @a[scores={soundTick=3..}] run scoreboard players set @s soundTick 0
 
 #jetpack up
-execute as @a[scores={sneak=1,hoverpackDead=0,hoverpackEquipped=1},nbt=!{OnGround:1b}] run effect give @s minecraft:levitation 1 9 true
+execute as @a[scores={sneak=1,hoverpackDead=0,hoverpackEquipped=1,abilitiesBlocked=0},nbt=!{OnGround:1b}] run effect give @s minecraft:levitation 1 9 true
 
 #detect if near ground
 execute at @a[scores={hoverpackEquipped=1,nearGround=0}] unless block ~ ~-3 ~ minecraft:air as @a[scores={hoverpackEquipped=1,nearGround=0}] run scoreboard players set @s nearGround 1

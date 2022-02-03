@@ -1,4 +1,6 @@
 #run nested functions
+
+#weapons
 function battlefront:weapons/grenade/grenadetick
 function battlefront:weapons/pblaster/pblastertick
 function battlefront:weapons/sonic/sonictick
@@ -11,6 +13,8 @@ function battlefront:weapons/vibrosword/vibroswordtick
 function battlefront:weapons/strike/striketick
 function battlefront:weapons/leiaalt/leiaalttick
 function battlefront:weapons/repeater/repeatertick
+
+#abilities
 function battlefront:abilities/insight/insighttick
 function battlefront:abilities/tripmine/tripminetick
 function battlefront:abilities/fortify/fortifytick
@@ -34,6 +38,8 @@ function battlefront:abilities/freeze/freezetick
 function battlefront:abilities/retribution/retributiontick
 function battlefront:abilities/choke/choketick
 function battlefront:abilities/thrustsurge/thrustsurgetick
+
+#packs 
 function battlefront:jetpack/jetpacktick
 function battlefront:jumppack/jumppacktick
 
@@ -59,7 +65,13 @@ execute as @a[scores={killedPlayer=1..,CIShero=1}] run effect give @s minecraft:
 execute at @a[nbt={Inventory:[{Slot:102b,Count:1b,id:"minecraft:leather_chestplate",tag:{Tags:["actualjumppack"]}}],ActiveEffects:[{Id:25b}]}] rotated ~ 0 positioned ^ ^ ^-0.3 run particle minecraft:flame ~ ~1 ~ 0 0 0 0 0
 
 #run arrow explosion effects
-execute at @e[type=arrow,nbt={inGround:1b,Color:12397074}] run summon minecraft:creeper ~ ~ ~ {powered:0,Fuse:0,ignited:1,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:1}
+execute at @e[type=arrow,nbt={inGround:1b,Color:12397074}] run summon minecraft:creeper ~ ~ ~ {powered:0,Fuse:0,ignited:1,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:1,CustomName:'"G125 Projectile Bolt"'}
+execute at @e[type=arrow,nbt={inGround:1b,Color:12397073}] run summon minecraft:creeper ~ ~ ~ {powered:0,Fuse:0,ignited:1,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:1,CustomName:'"Bowcaster Bolt"'}
+
+#ability restrictor
+execute as @a[scores={abilitiesBlocked=2..}] run scoreboard players remove @s abilitiesBlocked 1
+execute as @a[scores={abilitiesBlocked=1}] run tellraw @s {"text":"Abilities are no longer restricted.","color":"green"}
+execute as @a[scores={abilitiesBlocked=..1}] run scoreboard players set @s abilitiesBlocked 0
 
 #kill arrows in ground
 execute as @e[type=arrow,nbt={inGround:1b}] run kill @s
@@ -95,6 +107,7 @@ execute as @a[scores={defeated=1}] run scoreboard players set @s passCooldown 0
 execute as @a[scores={defeated=1}] run scoreboard players set @s pbatCooldown 0
 execute as @a[scores={defeated=1}] run scoreboard players set @s trunCooldown 0
 execute as @a[scores={defeated=1}] run scoreboard players set @s spinCooldown 0
+execute as @a[scores={defeated=1}] run item replace entity @s armor.chest with air
 execute as @a[scores={defeated=1}] run tellraw @s {"text":"Respawning...","color":"green","underlined": true}
 execute as @a[scores={defeated=1}] run scoreboard players set @s defeated 2
 

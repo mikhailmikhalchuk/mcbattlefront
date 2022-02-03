@@ -15,7 +15,7 @@ execute if entity @s[scores={defeated=2},team=REB] run item replace entity @s ar
 execute if entity @s[scores={defeated=2},team=REB] run item replace entity @s armor.legs with minecraft:leather_leggings{display:{Name:'{"text":"Armor","color":"yellow","italic":false}'},HideFlags:1} 1
 execute if entity @s[scores={defeated=2},team=REB] run item replace entity @s armor.feet with minecraft:leather_boots{display:{Name:'{"text":"Armor","color":"yellow","italic":false}'},HideFlags:1} 1
 execute if entity @s[scores={defeated=2},team=REB] run give @s minecraft:crossbow{display:{Name:'{"text":"Bowcaster","italic":false}'},Unbreakable:1,Tags:["bowcast"]} 1
-execute if entity @s[scores={defeated=2},team=REB] run give @s minecraft:tipped_arrow{Potion:"minecraft:water",CustomPotionColor:12397074,display:{Name:'{"text":"Bowcaster Bolt","italic":false}'},HideFlags:32} 64
+execute if entity @s[scores={defeated=2},team=REB] run give @s minecraft:tipped_arrow{Potion:"minecraft:water",CustomPotionColor:12397073,display:{Name:'{"text":"Bowcaster Bolt","italic":false}'},HideFlags:32} 64
 
 #praetorian guard
 execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.head with minecraft:player_head{display:{Name:'{"text":"Praetorian Guard Helmet"}'},Enchantments:[{id:"minecraft:binding_curse",lvl:1}],SkullOwner:{Id:[I;1154760920,1181372274,-1235680490,538871679],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjhmNmUzOTU4MTJjNzMyYzA3NGJlYzdlN2I5NzU2YmE1MWUxMDE2Yjc4ZTZjNjE5MWUxZTJiMGE5NzAzN2JmOSJ9fX0="}]}},HideFlags:1} 1
