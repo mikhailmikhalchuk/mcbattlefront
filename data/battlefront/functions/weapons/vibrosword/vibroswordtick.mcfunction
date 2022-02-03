@@ -1,3 +1,4 @@
+execute as @a[scores={useTruncheon=2,vibroCooldown=0},nbt={SelectedItem:{tag:{Tags:["vibrosword"]}}},nbt=!{SelectedItem:{tag:{Enchantments:[{id:"minecraft:sharpness",lvl:2s}]}}}] run enchant @s sharpness 2
 execute as @a[scores={useTruncheon=3..,vibroCooldown=0},nbt={SelectedItem:{tag:{Tags:["vibrosword"]}}}] run tellraw @s {"text":"Recharging vibrosword...","color":"red"}
 execute as @a[scores={useTruncheon=3..,vibroCooldown=0},nbt={SelectedItem:{tag:{Tags:["vibrosword"]}}}] run scoreboard players set @s vibroCooldown 1
 execute as @a[scores={useTruncheon=3..,vibroCooldown=1},nbt={SelectedItem:{tag:{Tags:["vibrosword"]}}}] run clear @s stone_sword

@@ -53,13 +53,14 @@ function battlefront:posts/postetick
 #knockback setter
 execute as @a run attribute @s minecraft:generic.knockback_resistance base set 1.0
 
-#apply hero effects
+#apply health effects
 execute as @a[scores={killedPlayer=1..,REBhero=1}] run effect give @s minecraft:instant_health 1 0 true
 execute as @a[scores={killedPlayer=1..,REShero=1}] run effect give @s minecraft:instant_health 1 0 true
 execute as @a[scores={killedPlayer=1..,FOhero=1}] run effect give @s minecraft:instant_health 1 0 true
 execute as @a[scores={killedPlayer=1..,EMPhero=1}] run effect give @s minecraft:instant_health 1 0 true
 execute as @a[scores={killedPlayer=1..,REPhero=1}] run effect give @s minecraft:instant_health 1 0 true
 execute as @a[scores={killedPlayer=1..,CIShero=1}] run effect give @s minecraft:instant_health 1 0 true
+execute as @a[scores={killedPlayer=1..,bfocDuration=1..}] run effect give @s minecraft:instant_health 2 0 true
 
 #flame particle on jumppack use
 execute at @a[nbt={Inventory:[{Slot:102b,Count:1b,id:"minecraft:leather_chestplate",tag:{Tags:["actualjumppack"]}}],ActiveEffects:[{Id:25b}]}] rotated ~ 0 positioned ^ ^ ^-0.3 run particle minecraft:flame ~ ~1 ~ 0 0 0 0 0

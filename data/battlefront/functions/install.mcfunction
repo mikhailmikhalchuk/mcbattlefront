@@ -38,6 +38,8 @@ scoreboard objectives add vibroCooldown dummy
 scoreboard objectives add thrustCooldown dummy
 scoreboard objectives add mineCooldown dummy
 scoreboard objectives add stCooldown dummy
+scoreboard objectives add intelCooldown dummy
+scoreboard objectives add doubCooldown dummy
 
 #posts
 scoreboard objectives add postA dummy
@@ -77,6 +79,7 @@ scoreboard objectives add duelDuration dummy
 scoreboard objectives add insigDuration dummy
 scoreboard objectives add chokeDuration dummy
 scoreboard objectives add retribDuration dummy
+scoreboard objectives add bfocDuration dummy
 scoreboard objectives add respawnTime dummy
 scoreboard objectives add respawnTick dummy
 scoreboard objectives add nearGround dummy

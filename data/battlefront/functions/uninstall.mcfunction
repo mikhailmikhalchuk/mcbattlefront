@@ -38,6 +38,8 @@ scoreboard objectives remove vibroCooldown
 scoreboard objectives remove thrustCooldown
 scoreboard objectives remove mineCooldown
 scoreboard objectives remove stCooldown
+scoreboard objectives remove intelCooldown
+scoreboard objectives remove doubCooldown
 
 #posts
 scoreboard objectives remove postA
@@ -77,6 +79,7 @@ scoreboard objectives remove duelDuration
 scoreboard objectives remove insigDuration
 scoreboard objectives remove chokeDuration
 scoreboard objectives remove retribDuration
+scoreboard objectives remove bfocDuration
 scoreboard objectives remove respawnTime
 scoreboard objectives remove respawnTick
 scoreboard objectives remove nearGround
