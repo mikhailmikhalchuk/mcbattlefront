@@ -1,4 +1,4 @@
-execute as @a[scores={clickStick=1,frezCooldown=1..},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"frezCooldown"},"color":"red"},{"text":" of 750 ticks (1/20ths of a second) remaining.","color":"red"}]
+execute as @a[scores={clickStick=1,frezCooldown=1..},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"frezCooldown"},"color":"red"},{"text":" of 600 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,frezCooldown=1..},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] run scoreboard players set @s clickStick 0
@@ -12,4 +12,4 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] 
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] at @s anchored eyes facing entity @p[team=RES,distance=..10] eyes anchored feet positioned ^ ^ ^1 rotated as @s positioned ^ ^ ^-1 if entity @s[distance=..0.6] if entity @p[team=RES,distance=..10] run playsound minecraft:entity.player.hurt_freeze block @a ~ ~ ~
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={frezCooldown=1..}] run scoreboard players add @s frezCooldown 1
-execute as @a[scores={frezCooldown=750..}] run scoreboard players set @s frezCooldown 0
+execute as @a[scores={frezCooldown=600..}] run scoreboard players set @s frezCooldown 0

@@ -1,4 +1,4 @@
-execute as @a[scores={clickStick=1,mindCooldown=1..},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"mindCooldown"},"color":"red"},{"text":" of 1000 ticks (1/20ths of a second) remaining.","color":"red"}]
+execute as @a[scores={clickStick=1,mindCooldown=1..},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"mindCooldown"},"color":"red"},{"text":" of 600 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,mindCooldown=1..},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] run scoreboard players set @s clickStick 0
@@ -13,4 +13,4 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] at @s unless block ~ ~-1 ~ air if entity @p[distance=..5,team=FO] run scoreboard players set @s mindCooldown 1
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={mindCooldown=1..}] run scoreboard players add @s mindCooldown 1
-execute as @a[scores={mindCooldown=1000..}] run scoreboard players set @s mindCooldown 0
+execute as @a[scores={mindCooldown=600..}] run scoreboard players set @s mindCooldown 0

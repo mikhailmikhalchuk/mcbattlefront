@@ -1,4 +1,4 @@
-execute as @a[scores={clickStick=1,domiCooldown=1..},nbt={SelectedItem:{tag:{Tags:["dominance"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"domiCooldown"},"color":"red"},{"text":" of 750 ticks (1/20ths of a second) remaining.","color":"red"}]
+execute as @a[scores={clickStick=1,domiCooldown=1..},nbt={SelectedItem:{tag:{Tags:["dominance"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"domiCooldown"},"color":"red"},{"text":" of 600 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,domiCooldown=1..},nbt={SelectedItem:{tag:{Tags:["dominance"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["dominance"]}}}] at @s anchored eyes facing entity @p[team=CIS,distance=..10] eyes anchored feet positioned ^ ^ ^1 rotated as @s positioned ^ ^ ^-1 if entity @s[distance=..0.6] rotated ~ 0 unless block ~ ~-1 ~ air run tp @p[team=CIS,distance=..10] ^ ^ ^1 facing entity @s
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["dominance"]}}}] at @s anchored eyes facing entity @p[team=CIS,distance=..10] eyes anchored feet positioned ^ ^ ^1 rotated as @s positioned ^ ^ ^-1 if entity @s[distance=..0.6] rotated ~ 0 unless block ~ ~-1 ~ air run effect give @p[team=CIS,distance=..10] instant_damage 1 0 true
@@ -26,4 +26,4 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["dominance"]}}
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["dominance"]}}}] at @s anchored eyes facing entity @p[team=CIS,distance=..10] eyes anchored feet positioned ^ ^ ^1 rotated as @s positioned ^ ^ ^-1 if entity @s[distance=..0.6] rotated ~ 0 unless block ~ ~-1 ~ air run particle cloud ^ ^0.25 ^3.95
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["dominance"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={domiCooldown=1..}] run scoreboard players add @s domiCooldown 1
-execute as @a[scores={domiCooldown=750..}] run scoreboard players set @s domiCooldown 0
+execute as @a[scores={domiCooldown=600..}] run scoreboard players set @s domiCooldown 0

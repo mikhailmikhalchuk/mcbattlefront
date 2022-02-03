@@ -65,8 +65,8 @@ execute as @a[scores={killedPlayer=1..,CIShero=1}] run effect give @s minecraft:
 execute at @a[nbt={Inventory:[{Slot:102b,Count:1b,id:"minecraft:leather_chestplate",tag:{Tags:["actualjumppack"]}}],ActiveEffects:[{Id:25b}]}] rotated ~ 0 positioned ^ ^ ^-0.3 run particle minecraft:flame ~ ~1 ~ 0 0 0 0 0
 
 #run arrow explosion effects
-execute at @e[type=arrow,nbt={inGround:1b,Color:12397074}] run summon minecraft:creeper ~ ~ ~ {powered:0,Fuse:0,ignited:1,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:1,CustomName:'"G125 Projectile Bolt"'}
-execute at @e[type=arrow,nbt={inGround:1b,Color:12397073}] run summon minecraft:creeper ~ ~ ~ {powered:0,Fuse:0,ignited:1,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:1,CustomName:'"Bowcaster Bolt"'}
+execute at @e[type=arrow,nbt={inGround:1b,Color:12397074}] run summon minecraft:creeper ~ ~ ~ {powered:0,Fuse:0,ignited:1,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:1,CustomName:'{"text":"G125 Projectile Bolt","color":"red"}'}
+execute at @e[type=arrow,nbt={inGround:1b,Color:12397073}] run summon minecraft:creeper ~ ~ ~ {powered:0,Fuse:0,ignited:1,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:1,CustomName:'{"text":"Bowcaster Bolt","color":"red"}'}
 
 #ability restrictor
 execute as @a[scores={abilitiesBlocked=2..}] run scoreboard players remove @s abilitiesBlocked 1

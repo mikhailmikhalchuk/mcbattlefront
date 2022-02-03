@@ -1,4 +1,4 @@
-execute as @a[scores={clickStick=1,helmCooldown=1..},nbt={SelectedItem:{tag:{Tags:["helmscan"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"helmCooldown"},"color":"red"},{"text":" of 750 ticks (1/20ths of a second) remaining.","color":"red"}]
+execute as @a[scores={clickStick=1,helmCooldown=1..},nbt={SelectedItem:{tag:{Tags:["helmscan"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"helmCooldown"},"color":"red"},{"text":" of 600 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,helmCooldown=1..},nbt={SelectedItem:{tag:{Tags:["helmscan"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["helmscan"]}}}] run scoreboard players set @s helmCooldown 1
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["helmscan"]}}}] run scoreboard players set @s helmGlowing 1
@@ -16,4 +16,4 @@ execute as @a[scores={helmGlowing=180}] at @s run playsound minecraft:block.bell
 execute as @a[scores={helmCooldown=1..}] run scoreboard players add @s helmCooldown 1
 execute as @a[scores={helmGlowing=1..}] run scoreboard players add @s helmGlowing 1
 execute as @a[scores={helmGlowing=181..}] run scoreboard players set @s helmGlowing 0
-execute as @a[scores={helmCooldown=750..}] run scoreboard players set @s helmCooldown 0
+execute as @a[scores={helmCooldown=600..}] run scoreboard players set @s helmCooldown 0
