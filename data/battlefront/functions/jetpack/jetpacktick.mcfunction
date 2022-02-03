@@ -62,7 +62,7 @@ execute as @a[scores={hoverpackEquipped=1,hoverpackDead=0,clickHover=2}] run eff
 execute as @a[scores={hoverpackEquipped=1,nearGround=1}] run effect give @s minecraft:slow_falling 1 0 true
 
 #jetpack particle effect
-execute at @a[nbt={ActiveEffects:[{Id:25b}]},scores={hoverpackDead=0,hoverpackEquipped=1}] rotated ~ 0 positioned ^ ^ ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
+execute at @a[scores={hoverpackDead=0,hoverpackEquipped=1},nbt={ActiveEffects:[{Id:25b}]}] rotated ~ 0 positioned ^ ^ ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
 
 scoreboard players reset @a jump
 scoreboard players reset @a sprint

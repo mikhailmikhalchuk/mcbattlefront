@@ -12,8 +12,8 @@ execute at @a[scores={clickStick=1},team=FO,nbt={SelectedItem:{tag:{Tags:["bcom"
 execute at @a[scores={clickStick=1},team=RES,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run effect give @a[distance=1..7,team=RES] strength 15 1 true
 execute at @a[scores={clickStick=1},team=EMP,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run effect give @a[distance=1..7,team=EMP] strength 15 1 true
 execute at @a[scores={clickStick=1},team=REB,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run effect give @a[distance=1..7,team=REB] strength 15 1 true
-execute at @a[scores={clickStick=1},team=REP,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run effect give @a[distance=1..7,team=EMP] strength 15 1 true
-execute at @a[scores={clickStick=1},team=CIS,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run effect give @a[distance=1..7,team=REB] strength 15 1 true
+execute at @a[scores={clickStick=1},team=REP,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run effect give @a[distance=1..7,team=REP] strength 15 1 true
+execute at @a[scores={clickStick=1},team=CIS,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run effect give @a[distance=1..7,team=CIS] strength 15 1 true
 execute at @a[scores={clickStick=1},team=FO,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run tellraw @a[distance=1..7,team=FO] {"text":"Inspired by nearby officer's battle command!","color":"yellow"}
 execute at @a[scores={clickStick=1},team=RES,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run tellraw @a[distance=1..7,team=RES] {"text":"Inspired by nearby officer's battle command!","color":"yellow"}
 execute at @a[scores={clickStick=1},team=EMP,nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run tellraw @a[distance=1..7,team=EMP] {"text":"Inspired by nearby officer's battle command!","color":"yellow"}

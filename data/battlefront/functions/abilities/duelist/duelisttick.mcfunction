@@ -3,6 +3,7 @@ execute as @a[scores={clickStick=1,duelCooldown=1..},nbt={SelectedItem:{tag:{Tag
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] at @s unless block ~ ~-1 ~ air run attribute @s minecraft:generic.attack_speed base set 8.0
+execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] at @s unless block ~ ~-1 ~ air run effect give @s strength 5 0 true
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] at @s unless block ~ ~-1 ~ air run scoreboard players set @s duelCooldown 1
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] at @s unless block ~ ~-1 ~ air run scoreboard players set @s duelDuration 1
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] at @s unless block ~ ~-1 ~ air run scoreboard players set @s clickStick 0

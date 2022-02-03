@@ -7,7 +7,7 @@ execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s arm
 execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.feet with minecraft:leather_boots{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:11546150},HideFlags:1} 1
 execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:carrot_on_a_stick{custom_model_data:8,display:{Name:'{"text":"ST-W48 blaster","color":"red","italic":false}'},HideFlags:32,Unbreakable:1,Tags:["sithgun"]} 1
 execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:carrot_on_a_stick{custom_model_data:11,display:{Name:'{"text":"Combat Rush","color":"blue","italic":false}',Lore:['{"text":"Temporarily increases your speed","italic":false}']},HideFlags:32,Unbreakable:1,Tags:["comrush"]} 1
-execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:carrot_on_a_stick{custom_model_data:12,display:{Name:'{"text":"Seeker Tactics","color":"blue","italic":false}',Lore:['{"text":"Allows you to see a nearby enemy for a short time","italic":false}']},HideFlags:32,Unbreakable:1,Tags:["seektactic"]} 1
+execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:carrot_on_a_stick{custom_model_data:12,display:{Name:'{"text":"Seeker Tactics","color":"blue","italic":false}',Lore:['{"text":"Temporarily reveals the 4 closest nearby enemies","italic":false}']},HideFlags:32,Unbreakable:1,Tags:["seektactic"]} 1
 
 #caphex spy
 execute if entity @s[scores={defeated=2},team=RES] run give @s minecraft:bow{display:{Name:'{"text":"Modified GLIE-44","italic":false}'},Unbreakable:1,Enchantments:[{id:"infinity",lvl:1},{id:"power",lvl:1}]} 1

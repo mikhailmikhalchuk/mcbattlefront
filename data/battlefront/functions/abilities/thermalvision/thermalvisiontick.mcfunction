@@ -1,5 +1,7 @@
 execute as @a[scores={clickStick=1,thermCooldown=1..},nbt={SelectedItem:{tag:{Tags:["thermvision"]}}}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"thermCooldown"},"color":"red"},{"text":" of 750 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,thermCooldown=1..},nbt={SelectedItem:{tag:{Tags:["thermvision"]}}}] run scoreboard players set @s clickStick 0
+execute as @a[scores={clickStick=1,abilitiesBlocked=2..},nbt={SelectedItem:{tag:{Tags:["thermvision"]}}}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
+execute as @a[scores={clickStick=1,abilitiesBlocked=2..},nbt={SelectedItem:{tag:{Tags:["thermvision"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["thermvision"]}}}] run scoreboard players set @s thermCooldown 1
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["thermvision"]}}}] run scoreboard players set @s thermGlowing 1
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["thermvision"]}}}] run scoreboard players set @s clickStick 0
