@@ -11,6 +11,7 @@ tag @e[tag=stprojectile] add sdie
 tag @e[tag=stprojectile] remove stprojectile
 execute as @e[tag=sdie] run data modify entity @s damage set value 1.0
 kill @e[tag=direction]
+
 #switches gun between st/quarrel
 execute at @e[type=item,nbt={Item:{tag:{Tags:["sithgun"]}}}] if data entity @e[type=item,nbt={Item:{tag:{Tags:["sithgun"]}}},limit=1] Thrower run give @p minecraft:carrot_on_a_stick{custom_model_data:9,display:{Name:'{"text":"Quarrel blast","color":"red","italic":false}'},HideFlags:32,Unbreakable:1,Tags:["quarrel"]} 1
 execute as @e[type=item,nbt={Item:{tag:{Tags:["sithgun"]}}}] run kill @s

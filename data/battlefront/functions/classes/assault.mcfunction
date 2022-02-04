@@ -1,6 +1,6 @@
 execute if entity @s[scores={defeated=2}] run clear @s
 execute if entity @s[scores={defeated=2}] run give @s minecraft:crossbow{CustomModelData:75,display:{Name:'{"text":"Blaster","italic":false}'},Enchantments:[{id:"quick_charge",lvl:2}],Unbreakable:1} 1
-execute if entity @s[scores={defeated=2}] run give @s minecraft:lingering_potion{Potion:"minecraft:luck",CustomModelData:52,CustomPotionColor:1,display:{Name:'{"text":"Thermal Detonator","color":"red","italic":false}'},HideFlags:32} 1
+execute if entity @s[scores={defeated=2}] run give @s minecraft:lingering_potion{Potion:"minecraft:luck",CustomModelData:52,CustomPotionColor:9934743,display:{Name:'{"text":"Thermal Detonator","color":"red","italic":false}'},HideFlags:32} 1
 execute if entity @s[scores={defeated=2}] run give @s minecraft:arrow{display:{Name:'{"text":"Blaster Bolt","italic":false}'}} 64
 execute if entity @s[scores={defeated=2}] run give @s minecraft:spectral_arrow{display:{Name:'[{"text":"Scan Dart","italic":false}]',Lore:['[{"text":"Temporarily reveals enemies hit with the dart","italic":false}]']}} 3
 
@@ -41,5 +41,5 @@ execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s ar
 execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.feet with minecraft:leather_boots{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:12296320},HideFlags:1} 1
 
 execute unless entity @s[scores={defeated=2}] run tellraw @s {"text":"Nice try...\nYou can only spawn in as a new class if you have been defeated!","color":"red"}
-execute if score @s respawnTick < @s respawnTime run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
+execute if score @s respawnTick < @s respawnTime unless entity @s[scores={defeated=0}] run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
 execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime run function battlefront:classes/spawnplayer

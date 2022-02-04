@@ -48,5 +48,5 @@ execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:carrot_
 execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:arrow{display:{Name:'{"text":"Blaster Bolt","italic":false}'},HideFlags:32} 1
 
 execute unless entity @s[scores={defeated=2}] run tellraw @s {"text":"Nice try...\nYou can only spawn in as a new class if you have been defeated!","color":"red"}
-execute if score @s respawnTick < @s respawnTime run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
+execute if score @s respawnTick < @s respawnTime unless entity @s[scores={defeated=0}] run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
 execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime run function battlefront:classes/spawnplayer

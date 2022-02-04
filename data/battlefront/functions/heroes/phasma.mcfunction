@@ -8,7 +8,7 @@ execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnT
 execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime unless entity @a[scores={FOhero=1}] run give @s minecraft:iron_sword{CustomModelData:50,display:{Name:'{"text":"Phasma\'s baton","color":"red","italic":false}'},HideFlags:1,Unbreakable:1} 1
 execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime unless entity @a[scores={FOhero=1}] run attribute @s minecraft:generic.max_health base set 40
 execute unless entity @s[scores={defeated=2}] run tellraw @s {"text":"Nice try...\nYou can only spawn in as a new class if you have been defeated!","color":"red"}
-execute if score @s respawnTick < @s respawnTime run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
+execute if score @s respawnTick < @s respawnTime unless entity @s[scores={defeated=0}] run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
 execute if entity @s[scores={defeated=2}] if entity @a[scores={FOhero=1}] run tellraw @s {"text":"There's already a hero for your team on the battlefront.","color":"red"}
 execute unless entity @a[scores={FOhero=1}] if score @s respawnTick >= @s respawnTime if score @s defeated matches 2 run scoreboard players set @s FOhero 1
 execute unless entity @a[scores={FOhero=1},distance=1..] if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime run function battlefront:classes/spawnplayer

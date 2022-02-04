@@ -10,7 +10,7 @@ execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnT
 execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime unless entity @a[scores={EMPhero=1}] run effect give @s jump_boost 10000 2 true
 execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime unless entity @a[scores={EMPhero=1}] run effect give @s slow_falling 10000 0 true
 execute unless entity @s[scores={defeated=2}] run tellraw @s {"text":"Nice try...\nYou can only spawn in as a new class if you have been defeated!","color":"red"}
-execute if score @s respawnTick < @s respawnTime run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
+execute if score @s respawnTick < @s respawnTime unless entity @s[scores={defeated=0}] run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
 execute if entity @s[scores={defeated=2}] if entity @a[scores={EMPhero=1}] run tellraw @s {"text":"There's already a hero for your team on the battlefront.","color":"red"}
 execute unless entity @a[scores={EMPhero=1}] if score @s respawnTick >= @s respawnTime if score @s defeated matches 2 run scoreboard players set @s EMPhero 1
 execute unless entity @a[scores={EMPhero=1},distance=1..] if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime run function battlefront:classes/spawnplayer
