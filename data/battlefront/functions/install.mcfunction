@@ -40,6 +40,7 @@ scoreboard objectives add mineCooldown dummy
 scoreboard objectives add stCooldown dummy
 scoreboard objectives add intelCooldown dummy
 scoreboard objectives add doubCooldown dummy
+scoreboard objectives add pullCooldown dummy
 
 #posts
 scoreboard objectives add postA dummy
@@ -84,6 +85,7 @@ scoreboard objectives add respawnTime dummy
 scoreboard objectives add respawnTick dummy
 scoreboard objectives add nearGround dummy
 scoreboard objectives add fuelTick dummy
+scoreboard objectives add showDelay dummy
 
 #init objective default values
 scoreboard players set @a hoverpackFuel 0

@@ -40,6 +40,7 @@ scoreboard objectives remove mineCooldown
 scoreboard objectives remove stCooldown
 scoreboard objectives remove intelCooldown
 scoreboard objectives remove doubCooldown
+scoreboard objectives remove pullCooldown
 
 #posts
 scoreboard objectives remove postA
@@ -84,6 +85,7 @@ scoreboard objectives remove respawnTime
 scoreboard objectives remove respawnTick
 scoreboard objectives remove nearGround
 scoreboard objectives remove fuelTick
+scoreboard objectives remove showDelay
 
 #team
 team remove EMP
