@@ -6,7 +6,7 @@ execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s ar
 execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s armor.legs with minecraft:leather_leggings{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:1908001},HideFlags:1} 1
 execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s armor.feet with minecraft:leather_boots{display:{Name:'{"text":"Armor","color":"yellow","italic":false}',color:1908001},HideFlags:1} 1
 execute if entity @s[scores={defeated=2},team=EMP] run give @s minecraft:crossbow{display:{Name:'{"text":"E-11D blaster","italic":false}'},Enchantments:[{id:"quick_charge",lvl:2}],Unbreakable:1} 1
-execute if entity @s[scores={defeated=2},team=EMP] run give @s minecraft:lingering_potion{Potion:"minecraft:luck",CustomModelData:53,CustomPotionColor:15924479,display:{Name:'{"text":"Sonic Imploder","color":"red","italic":false}'},HideFlags:32} 1
+execute if entity @s[scores={defeated=2},team=EMP] run give @s minecraft:lingering_potion{Potion:"minecraft:luck",CustomModelData:53,CustomPotionColor:15924479,display:{Name:'{"text":"Sonic Imploder","color":"red","italic":false}'},Lore:['{"text":"Launches a blinding pulse","italic":false}'],HideFlags:32} 1
 execute if entity @s[scores={defeated=2},team=EMP] run give @s minecraft:arrow{display:{Name:'{"text":"Blaster Bolt","italic":false}'}} 64
 
 #wookiee warrior

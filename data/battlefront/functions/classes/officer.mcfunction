@@ -1,6 +1,6 @@
 execute if entity @s[scores={defeated=2}] run clear @s
 execute if entity @s[scores={defeated=2}] run give @s minecraft:bow{display:{Name:'{"text":"SE-44","italic":false}'},Enchantments:[{id:"infinity",lvl:1}],Unbreakable:1} 1
-execute if entity @s[scores={defeated=2}] run give @s minecraft:carrot_on_a_stick{custom_model_data:10,display:{Name:'{"text":"Battle Command","color":"blue","italic":false}',Lore:['{"text":"Temporarily gives nearby allies a health and damage boost","italic":false}']},HideFlags:32,Unbreakable:1,Tags:["bcom"]} 1
+execute if entity @s[scores={defeated=2}] run give @s minecraft:carrot_on_a_stick{custom_model_data:10,display:{Name:'{"text":"Battle Command","color":"blue","italic":false}',Lore:['{"text":"Temporarily boosts the health and damage of nearby allies","italic":false}']},HideFlags:32,Unbreakable:1,Tags:["bcom"]} 1
 execute if entity @s[scores={defeated=2}] run give @s minecraft:arrow{display:{Name:'{"text":"Blaster Bolt","italic":false}'}} 1
 
 #fo officer

@@ -11,5 +11,6 @@ execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnT
 execute unless entity @s[scores={defeated=2}] run tellraw @s {"text":"Nice try...\nYou can only spawn in as a new class if you have been defeated!","color":"red"}
 execute if score @s respawnTick < @s respawnTime unless entity @s[scores={defeated=0}] run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
 execute if entity @s[scores={defeated=2}] if entity @a[scores={CIShero=1}] run tellraw @s {"text":"There's already a hero for your team on the battlefront.","color":"red"}
+execute if entity @s[scores={defeated=2}] if entity @a[scores={CIShero=1}] run scoreboard players set @s showDelay 60
 execute unless entity @a[scores={CIShero=1}] if score @s respawnTick >= @s respawnTime if score @s defeated matches 2 run scoreboard players set @s CIShero 1
 execute unless entity @a[scores={CIShero=1},distance=1..] if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime run function battlefront:classes/spawnplayer
