@@ -43,7 +43,7 @@ execute as @a[scores={hoverpackFuel=10,hoverpackEquipped=1}] run title @s action
 
 #out-of-fuel sound indicator
 execute as @a[scores={hoverpackDead=1}] run scoreboard players add @s soundTick 1
-execute at @a[scores={hoverpackDead=1,hoverpackEquipped=1,sound-enabled=1,soundTick=3..}] run playsound minecraft:block.note_block.bit block @a ~ ~ ~ 0.5 1.6
+execute at @a[scores={hoverpackDead=1,hoverpackEquipped=1,soundTick=3..}] run playsound minecraft:block.note_block.bit block @a ~ ~ ~ 0.5 1.6
 execute as @a[scores={soundTick=3..}] run scoreboard players set @s soundTick 0
 
 #jetpack up

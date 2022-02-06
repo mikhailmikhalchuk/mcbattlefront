@@ -13,8 +13,6 @@ The datapack currently spans over the 3 eras of the Republic, Rebellion, and Res
 
 - The position in which players will be teleported to upon death and position in which players will face upon death can be set by standing over the desired area and running `/function battlefront:setdeathspectatearea` and `/function battlefront:setfacingspectatearea`, respectively.
 
-- The First Order Jet Trooper's out-of-fuel audio indicator can be toggled using `/function battlefront:jetpack/togglesound`.
-
 - To change the respawn time, run `/scoreboard players set @a respawnTime <time>`. Note that time is in ticks and not seconds.
 
 Issues? Report them on this repository's [issues page](https://github.com/MikhailMCraft/mcbattlefront/issues)!

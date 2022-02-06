@@ -6,7 +6,6 @@ scoreboard objectives add hoverpackFuel dummy
 scoreboard objectives add hoverpackDead dummy
 scoreboard objectives add hoverpackTick dummy
 scoreboard objectives add soundTick dummy
-scoreboard objectives add sound-enabled dummy
 
 #cooldowns
 scoreboard objectives add fortCooldown dummy
@@ -72,6 +71,7 @@ scoreboard objectives add useSpin minecraft.used:minecraft.trident
 scoreboard objectives add defeated minecraft.custom:minecraft.deaths
 scoreboard objectives add killedPlayer minecraft.custom:minecraft.player_kills
 scoreboard objectives add damageTaken minecraft.custom:damage_taken
+scoreboard objectives add saberBlocked minecraft.used:shield
 
 #misc
 scoreboard objectives add helmGlowing dummy

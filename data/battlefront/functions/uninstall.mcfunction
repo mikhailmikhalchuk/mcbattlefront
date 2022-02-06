@@ -6,7 +6,6 @@ scoreboard objectives remove hoverpackFuel
 scoreboard objectives remove hoverpackDead
 scoreboard objectives remove hoverpackTick
 scoreboard objectives remove soundTick
-scoreboard objectives remove sound-enabled
 
 #cooldowns
 scoreboard objectives remove fortCooldown
@@ -72,6 +71,7 @@ scoreboard objectives remove useSpin
 scoreboard objectives remove defeated
 scoreboard objectives remove killedPlayer
 scoreboard objectives remove damageTaken
+scoreboard objectives remove saberBlocked
 
 #misc
 scoreboard objectives remove helmGlowing
@@ -101,6 +101,9 @@ bossbar remove battlefront:postb
 bossbar remove battlefront:postc
 bossbar remove battlefront:postd
 bossbar remove battlefront:poste
+
+#knockback
+execute as @a run attribute @s minecraft:generic.knockback_resistance base set 1.0
 
 #yay!
 tellraw @s {"text":"Successfully uninstalled Battlefront and all its assets.","color":"green"}

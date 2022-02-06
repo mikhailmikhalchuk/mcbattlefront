@@ -88,6 +88,9 @@ execute as @a[nbt=!{Inventory:[{Slot:103b,id:"minecraft:player_head",Count:1b,ta
 #slowness to specialists
 execute as @a[scores={defeated=0},nbt={SelectedItem:{tag:{Tags:["sniper"],Charged:1b}}},nbt=!{ActiveEffects:[{Id:2b}]}] run effect give @s slowness 1 5 true
 
+#saber block
+#execute as @a[scores={FOhero=1,saberBlocked=1..}] run item replace entity @s weapon.offhand with minecraft:shield{display:{Name:'{"text":"Saber Block","color":"red","italic":false}'},Enchantments:[{id:"feather_falling",lvl:1}],HideFlags:1,BlockEntityTag:{Base:14}} 1
+
 #show ticker
 execute as @a[scores={showDelay=1..}] run scoreboard players remove @s showDelay 1
 
@@ -132,3 +135,4 @@ execute as @a[scores={defeated=2}] if entity @e[type=armor_stand,tag=deathspec] 
 execute as @a[scores={defeated=3..}] run scoreboard players set @s defeated 2
 execute as @a[scores={clickStick=1..}] run scoreboard players set @s clickStick 0
 scoreboard players set @a killedPlayer 0
+scoreboard players set @a saberBlocked 0
