@@ -27,3 +27,7 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["dominance"]}}
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["dominance"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={domiCooldown=1..}] run scoreboard players add @s domiCooldown 1
 execute as @a[scores={domiCooldown=600..}] run scoreboard players set @s domiCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={domiCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["dominance"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"domiCooldown"},"color":"red"},{"text":"/600","color":"red"}]
+execute as @a[scores={domiCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["dominance"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

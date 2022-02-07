@@ -17,3 +17,7 @@ execute as @a[scores={chokeDuration=1..}] run scoreboard players add @s chokeDur
 execute as @a[scores={chokeDuration=60..}] at @s run tag @p[team=REB,distance=..10] remove choked
 execute as @a[scores={chokeDuration=60..}] run scoreboard players set @s chokeDuration 0
 execute as @a[scores={chokeCooldown=750..}] run scoreboard players set @s chokeCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={chokeCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"chokeCooldown"},"color":"red"},{"text":"/750","color":"red"}]
+execute as @a[scores={chokeCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

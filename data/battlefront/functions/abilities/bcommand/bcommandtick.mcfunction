@@ -24,3 +24,7 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] ru
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={bcomCooldown=1..}] run scoreboard players add @s bcomCooldown 1
 execute as @a[scores={bcomCooldown=1000..}] run scoreboard players set @s bcomCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={bcomCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"bcomCooldown"},"color":"red"},{"text":"/1000","color":"red"}]
+execute as @a[scores={bcomCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["bcom"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

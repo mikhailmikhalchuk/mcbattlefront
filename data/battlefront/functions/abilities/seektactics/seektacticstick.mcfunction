@@ -7,3 +7,7 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["seektactic"]}
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["seektactic"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={seekCooldown=1..}] run scoreboard players add @s seekCooldown 1
 execute as @a[scores={seekCooldown=600..}] run scoreboard players set @s seekCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={seekCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["seektactic"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"seekCooldown"},"color":"red"},{"text":"/600","color":"red"}]
+execute as @a[scores={seekCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["seektactic"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

@@ -17,3 +17,7 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["trip"]}}}] ru
 execute as @a[scores={mineCooldown=1..}] run scoreboard players add @s mineCooldown 1
 execute as @a[scores={mineCooldown=800..}] run scoreboard players set @s mineCooldown 0
 kill @e[type=area_effect_cloud,nbt={Effects:[{Ambient:0b,ShowIcon:0b,ShowParticles:0b,Duration:200000,Id:14b,Amplifier:1b},{Ambient:0b,ShowIcon:0b,ShowParticles:0b,Duration:200000,Id:2b,Amplifier:-1b}]}]
+
+#show cooldown on actionbar
+execute as @a[scores={mineCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["trip"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"mineCooldown"},"color":"red"},{"text":"/800","color":"red"}]
+execute as @a[scores={mineCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["trip"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

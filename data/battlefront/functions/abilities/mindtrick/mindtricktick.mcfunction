@@ -14,3 +14,7 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={mindCooldown=1..}] run scoreboard players add @s mindCooldown 1
 execute as @a[scores={mindCooldown=600..}] run scoreboard players set @s mindCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={mindCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"mindCooldown"},"color":"red"},{"text":"/600","color":"red"}]
+execute as @a[scores={mindCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["mindtrick"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

@@ -86,6 +86,7 @@ scoreboard objectives add respawnTick dummy
 scoreboard objectives add nearGround dummy
 scoreboard objectives add fuelTick dummy
 scoreboard objectives add showDelay dummy
+scoreboard objectives add show-actionbar-cooldown dummy
 
 #init objective default values
 scoreboard players set @a hoverpackFuel 0

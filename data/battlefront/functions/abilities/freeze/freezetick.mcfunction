@@ -13,3 +13,7 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] 
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={frezCooldown=1..}] run scoreboard players add @s frezCooldown 1
 execute as @a[scores={frezCooldown=600..}] run scoreboard players set @s frezCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={frezCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"frezCooldown"},"color":"red"},{"text":"/600","color":"red"}]
+execute as @a[scores={frezCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["freeze"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

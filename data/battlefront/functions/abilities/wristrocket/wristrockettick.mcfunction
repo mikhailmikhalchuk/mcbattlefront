@@ -13,3 +13,7 @@ execute as @a[scores={wrisCooldown=1..}] run scoreboard players add @s wrisCoold
 execute as @a[scores={wrisCooldown=600..}] run scoreboard players set @s wrisCooldown 0
 tag @e[tag=wrprojectile] remove wrprojectile
 kill @e[tag=direction]
+
+#show cooldown on actionbar
+execute as @a[scores={wrisCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["wristrocket"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"wrisCooldown"},"color":"red"},{"text":"/600","color":"red"}]
+execute as @a[scores={wrisCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["wristrocket"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

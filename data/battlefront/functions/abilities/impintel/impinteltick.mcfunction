@@ -7,3 +7,7 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["impintel"]}}}
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["impintel"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={intelCooldown=1..}] run scoreboard players add @s intelCooldown 1
 execute as @a[scores={intelCooldown=600..}] run scoreboard players set @s intelCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={intelCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["impintel"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"intelCooldown"},"color":"red"},{"text":"/600","color":"red"}]
+execute as @a[scores={intelCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["impintel"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

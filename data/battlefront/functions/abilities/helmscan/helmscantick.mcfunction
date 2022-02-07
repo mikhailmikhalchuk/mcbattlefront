@@ -17,3 +17,7 @@ execute as @a[scores={helmCooldown=1..}] run scoreboard players add @s helmCoold
 execute as @a[scores={helmGlowing=1..}] run scoreboard players add @s helmGlowing 1
 execute as @a[scores={helmGlowing=181..}] run scoreboard players set @s helmGlowing 0
 execute as @a[scores={helmCooldown=600..}] run scoreboard players set @s helmCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={helmCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["helmscan"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"helmCooldown"},"color":"red"},{"text":"/600","color":"red"}]
+execute as @a[scores={helmCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["helmscan"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

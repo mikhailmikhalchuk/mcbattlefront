@@ -10,3 +10,7 @@ execute as @a[scores={bfocCooldown=750..}] run scoreboard players set @s bfocCoo
 execute as @a[scores={bfocDuration=1..}] run scoreboard players add @s insigDuration 1
 execute as @a[scores={bfocDuration=200..}] run tellraw @s {"text":"Battle Focus expired.","color":"red"}
 execute as @a[scores={bfocDuration=200..}] run scoreboard players set @s insigDuration 0
+
+#show cooldown on actionbar
+execute as @a[scores={bfocCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["battlefocus"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"bfocCooldown"},"color":"red"},{"text":"/750","color":"red"}]
+execute as @a[scores={bfocCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["battlefocus"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

@@ -86,6 +86,7 @@ scoreboard objectives remove respawnTick
 scoreboard objectives remove nearGround
 scoreboard objectives remove fuelTick
 scoreboard objectives remove showDelay
+scoreboard objectives remove show-actionbar-cooldown
 
 #team
 team remove EMP

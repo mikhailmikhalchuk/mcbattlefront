@@ -16,3 +16,7 @@ execute as @e[type=armor_stand,tag=retribCircleGen] at @s run particle cloud ^ ^
 execute as @a[scores={retribDuration=1..}] run scoreboard players add @s retribDuration 1
 execute as @a[scores={retribDuration=60..}] run kill @e[type=armor_stand,tag=retribCircleGen]
 execute as @a[scores={retribDuration=60..}] run scoreboard players set @s retribDuration 0
+
+#show cooldown on actionbar
+execute as @a[scores={damageTaken=..2499,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["retribution"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"damageTaken"},"color":"red"},{"text":"/2500","color":"red"}]
+execute as @a[scores={damageTaken=2500..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["retribution"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

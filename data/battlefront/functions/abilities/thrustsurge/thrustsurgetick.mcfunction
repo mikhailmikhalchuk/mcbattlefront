@@ -8,3 +8,7 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["thrust"]}}}] 
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["thrust"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={thrustCooldown=1..}] run scoreboard players add @s thrustCooldown 1
 execute as @a[scores={thrustCooldown=750..}] run scoreboard players set @s thrustCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={thrustCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["thrust"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"thrustCooldown"},"color":"red"},{"text":"/750","color":"red"}]
+execute as @a[scores={thrustCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["thrust"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

@@ -8,3 +8,7 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["pull"]}}}] at
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["pull"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={pullCooldown=1..}] run scoreboard players add @s pullCooldown 1
 execute as @a[scores={pullCooldown=500..}] run scoreboard players set @s pullCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={pullCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["pull"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"pullCooldown"},"color":"red"},{"text":"/500","color":"red"}]
+execute as @a[scores={pullCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["pull"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

@@ -10,3 +10,7 @@ execute at @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] 
 execute at @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] unless block ~ ~-1 ~ air run scoreboard players set @s clickStick 0
 execute as @a[scores={weakCooldown=1..}] run scoreboard players add @s weakCooldown 1
 execute as @a[scores={weakCooldown=600..}] run scoreboard players set @s weakCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={weakCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"weakCooldown"},"color":"red"},{"text":"/600","color":"red"}]
+execute as @a[scores={weakCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["expose"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

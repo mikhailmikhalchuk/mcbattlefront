@@ -1,3 +1,5 @@
+title @a actionbar {"text":""}
+
 #run nested functions
 
 #weapons
@@ -13,6 +15,8 @@ function battlefront:weapons/vibrosword/vibroswordtick
 function battlefront:weapons/strike/striketick
 function battlefront:weapons/leiaalt/leiaalttick
 function battlefront:weapons/repeater/repeatertick
+function battlefront:weapons/lightning/lightningtick
+function battlefront:weapons/spin/spintick
 
 #abilities
 function battlefront:abilities/insight/insighttick
@@ -24,8 +28,6 @@ function battlefront:abilities/comrush/comrushtick
 function battlefront:abilities/seektactics/seektacticstick
 function battlefront:abilities/assaulttrain/assaulttraintick
 function battlefront:abilities/survivor/survivortick
-function battlefront:abilities/spin/spintick
-function battlefront:abilities/lightning/lightningtick
 function battlefront:abilities/expose/exposetick
 function battlefront:abilities/duelist/duelisttick
 function battlefront:abilities/pulldom/pulldomtick

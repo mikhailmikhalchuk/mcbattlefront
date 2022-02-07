@@ -13,3 +13,7 @@ execute as @a[scores={duelDuration=100..}] run attribute @s minecraft:generic.at
 execute as @a[scores={duelDuration=100..}] run tellraw @s {"text":"Duelist ability expired.","color":"red"}
 execute as @a[scores={duelDuration=100..}] run scoreboard players set @s duelDuration 0
 execute as @a[scores={duelCooldown=500..}] run scoreboard players set @s duelCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={duelCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"duelCooldown"},"color":"red"},{"text":"/500","color":"red"}]
+execute as @a[scores={duelCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["duel"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

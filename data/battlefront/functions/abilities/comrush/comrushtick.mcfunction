@@ -7,3 +7,7 @@ execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["comrush"]}}}]
 execute as @a[scores={clickStick=1},nbt={SelectedItem:{tag:{Tags:["comrush"]}}}] run scoreboard players set @s clickStick 0
 execute as @a[scores={rushCooldown=1..}] run scoreboard players add @s rushCooldown 1
 execute as @a[scores={rushCooldown=750..}] run scoreboard players set @s rushCooldown 0
+
+#show cooldown on actionbar
+execute as @a[scores={rushCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["comrush"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"rushCooldown"},"color":"red"},{"text":"/750","color":"red"}]
+execute as @a[scores={rushCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["comrush"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}

@@ -11,8 +11,10 @@ The datapack currently spans over the 3 eras of the Republic, Rebellion, and Res
 
 - Team spawn points can be set by standing over the desired area and running `/function battlefront:setteamspawn/<team>`.
 
-- The position in which players will be teleported to upon death and position in which players will face upon death can be set by standing over the desired area and running `/function battlefront:setdeathspectatearea` and `/function battlefront:setfacingspectatearea`, respectively.
+- The position in which players will be teleported to upon death and position in which players will face upon death can be set by standing over the desired area and running `/function battlefront:setdeathspectatearea` and `/function battlefront:setdeathfacingarea`, respectively.
 
 - To change the respawn time, run `/scoreboard players set @a respawnTime <time>`. Note that time is in ticks and not seconds.
+
+- Run `/scoreboard players set <player> show-actionbar-cooldown <0|1>` to hide or show the cooldown of the currently selected ability above the hotbar.
 
 Issues? Report them on this repository's [issues page](https://github.com/MikhailMCraft/mcbattlefront/issues)!

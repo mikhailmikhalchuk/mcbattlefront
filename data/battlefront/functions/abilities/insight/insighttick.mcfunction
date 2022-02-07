@@ -12,3 +12,7 @@ execute as @a[scores={insigCooldown=500..}] run scoreboard players set @s insigC
 execute as @a[scores={insigDuration=1..}] run scoreboard players add @s insigDuration 1
 execute as @a[scores={insigDuration=120..}] run tellraw @s {"text":"Insight ability expired.","color":"red"}
 execute as @a[scores={insigDuration=120..}] run scoreboard players set @s insigDuration 0
+
+#show cooldown on actionbar
+execute as @a[scores={insigCooldown=1..,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["insight"]}}}] run title @s actionbar ["",{"score":{"name":"*","objective":"insigCooldown"},"color":"red"},{"text":"/500","color":"red"}]
+execute as @a[scores={insigCooldown=0,show-actionbar-cooldown=1},nbt={SelectedItem:{tag:{Tags:["insight"]}}}] run title @s actionbar {"text":"Ready!","color":"green"}
