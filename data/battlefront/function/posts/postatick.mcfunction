@@ -40,14 +40,18 @@ execute as @e[type=armor_stand,team=EMP,tag=A] if score @s postA matches 1 run b
 execute as @e[type=armor_stand,team=EMP,tag=A] if score @s postA matches 1 run waypoint modify @s color blue
 execute as @e[type=armor_stand,team=EMP,tag=A] if score @s postA matches 1 run team join REB @s
 
+execute as @e[type=armor_stand,tag=A] if score @s postA matches 1 run scoreboard players set @s postA 200
+
 #capture republic command post
 execute at @a[team=CIS] as @e[type=armor_stand,team=REP,tag=A,distance=..5] unless entity @a[team=REP,distance=..5] unless score @s postA matches 1 run scoreboard players remove @s postA 1
 execute at @a[team=REP] as @e[type=armor_stand,team=REP,tag=A,distance=..5] unless entity @a[team=CIS,distance=..5] unless score @s postA matches 200 run scoreboard players add @s postA 1
-execute at @e[type=armor_stand,team=CIS,tag=A] as @e[type=armor_stand,team=CIS,tag=A] if score @s postA matches 200 run setblock ~ ~-1 ~ minecraft:blue_stained_glass replace
+execute at @e[type=armor_stand,team=CIS,tag=A] as @e[type=armor_stand,team=CIS,tag=A] if score @s postA matches 200 run setblock ~ ~-1 ~ minecraft:red_stained_glass replace
 execute as @e[type=armor_stand,team=REP,tag=A] if score @s postA matches 1 run tellraw @a {"text":"The Confederacy has captured command post A.","color":"red"}
 execute as @e[type=armor_stand,team=REP,tag=A] if score @s postA matches 1 run bossbar set battlefront:posta color red
 execute as @e[type=armor_stand,team=REP,tag=A] if score @s postA matches 1 run waypoint modify @s color red
 execute as @e[type=armor_stand,team=REP,tag=A] if score @s postA matches 1 run team join CIS @s
+
+execute as @e[type=armor_stand,tag=A] if score @s postA matches 1 run scoreboard players set @s postA 200
 
 #capture separatist command post
 execute at @a[team=REP] as @e[type=armor_stand,team=CIS,tag=A,distance=..5] unless entity @a[team=CIS,distance=..5] unless score @s postA matches 1 run scoreboard players remove @s postA 1

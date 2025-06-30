@@ -89,7 +89,6 @@ scoreboard objectives add respawnTick dummy
 scoreboard objectives add nearGround dummy
 scoreboard objectives add fuelTick dummy
 scoreboard objectives add showDelay dummy
-scoreboard objectives add show-actionbar-cooldown dummy
 scoreboard objectives add secondsHelper dummy
 
 #init objective default values
@@ -127,6 +126,12 @@ team modify EMP nametagVisibility hideForOtherTeams
 team modify REB nametagVisibility hideForOtherTeams
 team modify REP nametagVisibility hideForOtherTeams
 team modify CIS nametagVisibility hideForOtherTeams
+team modify FO collisionRule never
+team modify RES collisionRule never
+team modify EMP collisionRule never
+team modify REB collisionRule never
+team modify REP collisionRule never
+team modify CIS collisionRule never
 
 #init post bars
 bossbar add battlefront:posta {"text":"Post A"}

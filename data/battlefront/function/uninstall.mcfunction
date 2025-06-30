@@ -6,6 +6,7 @@ scoreboard objectives remove hoverpackFuel
 scoreboard objectives remove hoverpackDead
 scoreboard objectives remove hoverpackTick
 scoreboard objectives remove soundTick
+scoreboard objectives remove stopMove
 
 #cooldowns
 scoreboard objectives remove fortCooldown
@@ -88,7 +89,7 @@ scoreboard objectives remove respawnTick
 scoreboard objectives remove nearGround
 scoreboard objectives remove fuelTick
 scoreboard objectives remove showDelay
-scoreboard objectives remove show-actionbar-cooldown
+scoreboard objectives remove secondsHelper
 
 #team
 team remove EMP
