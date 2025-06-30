@@ -6,6 +6,7 @@ scoreboard objectives add hoverpackFuel dummy
 scoreboard objectives add hoverpackDead dummy
 scoreboard objectives add hoverpackTick dummy
 scoreboard objectives add soundTick dummy
+scoreboard objectives add stopMove dummy
 
 #cooldowns
 scoreboard objectives add fortCooldown dummy

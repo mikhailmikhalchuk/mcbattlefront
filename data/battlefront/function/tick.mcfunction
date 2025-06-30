@@ -88,7 +88,7 @@ execute as @a[scores={REPhero=1}] if items entity @s armor.head *[custom_data={a
 execute as @a[scores={REPhero=1}] unless items entity @s armor.head *[custom_data={anakin:true}] run scoreboard players set @s damageTaken 0
 
 #slowness to specialists
-execute as @a[scores={defeated=0}] if items entity @s weapon *[custom_data={sniper:true}] unless predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:slowness":{}}}} run effect give @s slowness 1 5 true
+execute as @a[scores={defeated=0},nbt={SelectedItem:{components:{"minecraft:charged_projectiles":[{id:"minecraft:arrow"}]}}}] if items entity @s weapon crossbow[custom_data={sniper:true}] unless predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:slowness":{}}}} run effect give @s slowness 1 5 true
 
 #saber block
 #execute as @a[scores={FOhero=1,saberBlocked=1..}] run item replace entity @s weapon.offhand with minecraft:shield{display:{Name:'{"text":"Saber Block","color":"red","italic":false}'},Enchantments:[{id:"feather_falling",lvl:1}],HideFlags:1,BlockEntityTag:{Base:14}} 1
@@ -145,6 +145,7 @@ execute as @a[scores={defeated=2},team=REP] if score @s respawnTick = @s respawn
 execute as @a[scores={defeated=2},team=CIS] if score @s respawnTick = @s respawnTime unless score @s showDelay matches 1.. run dialog show @s battlefront:separatistdialog
 
 execute as @a[scores={defeated=2}] if entity @e[type=armor_stand,tag=deathspec] if entity @e[type=armor_stand,tag=facespec] at @e[type=armor_stand,tag=deathspec] run tp @s ~ ~ ~ facing entity @e[type=armor_stand,tag=facespec,limit=1]
+execute as @a[scores={defeated=3..}] run scoreboard players set @s respawnTick 0
 execute as @a[scores={defeated=3..}] run scoreboard players set @s defeated 2
 execute as @a[scores={clickStick=1..}] run scoreboard players set @s clickStick 0
 scoreboard players set @a killedPlayer 0
