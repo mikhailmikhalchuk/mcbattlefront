@@ -1,4 +1,3 @@
-execute as @a[scores={clickStick=1,damageTaken=..2499}] if items entity @s weapon *[custom_data~{retribution:true}] run tellraw @s ["",{"text":"Cannot use item!\nNot enough damage taken (Need 2500, total ","color":"red"},{"score":{"name":"*","objective":"damageTaken"},"color":"red"},{"text":")","color":"red"}]
 execute as @a[scores={clickStick=1,damageTaken=..2499}] if items entity @s weapon *[custom_data~{retribution:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{retribution:true}] at @s unless block ~ ~-1 ~ air if entity @a[team=CIS,distance=..10] run scoreboard players set @s damageTaken 0
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{retribution:true}] at @s unless block ~ ~-1 ~ air if entity @a[team=CIS,distance=..10] run scoreboard players set @s retribDuration 1
@@ -27,5 +26,5 @@ execute as @a[scores={retribDuration=60..}] run kill @e[type=armor_stand,tag=ret
 execute as @a[scores={retribDuration=60..}] run scoreboard players set @s retribDuration 0
 
 #show cooldown on actionbar
-execute as @a[scores={damageTaken=..2499,show-actionbar-cooldown=1}] if items entity @s weapon *[custom_data~{retribution:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"damageTaken"},"color":"red"},{"text":"/2500","color":"red"}]
-execute as @a[scores={damageTaken=2500..,show-actionbar-cooldown=1}] if items entity @s weapon *[custom_data~{retribution:true}] run title @s actionbar {"text":"Ready!","color":"green"}
+execute as @a[scores={damageTaken=..2499}] if items entity @s weapon *[custom_data~{retribution:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"damageTaken"},"color":"red"},{"text":"/2500 damage received","color":"red"}]
+execute as @a[scores={damageTaken=2500..}] if items entity @s weapon *[custom_data~{retribution:true}] run title @s actionbar {"text":"Ready!","color":"green"}

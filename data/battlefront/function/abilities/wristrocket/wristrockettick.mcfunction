@@ -1,4 +1,3 @@
-execute as @a[scores={clickStick=1,wrisCooldown=1..}] if items entity @s weapon *[custom_data~{wristrocket:true}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"wrisCooldown"},"color":"red"},{"text":" of 600 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,wrisCooldown=1..}] if items entity @s weapon *[custom_data~{wristrocket:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..}] if items entity @s weapon *[custom_data~{wristrocket:true}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..}] if items entity @s weapon *[custom_data~{wristrocket:true}] run scoreboard players set @s clickStick 0
@@ -15,5 +14,7 @@ tag @e[tag=wrprojectile] remove wrprojectile
 kill @e[tag=direction]
 
 #show cooldown on actionbar
-execute as @a[scores={wrisCooldown=1..,show-actionbar-cooldown=1}] if items entity @s weapon *[custom_data~{wristrocket:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"wrisCooldown"},"color":"red"},{"text":"/600","color":"red"}]
-execute as @a[scores={wrisCooldown=0,show-actionbar-cooldown=1}] if items entity @s weapon *[custom_data~{wristrocket:true}] run title @s actionbar {"text":"Ready!","color":"green"}
+execute as @a[scores={wrisCooldown=1..}] if items entity @s weapon *[custom_data~{wristrocket:true}] run scoreboard players operation @s secondsHelper = @s wrisCooldown
+execute as @a run scoreboard players operation @s secondsHelper /= $const20 secondsHelper
+execute as @a[scores={wrisCooldown=1..}] if items entity @s weapon *[custom_data~{wristrocket:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"secondsHelper"},"color":"red"},{"text":"/30 seconds","color":"red"}]
+execute as @a[scores={wrisCooldown=0}] if items entity @s weapon *[custom_data~{wristrocket:true}] run title @s actionbar {"text":"Ready!","color":"green"}

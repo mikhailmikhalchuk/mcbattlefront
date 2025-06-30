@@ -37,7 +37,7 @@ scoreboard objectives add chokeCooldown dummy
 scoreboard objectives add vibroCooldown dummy
 scoreboard objectives add thrustCooldown dummy
 scoreboard objectives add mineCooldown dummy
-scoreboard objectives add stCooldown dummy
+scoreboard objectives add shotCooldown dummy
 scoreboard objectives add intelCooldown dummy
 scoreboard objectives add doubCooldown dummy
 scoreboard objectives add pullCooldown dummy
@@ -90,10 +90,11 @@ scoreboard objectives add nearGround dummy
 scoreboard objectives add fuelTick dummy
 scoreboard objectives add showDelay dummy
 scoreboard objectives add show-actionbar-cooldown dummy
+scoreboard objectives add secondsHelper dummy
 
 #init objective default values
 scoreboard players set @a hoverpackFuel 0
-scoreboard players set @a stCooldown 0
+scoreboard players set @a shotCooldown 0
 scoreboard players set @a trunCooldown 0
 scoreboard players set @a vibroCooldown 0
 scoreboard players set @a pbatCooldown 0

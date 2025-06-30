@@ -55,6 +55,9 @@ function battlefront:posts/postctick
 function battlefront:posts/postdtick
 function battlefront:posts/postetick
 
+execute as @a[scores={shotCooldown=1..}] run scoreboard players add @s shotCooldown 1
+scoreboard players set $const20 secondsHelper 20
+
 #knockback setter
 execute as @a run attribute @s minecraft:knockback_resistance base set 1.0
 

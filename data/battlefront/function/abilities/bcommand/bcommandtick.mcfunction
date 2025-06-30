@@ -1,4 +1,3 @@
-execute as @a[scores={clickStick=1,bcomCooldown=1..}] if items entity @s weapon *[custom_data~{bcom:true}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"bcomCooldown"},"color":"red"},{"text":" of 1000 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,bcomCooldown=1..}] if items entity @s weapon *[custom_data~{bcom:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..}] if items entity @s weapon *[custom_data~{bcom:true}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..}] if items entity @s weapon *[custom_data~{bcom:true}] run scoreboard players set @s clickStick 0
@@ -26,5 +25,7 @@ execute as @a[scores={bcomCooldown=1..}] run scoreboard players add @s bcomCoold
 execute as @a[scores={bcomCooldown=1000..}] run scoreboard players set @s bcomCooldown 0
 
 #show cooldown on actionbar
-execute as @a[scores={bcomCooldown=1..,show-actionbar-cooldown=1}] if items entity @s weapon *[custom_data~{bcom:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"bcomCooldown"},"color":"red"},{"text":"/1000","color":"red"}]
-execute as @a[scores={bcomCooldown=0,show-actionbar-cooldown=1}] if items entity @s weapon *[custom_data~{bcom:true}] run title @s actionbar {"text":"Ready!","color":"green"}
+execute as @a[scores={bcomCooldown=1..}] if items entity @s weapon *[custom_data~{bcom:true}] run scoreboard players operation @s secondsHelper = @s bcomCooldown
+execute as @a run scoreboard players operation @s secondsHelper /= $const20 secondsHelper
+execute as @a[scores={bcomCooldown=1..}] if items entity @s weapon *[custom_data~{bcom:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"secondsHelper"},"color":"red"},{"text":"/50 seconds","color":"red"}]
+execute as @a[scores={bcomCooldown=0}] if items entity @s weapon *[custom_data~{bcom:true}] run title @s actionbar {"text":"Ready!","color":"green"}

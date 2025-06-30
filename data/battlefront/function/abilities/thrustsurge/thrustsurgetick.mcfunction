@@ -1,4 +1,3 @@
-execute as @a[scores={clickStick=1,thrustCooldown=1..}] if items entity @s weapon *[custom_data~{thrust:true}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"thrustCooldown"},"color":"red"},{"text":" of 750 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,thrustCooldown=1..}] if items entity @s weapon *[custom_data~{thrust:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..}] if items entity @s weapon *[custom_data~{thrust:true}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..}] if items entity @s weapon *[custom_data~{thrust:true}] run scoreboard players set @s clickStick 0
@@ -7,8 +6,10 @@ execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{th
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{thrust:true}] at @s anchored eyes facing entity @p[team=REP,distance=..10] eyes anchored feet positioned ^ ^ ^1 rotated as @s positioned ^ ^ ^-1 if entity @s[distance=..0.6] unless block ~ ~-1 ~ air if entity @a[team=REP,distance=..10] run scoreboard players set @s thrustCooldown 1
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{thrust:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={thrustCooldown=1..}] run scoreboard players add @s thrustCooldown 1
-execute as @a[scores={thrustCooldown=750..}] run scoreboard players set @s thrustCooldown 0
+execute as @a[scores={thrustCooldown=600..}] run scoreboard players set @s thrustCooldown 0
 
 #show cooldown on actionbar
-execute as @a[scores={thrustCooldown=1..,show-actionbar-cooldown=1}] if items entity @s weapon *[custom_data~{thrust:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"thrustCooldown"},"color":"red"},{"text":"/750","color":"red"}]
-execute as @a[scores={thrustCooldown=0,show-actionbar-cooldown=1}] if items entity @s weapon *[custom_data~{thrust:true}] run title @s actionbar {"text":"Ready!","color":"green"}
+execute as @a[scores={thrustCooldown=1..}] if items entity @s weapon *[custom_data~{thrust:true}] run scoreboard players operation @s secondsHelper = @s thrustCooldown
+execute as @a run scoreboard players operation @s secondsHelper /= $const20 secondsHelper
+execute as @a[scores={thrustCooldown=1..}] if items entity @s weapon *[custom_data~{thrust:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"secondsHelper"},"color":"red"},{"text":"/30 seconds","color":"red"}]
+execute as @a[scores={thrustCooldown=0}] if items entity @s weapon *[custom_data~{thrust:true}] run title @s actionbar {"text":"Ready!","color":"green"}

@@ -15,8 +15,6 @@ The datapack currently spans over the 3 eras of the Republic, Rebellion, and Res
 
 - To change the respawn time, run `/scoreboard players set @a respawnTime <time>`. Note that time is in ticks and not seconds.
 
-- Run `/scoreboard players set <player> show-actionbar-cooldown <0|1>` to hide or show the cooldown of the currently selected ability above the hotbar.
-
 Issues? Report them on this repository's [issues page](https://github.com/MikhailMCraft/mcbattlefront/issues)!
 
 ## To-do

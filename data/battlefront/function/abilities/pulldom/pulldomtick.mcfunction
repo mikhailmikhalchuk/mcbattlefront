@@ -1,4 +1,3 @@
-execute as @a[scores={clickStick=1,domiCooldown=1..}] if items entity @s weapon *[custom_data~{dominance:true}] run tellraw @s ["",{"text":"Cannot use item!\n","color":"red"},{"score":{"name":"*","objective":"domiCooldown"},"color":"red"},{"text":" of 600 ticks (1/20ths of a second) remaining.","color":"red"}]
 execute as @a[scores={clickStick=1,domiCooldown=1..}] if items entity @s weapon *[custom_data~{dominance:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{dominance:true}] at @s anchored eyes facing entity @p[team=CIS,distance=..10] eyes anchored feet positioned ^ ^ ^1 rotated as @s positioned ^ ^ ^-1 if entity @s[distance=..0.6] rotated ~ 0 unless block ~ ~-1 ~ air run tp @p[team=CIS,distance=..10] ^ ^ ^1 facing entity @s
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{dominance:true}] at @s anchored eyes facing entity @p[team=CIS,distance=..10] eyes anchored feet positioned ^ ^ ^1 rotated as @s positioned ^ ^ ^-1 if entity @s[distance=..0.6] rotated ~ 0 unless block ~ ~-1 ~ air run effect give @p[team=CIS,distance=..10] instant_damage 1 0 true
@@ -29,5 +28,7 @@ execute as @a[scores={domiCooldown=1..}] run scoreboard players add @s domiCoold
 execute as @a[scores={domiCooldown=600..}] run scoreboard players set @s domiCooldown 0
 
 #show cooldown on actionbar
-execute as @a[scores={domiCooldown=1..,show-actionbar-cooldown=1}] if items entity @s weapon *[custom_data~{dominance:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"domiCooldown"},"color":"red"},{"text":"/600","color":"red"}]
-execute as @a[scores={domiCooldown=0,show-actionbar-cooldown=1}] if items entity @s weapon *[custom_data~{dominance:true}] run title @s actionbar {"text":"Ready!","color":"green"}
+execute as @a[scores={domiCooldown=1..}] if items entity @s weapon *[custom_data~{dominance:true}] run scoreboard players operation @s secondsHelper = @s domiCooldown
+execute as @a run scoreboard players operation @s secondsHelper /= $const20 secondsHelper
+execute as @a[scores={domiCooldown=1..}] if items entity @s weapon *[custom_data~{dominance:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"secondsHelper"},"color":"red"},{"text":"/30 seconds","color":"red"}]
+execute as @a[scores={domiCooldown=0}] if items entity @s weapon *[custom_data~{dominance:true}] run title @s actionbar {"text":"Ready!","color":"green"}

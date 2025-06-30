@@ -30,7 +30,7 @@ scoreboard players set @s chokeCooldown 0
 scoreboard players set @s vibroCooldown 0
 scoreboard players set @s thrustCooldown 0
 scoreboard players set @s mineCooldown 0
-scoreboard players set @s stCooldown 0
+scoreboard players set @s shotCooldown 0
 scoreboard players set @s intelCooldown 0
 scoreboard players set @s doubCooldown 0
 scoreboard players set @s pullCooldown 0

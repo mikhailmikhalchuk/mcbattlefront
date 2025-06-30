@@ -36,7 +36,7 @@ scoreboard objectives remove chokeCooldown
 scoreboard objectives remove vibroCooldown
 scoreboard objectives remove thrustCooldown
 scoreboard objectives remove mineCooldown
-scoreboard objectives remove stCooldown
+scoreboard objectives remove shotCooldown
 scoreboard objectives remove intelCooldown
 scoreboard objectives remove doubCooldown
 scoreboard objectives remove pullCooldown
