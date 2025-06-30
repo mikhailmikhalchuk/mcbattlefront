@@ -1,2 +1,0 @@
-execute at @e[type=area_effect_cloud,nbt={Color:9934743}] run summon minecraft:creeper ~ ~ ~ {powered:1,Fuse:0,ignited:1,ExplosionRadius:1,DeathLootTable:"minecraft:empty",Silent:1,CustomName:'{"text":"Thermal Imploder","color":"red"}'}
-kill @e[type=area_effect_cloud,nbt={Color:9934743}]

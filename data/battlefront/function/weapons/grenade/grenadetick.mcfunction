@@ -1,0 +1,2 @@
+execute as @e[type=area_effect_cloud] if predicate {condition:entity_properties, entity:this,predicate:{components:{custom_data:{detonator:true}}}} at @s run summon minecraft:creeper ~ ~ ~ {powered:true,Fuse:0,ignited:true,ExplosionRadius:1,DeathLootTable:"minecraft:empty",Silent:true,CustomName:'{"text":"Thermal Imploder","color":"red"}'}
+execute as @e[type=area_effect_cloud] if predicate {condition:entity_properties, entity:this,predicate:{components:{custom_data:{detonator:true}}}} run kill @s

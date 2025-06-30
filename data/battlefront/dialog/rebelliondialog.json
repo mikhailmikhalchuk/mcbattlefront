@@ -1,0 +1,104 @@
+{
+  "type": "minecraft:multi_action",
+  "title": {
+    "text": "Choose class"
+  },
+  "inputs": [],
+  "columns": 4,
+  "actions": [
+    {
+      "label": "Assault",
+      "tooltip": "Click to spawn in as Assault",
+      "width": 100,
+      "action": {
+        "type": "run_command",
+        "command": "/function battlefront:classes/assault"
+      }
+    },
+    {
+      "label": "Heavy",
+      "tooltip": "Click to spawn in as Heavy",
+      "width": 100,
+      "action": {
+        "type": "run_command",
+        "command": "/function battlefront:classes/heavy"
+      }
+    },
+    {
+      "label": "Officer",
+      "tooltip": "Click to spawn in as Officer",
+      "width": 100,
+      "action": {
+        "type": "run_command",
+        "command": "/function battlefront:classes/officer"
+      }
+    },
+    {
+      "label": "Specialist",
+      "tooltip": "Click to spawn in as Specialist",
+      "width": 100,
+      "action": {
+        "type": "run_command",
+        "command": "/function battlefront:classes/specialist"
+      }
+    },
+    {
+      "label": "Enforcer",
+      "tooltip": "Click to spawn in as Enforcer",
+      "width": 125,
+      "action": {
+        "type": "run_command",
+        "command": "/function battlefront:classes/enforcer"
+      }
+    },
+    {
+      "label": "Aerial",
+      "tooltip": "Click to spawn in as Aerial",
+      "width": 125,
+      "action": {
+        "type": "run_command",
+        "command": "/function battlefront:classes/aerial"
+      }
+    },
+    {
+      "label": "Infiltrator",
+      "tooltip": "Click to spawn in as Infiltrator",
+      "width": 125,
+      "action": {
+        "type": "run_command",
+        "command": "/function battlefront:classes/infiltrator"
+      }
+    },
+    {
+      "label": "",
+      "width": 125
+    },
+    {
+      "label": "Luke Skywalker",
+      "tooltip": "Click to spawn in as Luke Skywalker",
+      "width": 150,
+      "action": {
+        "type": "run_command",
+        "command": "/function battlefront:heroes/luke"
+      }
+    },
+    {
+      "label": "Princess Leia",
+      "tooltip": "Click to spawn in as Princess Leia",
+      "width": 150,
+      "action": {
+        "type": "run_command",
+        "command": "function battlefront:heroes/leia"
+      }
+    },
+    {
+      "label": "Chewbacca",
+      "tooltip": "Click to spawn in as Chewbacca",
+      "width": 150,
+      "action": {
+        "type": "run_command",
+        "command": "function battlefront:heroes/chewbacca"
+      }
+    }
+  ]
+}

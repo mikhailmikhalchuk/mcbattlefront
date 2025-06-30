@@ -1,0 +1,54 @@
+execute if entity @s[scores={defeated=2}] run clear @s
+
+#first order jet trooper
+
+execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.head with minecraft:player_head[item_name="First Order Jet Trooper Helmet",unbreakable={},profile={id:[I;336125291,658262222,-1090249647,-2073266283],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Y4MDc0OGQ4OGEzZDA1YTc2NGFjNmM0MmNjMTQyNDdlYTM3MTBkZmIyZTdkZGNiYWM3ODE1ZmNkYzIyMTExYSJ9fX0="}]},enchantments={"minecraft:binding_curse":1},tooltip_display={hide_tooltip:true}] 1
+execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.chest with minecraft:iron_chestplate[item_name={"color":"yellow","italic":false,"text":"NJP-900 Integrated Jetpack"},unbreakable={},enchantments={"minecraft:binding_curse":1},custom_data={hoverpack:true}] 1
+execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:crossbow[item_name={"color":"red","italic":false,"text":"G125 Projectile Launcher"},lore=[{"italic":false,"text":"Shoots explosive projectiles"},{"italic":false,"text":"\"None defies the First Order!\""}],unbreakable={}] 1
+execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:carrot_on_a_stick[item_name={"color":"gray","italic":false,"text":"Toggle Hover"},unbreakable={},custom_data={hovertoggle:true}] 1
+execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:arrow[item_name={"italic":false,"text":"G125 Projectile Bolt"},custom_data={foaerialbolt:true}] 64
+
+#resistance jump trooper
+execute if entity @s[scores={defeated=2},team=RES] run give @s minecraft:crossbow[item_name={"italic":false,"text":"EL-16HFE blaster"},unbreakable={},enchantments={"minecraft:quick_charge":2}] 1
+execute if entity @s[scores={defeated=2},team=RES] run item replace entity @s armor.chest with minecraft:leather_chestplate[item_name={"color":"yellow","italic":false,"text":"Resistance Jump-Pack"},unbreakable={},enchantments={"minecraft:binding_curse":1},custom_data={actualjumppack:true}] 1
+execute if entity @s[scores={defeated=2},team=RES] run item replace entity @s armor.feet with minecraft:leather_boots[item_name={"color":"yellow","italic":false,"text":"Boots"},dyed_color=7567221,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1,"minecraft:feather_falling":255}] 1
+execute if entity @s[scores={defeated=2},team=RES] run give @s minecraft:carrot_on_a_stick[item_name={"color":"gray","italic":false,"text":"Jetpack Boost"},unbreakable={},custom_data={jumppack:true}] 1
+execute if entity @s[scores={defeated=2},team=RES] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 64
+
+#imperial jump trooper
+execute if entity @s[scores={defeated=2},team=EMP] run give @s minecraft:crossbow[item_name={"italic":false,"text":"E-11 blaster"},unbreakable={},enchantments={"minecraft:quick_charge":2}] 1
+execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s armor.chest with minecraft:leather_chestplate[item_name={"color":"yellow","italic":false,"text":"Imperial Jump-Pack"},dyed_color=16383998,unbreakable={},enchantments={"minecraft:binding_curse":1},custom_data={actualjumppack:true}] 1
+execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s armor.feet with minecraft:leather_boots[item_name={"color":"yellow","italic":false,"text":"Boots"},dyed_color=16383998,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1,"minecraft:feather_falling":255}] 1
+execute if entity @s[scores={defeated=2},team=EMP] run give @s minecraft:carrot_on_a_stick[item_name={"color":"gray","italic":false,"text":"Jetpack Boost"},unbreakable={},custom_data={jumppack:true}] 1
+execute if entity @s[scores={defeated=2},team=EMP] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 64
+
+#rebellion jump trooper
+execute if entity @s[scores={defeated=2},team=REB] run give @s minecraft:crossbow[item_name={"italic":false,"text":"A280C blaster"},unbreakable={},enchantments={"minecraft:quick_charge":2}] 1
+execute if entity @s[scores={defeated=2},team=REB] run item replace entity @s armor.chest with minecraft:leather_chestplate[item_name={"color":"yellow","italic":false,"text":"Rebellion Jump-Pack"},unbreakable={},enchantments={"minecraft:binding_curse":1},custom_data={actualjumppack:true}] 1
+execute if entity @s[scores={defeated=2},team=REB] run item replace entity @s armor.feet with minecraft:leather_boots[item_name={"color":"yellow","italic":false,"text":"Boots"},tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1,"minecraft:feather_falling":255}] 1
+execute if entity @s[scores={defeated=2},team=REB] run give @s minecraft:carrot_on_a_stick[item_name={"color":"gray","italic":false,"text":"Jetpack Boost"},unbreakable={},custom_data={jumppack:true}] 1
+execute if entity @s[scores={defeated=2},team=REB] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 64
+
+#clone jump trooper
+execute if entity @s[scores={defeated=2},team=REP] run give @s minecraft:crossbow[item_name={"italic":false,"text":"DC-17"},unbreakable={},enchantments={"minecraft:quick_charge":2}] 1
+execute if entity @s[scores={defeated=2},team=REP] run item replace entity @s armor.head with minecraft:player_head[item_name="Jet Trooper Helmet",unbreakable={},profile={id:[I;1542657991,-1299887119,-1361409750,-392448798],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODliNDg5NDI4ZmNlN2RmMjQxZWE1OTk4ZGQxMGRmMzU0MTMwNGNlYzI5NmZiMzNkZWVkNzU3OTg0YTM2MTI4OCJ9fX0="}]},enchantments={"minecraft:binding_curse":1},tooltip_display={hide_tooltip:true}] 1
+execute if entity @s[scores={defeated=2},team=REP] run item replace entity @s armor.chest with minecraft:leather_chestplate[item_name={"color":"yellow","italic":false,"text":"Republic Jump-Pack"},dyed_color=16383998,unbreakable={},enchantments={"minecraft:binding_curse":1},custom_data={actualjumppack:true}] 1
+execute if entity @s[scores={defeated=2},team=REP] run item replace entity @s armor.legs with minecraft:leather_leggings[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=16383998,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
+execute if entity @s[scores={defeated=2},team=REP] run item replace entity @s armor.feet with minecraft:leather_boots[item_name={"color":"yellow","italic":false,"text":"Boots"},dyed_color=16383998,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1,"minecraft:feather_falling":255}] 1
+execute if entity @s[scores={defeated=2},team=REP] run give @s minecraft:carrot_on_a_stick[item_name={"color":"gray","italic":false,"text":"Jetpack Boost"},unbreakable={},custom_data={jumppack:true}] 1
+execute if entity @s[scores={defeated=2},team=REP] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 64
+
+#b2-rp droid
+
+execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.head with minecraft:player_head[item_name="B2-RP Rocket Droid Head",unbreakable={},profile={id:[I;-1313747275,1709130169,-1727420512,-965264263],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTYxMTY4OTA4MjU5MywKICAicHJvZmlsZUlkIiA6ICJiMWIxY2ViNTY1ZGY0MWI5OTkwOWE3YTBjNjc3M2M3OSIsCiAgInByb2ZpbGVOYW1lIiA6ICJNaWtoYWlsTUNyYWZ0IiwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzgwMDNlZWU1MTMxNWUwNWFmMjI2MjBjZDQxOTg0YzFhNmYwZDYzMmZlNDQ2ODJlODFlMjhiZGZlYzM0MWJjNzgiCiAgICB9CiAgfQp9"}]},enchantments={"minecraft:binding_curse":1},tooltip_display={hide_tooltip:true}] 1
+execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.chest with minecraft:leather_chestplate[item_name={"color":"yellow","italic":false,"text":"Built-in Rocket Pack"},dyed_color=7567221,unbreakable={},enchantments={"minecraft:binding_curse":1},custom_data={actualjumppack:true}] 1
+execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.legs with minecraft:leather_leggings[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=7567221,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
+execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.feet with minecraft:leather_boots[item_name={"color":"yellow","italic":false,"text":"Boots"},dyed_color=7567221,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1,"minecraft:feather_falling":255}] 1
+execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:bow[item_name={"color":"red","italic":false,"text":"Twin Wrist-Blaster"},unbreakable={},enchantments={"minecraft:infinity":1}] 1
+execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:carrot_on_a_stick[item_name={"color":"gray","italic":false,"text":"Jetpack Boost"},unbreakable={},custom_data={jumppack:true}] 1
+execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:carrot_on_a_stick[item_name={"color":"red","italic":false,"text":"Wrist Rocket"},unbreakable={},custom_data={wristrocket:true}] 1
+execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 1
+
+execute unless entity @s[scores={defeated=2}] run tellraw @s {"text":"Nice try...\nYou can only spawn in as a new class if you have been defeated!","color":"red"}
+execute if score @s respawnTick < @s respawnTime unless entity @s[scores={defeated=0}] run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
+execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime run function battlefront:classes/spawnplayer
