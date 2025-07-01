@@ -1,5 +1,5 @@
 # Battlefront
-A Star Wars themed datapack for Minecraft, initially concieved and created in December 2020. Currently in a pre-release state, and only supports version 1.21.6. Older versions can be found in releases.
+A Star Wars themed datapack for Minecraft, initially concieved and created in December 2020. Currently in a pre-release state, and supports versions 1.21.6+. Older versions can be found in releases.
 
 ## Installation
 Download or clone the repository, and move it to your save's `datapacks` folder.
@@ -19,12 +19,13 @@ The datapack currently spans over the 3 eras of the Republic, Rebellion, and Res
 
 Issues? Report them on this repository's [issues page](https://github.com/mikhailmikhalchuk/mcbattlefront/issues)!
 
+## FAQ
+-Q: What does the "Grounded" tag on my item/ability mean? A: "Grounded" means that the ability can only be used when standing on the ground.
+
 ## To-do
 - For lightsaber blocking [tick for shield and remove after time/hits then replace](https://github.com/mikhailmikhalchuk/mcbattlefront/blob/master/data/battlefront/function/tick.mcfunction)
 
 - For Clone Commando [Anti-armor attachment](https://github.com/mikhailmikhalchuk/mcbattlefront/blob/master/data/battlefront/function/classes/enforcer.mcfunction#L38)
-
-- For Wrist Rocket [increase radius](https://github.com/mikhailmikhalchuk/mcbattlefront/blob/master/data/battlefront/function/abilities/wristrocket/wristrockettick.mcfunction#L6) (test different radii and balance accordingly)
 
 - For Heavy class [add sentry ability](https://github.com/mikhailmikhalchuk/mcbattlefront/blob/master/data/battlefront/function/classes/heavy.mcfunction) (minigun w/o the firing delay)
 

@@ -4,4 +4,5 @@ execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{li
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{lightning:true}] run scoreboard players set @s elecCooldown 1
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{lightning:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={elecCooldown=1..}] run scoreboard players add @s elecCooldown 1
+execute as @a[scores={elecCooldown=15}] run kill @e[tag=sheevel]
 execute as @a[scores={elecCooldown=30..}] run scoreboard players set @s elecCooldown 0

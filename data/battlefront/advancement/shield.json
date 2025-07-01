@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "using_shield": {
+      "trigger": "minecraft:using_item",
+      "conditions": {
+        "item": { "items": ["minecraft:shield"] }
+      }
+    }
+  },
+  "rewards": {
+    "function": "battlefront:shieldup"
+  }
+}

@@ -6,6 +6,7 @@ execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnT
 execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime unless entity @a[scores={REShero=1}] run give @s minecraft:crossbow[item_name={"italic":false,"text":"Chewbacca's Bowcaster"},unbreakable={},enchantments={"minecraft:multishot":1},custom_data={bowcast:true}] 1
 execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime unless entity @a[scores={REShero=1}] run give @s minecraft:arrow[item_name={"italic":false,"text":"Bowcaster Bolt"},custom_data={bowcasterbolt:true}] 64
 execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime unless entity @a[scores={REShero=1}] run attribute @s minecraft:max_health base set 40
+execute if entity @s[scores={defeated=2}] if score @s respawnTick >= @s respawnTime unless entity @a[scores={REShero=1}] run effect give @s speed 10000 0 true
 execute unless entity @s[scores={defeated=2}] run tellraw @s {"text":"Nice try...\nYou can only spawn in as a new class if you have been defeated!","color":"red"}
 execute if score @s respawnTick < @s respawnTime unless entity @s[scores={defeated=0}] run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}
 execute if entity @s[scores={defeated=2}] if entity @a[scores={REShero=1}] run tellraw @s {"text":"There's already a hero for your team on the battlefront.","color":"red"}

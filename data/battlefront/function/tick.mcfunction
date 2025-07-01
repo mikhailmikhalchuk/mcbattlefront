@@ -43,6 +43,10 @@ function battlefront:abilities/thrustsurge/thrustsurgetick
 function battlefront:abilities/impintel/impinteltick
 function battlefront:abilities/doubleeffort/doubleefforttick
 function battlefront:abilities/pull/pulltick
+function battlefront:abilities/focusedrage/focusedragetick
+function battlefront:abilities/push/pushtick
+function battlefront:abilities/rush/rushtick
+function battlefront:abilities/darkaura/darkauratick
 
 #packs 
 function battlefront:jetpack/jetpacktick
@@ -71,11 +75,12 @@ execute as @a[scores={killedPlayer=1..,CIShero=1}] run effect give @s minecraft:
 execute as @a[scores={killedPlayer=1..,bfocDuration=1..}] run effect give @s minecraft:instant_health 2 0 true
 
 #flame particle on jumppack use
-execute as @s if items entity @s armor.chest *[custom_data={actualjumppack:true}] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:levitation":{}}}} at @s rotated ~ 0 positioned ^ ^ ^-0.3 run particle minecraft:flame ~ ~1 ~ 0 0 0 0 0
+execute as @a if items entity @s armor.chest *[custom_data={actualjumppack:true}] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:levitation":{}}}} at @s rotated ~ 0 positioned ^-0.2 ^ ^-0.3 run particle minecraft:flame ~ ~1 ~ 0 0 0 0 0
+execute as @a if items entity @s armor.chest *[custom_data={actualjumppack:true}] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:levitation":{}}}} at @s rotated ~ 0 positioned ^0.2 ^ ^-0.3 run particle minecraft:flame ~ ~1 ~ 0 0 0 0 0
 
 #run arrow explosion effects
-execute as @e[type=arrow,nbt={inGround:1b}] if predicate {condition:"minecraft:entity_properties",entity:this,predicate:{components:{custom_data:{foaerialbolt:true}}}} at @s run summon minecraft:creeper ~ ~ ~ {powered:false,Fuse:0,ignited:true,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:true,CustomName:'{"text":"G125 Projectile Bolt","color":"red"}'}
-execute as @e[type=arrow,nbt={inGround:1b}] if predicate {condition:"minecraft:entity_properties",entity:this,predicate:{components:{custom_data:{bowcasterbolt:true}}}} at @s run summon minecraft:creeper ~ ~ ~ {powered:false,Fuse:0,ignited:true,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:true,CustomName:'{"text":"Bowcaster Bolt","color":"red"}'}
+execute as @e[type=arrow,nbt={inGround:1b}] if predicate {condition:"minecraft:entity_properties",entity:this,predicate:{components:{custom_data:{foaerialbolt:true}}}} at @s run summon minecraft:creeper ~ ~ ~ {powered:false,Fuse:0,ignited:true,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:true,CustomName:{"text":"G125 Projectile Bolt","color":"red"}}
+execute as @e[type=arrow,nbt={inGround:1b}] if predicate {condition:"minecraft:entity_properties",entity:this,predicate:{components:{custom_data:{bowcasterbolt:true}}}} at @s run summon minecraft:creeper ~ ~ ~ {powered:true,Fuse:0,ignited:true,ExplosionRadius:2,DeathLootTable:"minecraft:empty",Silent:true,CustomName:{"text":"Bowcaster Bolt","color":"red"}}
 
 #ability restrictor
 execute as @a[scores={abilitiesBlocked=2..}] run scoreboard players remove @s abilitiesBlocked 1
@@ -99,8 +104,8 @@ execute as @a[scores={defeated=0},nbt={SelectedItem:{components:{"minecraft:char
 #show ticker
 execute as @a[scores={showDelay=1..}] run scoreboard players remove @s showDelay 1
 
-#make blaster shots straight
-execute as @e[type=arrow,tag=removegravity] run data modify entity @s NoGravity set value true
+execute as @e[tag=laser] at @s run function battlefront:moveblastershot
+execute as @e[tag=laser] at @s run function battlefront:moveblastershot
 
 #death handler
 
@@ -108,12 +113,14 @@ execute as @e[type=arrow,tag=removegravity] run data modify entity @s NoGravity 
 execute as @a[scores={defeated=1}] run gamemode spectator @s
 execute unless entity @e[type=armor_stand,tag=deathspec] as @a[scores={defeated=1}] run tellraw @s ["",{"text":"Could not find a valid death spectate area to teleport you to.","color":"red"},{"text":"\n"},{"text":"To set a death spectate area, run the command ","color":"red"},{"text":"/function battlefront:setdeathspectatearea","color":"red","click_event":{action:"run_command",command:"/function battlefront:setdeathspectatearea"},"hover_event":{action:"show_text",value:{"text":"Click to enter command"}}}]
 execute unless entity @e[type=armor_stand,tag=facespec] as @a[scores={defeated=1}] run tellraw @s ["",{"text":"Could not find a valid death facing area to face your camera at.","color":"red"},{"text":"\n"},{"text":"To set a death facing area, run the command ","color":"red"},{"text":"/function battlefront:setfacingspectatearea","color":"red","click_event":{action:"run_command",command:"/function battlefront:setdeathfacingarea"},"hover_event":{action:"show_text",value:{"text":"Click to enter command"}}}]
-execute as @a[scores={defeated=1,FOhero=1}] run attribute @s minecraft:max_health base set 20
-execute as @a[scores={defeated=1,REShero=1}] run attribute @s minecraft:max_health base set 20
-execute as @a[scores={defeated=1,REBhero=1}] run attribute @s minecraft:max_health base set 20
-execute as @a[scores={defeated=1,EMPhero=1}] run attribute @s minecraft:max_health base set 20
-execute as @a[scores={defeated=1,REPhero=1}] run attribute @s minecraft:max_health base set 20
-execute as @a[scores={defeated=1,CIShero=1}] run attribute @s minecraft:max_health base set 20
+execute as @a[scores={defeated=1,FOhero=1}] run attribute @s minecraft:max_health base reset
+execute as @a[scores={defeated=1,REShero=1}] run attribute @s minecraft:max_health base reset
+execute as @a[scores={defeated=1,REBhero=1}] run attribute @s minecraft:max_health base reset
+execute as @a[scores={defeated=1,EMPhero=1}] run attribute @s minecraft:max_health base reset
+execute as @a[scores={defeated=1,REPhero=1}] run attribute @s minecraft:max_health base reset
+execute as @a[scores={defeated=1,CIShero=1}] run attribute @s minecraft:max_health base reset
+execute as @a[scores={defeated=1}] run attribute @s minecraft:attack_damage base reset
+execute as @a[scores={defeated=1}] run attribute @s minecraft:attack_speed base reset
 execute as @a[scores={defeated=1,EMPhero=1}] run scoreboard players set @s chokeDuration 0
 execute as @a[scores={defeated=1,FOhero=1}] run scoreboard players set @s FOhero 0
 execute as @a[scores={defeated=1,REShero=1}] run scoreboard players set @s REShero 0
@@ -147,7 +154,7 @@ execute as @a[scores={defeated=2},team=RES] if score @s respawnTick = @s respawn
 execute as @a[scores={defeated=2},team=REP] if score @s respawnTick = @s respawnTime unless score @s showDelay matches 1.. run dialog show @s battlefront:republicdialog
 execute as @a[scores={defeated=2},team=CIS] if score @s respawnTick = @s respawnTime unless score @s showDelay matches 1.. run dialog show @s battlefront:separatistdialog
 
-execute as @a[scores={defeated=2}] if entity @e[type=armor_stand,tag=deathspec] if entity @e[type=armor_stand,tag=facespec] at @e[type=armor_stand,tag=deathspec] run tp @s ~ ~ ~ facing entity @e[type=armor_stand,tag=facespec,limit=1]
+execute as @a[scores={defeated=2}] if entity @e[type=armor_stand,tag=deathspec] if entity @e[type=armor_stand,tag=facespec] at @e[type=armor_stand,tag=deathspec] run tp @s ~ ~-10000 ~ facing entity @e[type=armor_stand,tag=facespec,limit=1]
 execute as @a[scores={defeated=3..}] run scoreboard players set @s respawnTick 0
 execute as @a[scores={defeated=3..}] run scoreboard players set @s defeated 2
 execute as @a[scores={clickStick=1..}] run scoreboard players set @s clickStick 0

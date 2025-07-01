@@ -41,6 +41,22 @@ scoreboard objectives add shotCooldown dummy
 scoreboard objectives add intelCooldown dummy
 scoreboard objectives add doubCooldown dummy
 scoreboard objectives add pullCooldown dummy
+scoreboard objectives add focusedRageCooldown dummy
+scoreboard objectives add pushCooldown dummy
+scoreboard objectives add comRushCooldown dummy
+scoreboard objectives add auraCooldown dummy
+
+#durations
+scoreboard objectives add duelDuration dummy
+scoreboard objectives add insigDuration dummy
+scoreboard objectives add chokeDuration dummy
+scoreboard objectives add retribDuration dummy
+scoreboard objectives add bfocDuration dummy
+scoreboard objectives add focusedRageDuration dummy
+scoreboard objectives add auraDuration dummy
+
+#charges
+scoreboard objectives add rushCharges dummy
 
 #posts
 scoreboard objectives add postA dummy
@@ -79,26 +95,53 @@ scoreboard objectives add thermGlowing dummy
 scoreboard objectives add leiaGrenades dummy
 scoreboard objectives add helmGlowing dummy
 scoreboard objectives add abilitiesBlocked dummy
-scoreboard objectives add duelDuration dummy
-scoreboard objectives add insigDuration dummy
-scoreboard objectives add chokeDuration dummy
-scoreboard objectives add retribDuration dummy
-scoreboard objectives add bfocDuration dummy
 scoreboard objectives add respawnTime dummy
 scoreboard objectives add respawnTick dummy
 scoreboard objectives add nearGround dummy
 scoreboard objectives add fuelTick dummy
 scoreboard objectives add showDelay dummy
 scoreboard objectives add secondsHelper dummy
+scoreboard objectives add unmoveable dummy
+scoreboard objectives add skip dummy
 
 #init objective default values
 scoreboard players set @a hoverpackFuel 0
-scoreboard players set @a shotCooldown 0
+scoreboard players set @a fortCooldown 0
+scoreboard players set @a mindCooldown 0
+scoreboard players set @a jumpCooldown 0
+scoreboard players set @a quarCooldown 0
+scoreboard players set @a bcomCooldown 0
+scoreboard players set @a bfocCooldown 0
 scoreboard players set @a trunCooldown 0
-scoreboard players set @a vibroCooldown 0
+scoreboard players set @a rushCooldown 0
+scoreboard players set @a seekCooldown 0
+scoreboard players set @a tranCooldown 0
 scoreboard players set @a pbatCooldown 0
-scoreboard players set @a passCooldown 0
+scoreboard players set @a survCooldown 0
 scoreboard players set @a spinCooldown 0
+scoreboard players set @a elecCooldown 0
+scoreboard players set @a weakCooldown 0
+scoreboard players set @a duelCooldown 0
+scoreboard players set @a passCooldown 0
+scoreboard players set @a domiCooldown 0
+scoreboard players set @a wrisCooldown 0
+scoreboard players set @a restrCooldown 0
+scoreboard players set @a helmCooldown 0
+scoreboard players set @a thermCooldown 0
+scoreboard players set @a frezCooldown 0
+scoreboard players set @a insigCooldown 0
+scoreboard players set @a chokeCooldown 0
+scoreboard players set @a vibroCooldown 0
+scoreboard players set @a thrustCooldown 0
+scoreboard players set @a mineCooldown 0
+scoreboard players set @a shotCooldown 0
+scoreboard players set @a intelCooldown 0
+scoreboard players set @a doubCooldown 0
+scoreboard players set @a pullCooldown 0
+scoreboard players set @a focusedRageCooldown 0
+scoreboard players set @a pushCooldown 0
+scoreboard players set @a comRushCooldown 0
+scoreboard players set @a auraCooldown 0
 execute if score @p respawnTime matches 0 run scoreboard players set @a respawnTime 20
 
 #init teams

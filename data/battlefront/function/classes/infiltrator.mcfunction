@@ -40,13 +40,12 @@ execute if entity @s[scores={defeated=2},team=REP] run give @s minecraft:carrot_
 execute if entity @s[scores={defeated=2},team=REP] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 1
 
 #commando droid
-
 execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.head with minecraft:player_head[item_name="Commando Droid Head",unbreakable={},profile={id:[I;1872306648,-1199552238,-1385236370,62080444],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvM2NjNmZjY2I1ODFhMmM0OWIyZjJkNWM5YjNiNDczYjc2NmZkNTk4Nzk1ZTZkZWU4YWU3ZjcwNjE2MWVlZjcyMyJ9fX0="}]},enchantments={"minecraft:binding_curse":1},tooltip_display={hide_tooltip:true}] 1
 execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.chest with minecraft:leather_chestplate[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=6043422,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
 execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.legs with minecraft:leather_leggings[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=6043422,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
 execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.feet with minecraft:leather_boots[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=6043422,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
-execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:crossbow[item_name={"color":"red","italic":false,"text":"E-5 blaster rifle"},unbreakable={},enchantments={"minecraft:quick_charge":2}] 1
-execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:stone_sword[item_name={"color":"red","italic":false,"text":"Vibrosword"},unbreakable={},custom_data={vibrosword:true}]
+execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:crossbow[item_name={"color":"red","italic":false,"text":"E-5 blaster rifle"},unbreakable={},enchantments={"minecraft:quick_charge":3}] 1
+execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:stone_sword[item_name={"color":"red","italic":false,"text":"Vibrosword"},lore=[{"italic":false,"text":"Gains bonus damage on third strike"}],unbreakable={},custom_data={vibrosword:true}]
 execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:carrot_on_a_stick[item_name={"color":"red","italic":false,"text":"Thermal Vision"},lore=[{"italic":false,"text":"Reveals enemies in the vicinity"}],unbreakable={},custom_data={thermvision:true}] 1
 execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 64
 execute if entity @s[scores={defeated=2},team=CIS] run effect give @s speed 10000 0 true

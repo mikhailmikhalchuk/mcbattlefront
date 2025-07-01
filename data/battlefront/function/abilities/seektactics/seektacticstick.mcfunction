@@ -5,10 +5,10 @@ execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{se
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{seektactic:true}] run scoreboard players set @s seekCooldown 1
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{seektactic:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={seekCooldown=1..}] run scoreboard players add @s seekCooldown 1
-execute as @a[scores={seekCooldown=600..}] run scoreboard players set @s seekCooldown 0
+execute as @a[scores={seekCooldown=200..}] run scoreboard players set @s seekCooldown 0
 
 #show cooldown on actionbar
 execute as @a[scores={seekCooldown=1..}] if items entity @s weapon *[custom_data~{seektactic:true}] run scoreboard players operation @s secondsHelper = @s seekCooldown
 execute as @a run scoreboard players operation @s secondsHelper /= $const20 secondsHelper
-execute as @a[scores={seekCooldown=1..}] if items entity @s weapon *[custom_data~{seektactic:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"secondsHelper"},"color":"red"},{"text":"/30 seconds","color":"red"}]
+execute as @a[scores={seekCooldown=1..}] if items entity @s weapon *[custom_data~{seektactic:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"secondsHelper"},"color":"red"},{"text":"/10 seconds","color":"red"}]
 execute as @a[scores={seekCooldown=0}] if items entity @s weapon *[custom_data~{seektactic:true}] run title @s actionbar {"text":"Ready!","color":"green"}

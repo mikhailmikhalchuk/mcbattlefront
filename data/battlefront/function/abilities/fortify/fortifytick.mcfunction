@@ -6,10 +6,10 @@ execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{fo
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{fortify:true}] run scoreboard players set @s fortCooldown 1
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{fortify:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={fortCooldown=1..}] run scoreboard players add @s fortCooldown 1
-execute as @a[scores={fortCooldown=600..}] run scoreboard players set @s fortCooldown 0
+execute as @a[scores={fortCooldown=500..}] run scoreboard players set @s fortCooldown 0
 
 #show cooldown on actionbar
 execute as @a[scores={fortCooldown=1..}] if items entity @s weapon *[custom_data~{fortify:true}] run scoreboard players operation @s secondsHelper = @s fortCooldown
 execute as @a run scoreboard players operation @s secondsHelper /= $const20 secondsHelper
-execute as @a[scores={fortCooldown=1..}] if items entity @s weapon *[custom_data~{fortify:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"secondsHelper"},"color":"red"},{"text":"/30 seconds","color":"red"}]
+execute as @a[scores={fortCooldown=1..}] if items entity @s weapon *[custom_data~{fortify:true}] run title @s actionbar ["",{"score":{"name":"*","objective":"secondsHelper"},"color":"red"},{"text":"/25 seconds","color":"red"}]
 execute as @a[scores={fortCooldown=0}] if items entity @s weapon *[custom_data~{fortify:true}] run title @s actionbar {"text":"Ready!","color":"green"}

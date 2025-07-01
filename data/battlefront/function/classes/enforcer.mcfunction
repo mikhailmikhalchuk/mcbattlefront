@@ -20,7 +20,6 @@ execute if entity @s[scores={defeated=2},team=REB] run give @s minecraft:crossbo
 execute if entity @s[scores={defeated=2},team=REB] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Bowcaster Bolt"},custom_data={bowcasterbolt:true}] 64
 
 #praetorian guard
-
 execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.head with minecraft:player_head[item_name="Praetorian Guard Helmet",unbreakable={},profile={id:[I;1154760920,1181372274,-1235680490,538871679],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjhmNmUzOTU4MTJjNzMyYzA3NGJlYzdlN2I5NzU2YmE1MWUxMDE2Yjc4ZTZjNjE5MWUxZTJiMGE5NzAzN2JmOSJ9fX0="}]},enchantments={"minecraft:binding_curse":1},tooltip_display={hide_tooltip:true}] 1
 execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.chest with minecraft:leather_chestplate[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=11546150,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
 execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.legs with minecraft:leather_leggings[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=11546150,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
@@ -30,7 +29,6 @@ execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:fishing_
 execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:golden_axe[item_name={"color":"red","italic":false,"text":"Vibro-arbir blade"},enchantments={"minecraft:feather_falling":1},unbreakable={}] 1
 
 #b2-rp droid
-
 execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.head with minecraft:player_head[item_name="B2 Super Battle Droid Head",unbreakable={},profile={id:[I;-1313747275,1709130169,-1727420512,-965264263],properties:[{name:"textures",value:"ewogICJ0aW1lc3RhbXAiIDogMTYxMTY4OTA4MjU5MywKICAicHJvZmlsZUlkIiA6ICJiMWIxY2ViNTY1ZGY0MWI5OTkwOWE3YTBjNjc3M2M3OSIsCiAgInByb2ZpbGVOYW1lIiA6ICJNaWtoYWlsTUNyYWZ0IiwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzgwMDNlZWU1MTMxNWUwNWFmMjI2MjBjZDQxOTg0YzFhNmYwZDYzMmZlNDQ2ODJlODFlMjhiZGZlYzM0MWJjNzgiCiAgICB9CiAgfQp9"}]},enchantments={"minecraft:binding_curse":1},tooltip_display={hide_tooltip:true}] 1
 execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.chest with minecraft:leather_chestplate[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=7567221,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
 execute if entity @s[scores={defeated=2},team=CIS] run item replace entity @s armor.legs with minecraft:leather_leggings[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=7567221,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
@@ -40,7 +38,6 @@ execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:carrot_
 execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 1
 
 #clone commando
-
 execute if entity @s[scores={defeated=2},team=REP] run item replace entity @s armor.head with minecraft:player_head[item_name="Clone Commando Helmet",unbreakable={},profile={id:[I;-673333705,1945128843,-1428971264,449723011],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTM5NjhmOTMwYmVmYTEzODc5ZjQ5MWM4OWNkOGYwZDc2ODFiYWJiNDZlNzQ1ZWZkODE1NzJlMmE3NDA2YTVjMCJ9fX0="}]},enchantments={"minecraft:binding_curse":1},tooltip_display={hide_tooltip:true}] 1
 execute if entity @s[scores={defeated=2},team=REP] run item replace entity @s armor.chest with minecraft:leather_chestplate[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=16383998,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
 execute if entity @s[scores={defeated=2},team=REP] run item replace entity @s armor.legs with minecraft:leather_leggings[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=16383998,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1

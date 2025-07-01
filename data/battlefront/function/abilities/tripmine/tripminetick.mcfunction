@@ -1,7 +1,7 @@
 execute as @a[scores={clickStick=1,mineCooldown=1..}] if items entity @s weapon *[custom_data~{trip:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..}] if items entity @s weapon *[custom_data~{trip:true}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..}] if items entity @s weapon *[custom_data~{trip:true}] run scoreboard players set @s clickStick 0
-execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{trip:true}] at @s run summon creeper ~ ~ ~ {Tags:["tripmine"],Fuse:5,CustomName:'{"text":"Trip Mine","color":"blue"}',CustomNameVisible:0b,DeathLootTable:"minecraft:empty",Silent:true,Health:10}
+execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{trip:true}] at @s run summon creeper ~ ~ ~ {Tags:["tripmine"],Fuse:5,CustomName:{"text":"Trip Mine","color":"blue"},CustomNameVisible:0b,DeathLootTable:"minecraft:empty",Silent:true,Health:10}
 execute as @a[scores={clickStick=1},team=FO] if items entity @s weapon *[custom_data~{trip:true}] at @s run team join FO @e[type=creeper,tag=tripmine,distance=..2]
 execute as @a[scores={clickStick=1},team=RES] if items entity @s weapon *[custom_data~{trip:true}] at @s run team join RES @e[type=creeper,tag=tripmine,distance=..2]
 execute as @a[scores={clickStick=1},team=REB] if items entity @s weapon *[custom_data~{trip:true}] at @s run team join REB @e[type=creeper,tag=tripmine,distance=..2]

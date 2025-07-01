@@ -1,10 +1,7 @@
-execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{repeater:true}] at @s anchored eyes positioned ~ ~1.5 ~ run summon arrow ~ ~ ~ {Tags:["dcprojectile","removegravity"]}
-execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{repeater:true}] at @s rotated as @s positioned 0.0 0 0.0 positioned ^ ^ ^5 summon area_effect_cloud run data modify entity @e[tag=dcprojectile,limit=1] Motion set from entity @s Pos
-execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{repeater:true}] run data modify entity @e[type=arrow,tag=dcprojectile,limit=1] Owner set from entity @s UUID
+execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{repeater:true}] at @s run summon block_display ~ ~1.5 ~ {Tags:["laser","newlaser","repeaterbolt"],Passengers:[{id:"minecraft:block_display",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.15f,-0.15f,-0.6f],scale:[0.3f,0.3f,1.2f]},block_state:{Name:"minecraft:red_stained_glass"}}],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.05f,-0.05f,-0.5f],scale:[0.1f,0.1f,1.0f]},block_state:{Name:"minecraft:magma_block"}}
+execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{repeater:true}] as @e[tag=newlaser] at @s run function battlefront:setupblastershot
+execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{repeater:true}] at @s run playsound entity.allay.hurt
 execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{repeater:true}] at @s run playsound minecraft:entity.arrow.shoot block @a ~ ~ ~
 execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{repeater:true}] run scoreboard players set @s shotCooldown 1
 execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{repeater:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={shotCooldown=2..}] if items entity @s weapon *[custom_data~{repeater:true}] run scoreboard players set @s shotCooldown 0
-execute as @e[tag=dcprojectile] run data modify entity @s damage set value 1
-tag @e[tag=dcprojectile] remove dcprojectile
-kill @e[tag=direction]

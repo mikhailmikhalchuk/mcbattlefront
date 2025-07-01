@@ -19,6 +19,7 @@ execute as @a[scores={clickStick=1},team=EMP] if items entity @s weapon *[custom
 execute as @a[scores={clickStick=1},team=REB] if items entity @s weapon *[custom_data~{bcom:true}] at @s run tellraw @a[distance=1..7,team=REB] {"text":"Inspired by nearby officer's battle command!","color":"yellow"}
 execute as @a[scores={clickStick=1},team=REP] if items entity @s weapon *[custom_data~{bcom:true}] at @s run tellraw @a[distance=1..7,team=REP] {"text":"Inspired by nearby officer's battle command!","color":"yellow"}
 execute as @a[scores={clickStick=1},team=CIS] if items entity @s weapon *[custom_data~{bcom:true}] at @s run tellraw @a[distance=1..7,team=CIS] {"text":"Inspired by nearby officer's battle command!","color":"yellow"}
+execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{bcom:true}] run playsound entity.happy_ghast.equip master @a ~ ~50 ~ 999 1.5
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{bcom:true}] run scoreboard players set @s bcomCooldown 1
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{bcom:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={bcomCooldown=1..}] run scoreboard players add @s bcomCooldown 1

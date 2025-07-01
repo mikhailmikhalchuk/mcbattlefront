@@ -69,8 +69,10 @@ execute as @a[scores={hoverpackEquipped=1,hoverpackDead=0,clickHover=2,stopMove=
 execute as @a[scores={hoverpackEquipped=1,nearGround=1}] run effect give @s minecraft:slow_falling 1 150 true
 
 #jetpack particle effect
-execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @a[scores={hoverpackDead=0,hoverpackEquipped=1}] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:levitation":{}}}} rotated ~ 0 positioned ^ ^ ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
-execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @a[scores={hoverpackDead=0,hoverpackEquipped=1,clickHover=2}] rotated ~ 0 positioned ^ ^ ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
+execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @a[scores={hoverpackDead=0,hoverpackEquipped=1}] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:levitation":{}}}} rotated ~ 0 positioned ^ ^0.2 ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
+execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @a[scores={hoverpackDead=0,hoverpackEquipped=1}] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:levitation":{}}}} rotated ~ 0 positioned ^ ^-0.2 ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
+execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @a[scores={hoverpackDead=0,hoverpackEquipped=1,clickHover=2}] rotated ~ 0 positioned ^ ^0.2 ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
+execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @a[scores={hoverpackDead=0,hoverpackEquipped=1,clickHover=2}] rotated ~ 0 positioned ^ ^-0.2 ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
 
 scoreboard players reset @a jump
 scoreboard players reset @a sprint

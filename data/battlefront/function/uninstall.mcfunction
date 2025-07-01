@@ -41,6 +41,22 @@ scoreboard objectives remove shotCooldown
 scoreboard objectives remove intelCooldown
 scoreboard objectives remove doubCooldown
 scoreboard objectives remove pullCooldown
+scoreboard objectives remove focusedRageCooldown
+scoreboard objectives remove pushCooldown
+scoreboard objectives remove comRushCooldown
+scoreboard objectives remove auraCooldown
+
+#durations
+scoreboard objectives remove duelDuration
+scoreboard objectives remove insigDuration
+scoreboard objectives remove chokeDuration
+scoreboard objectives remove retribDuration
+scoreboard objectives remove bfocDuration
+scoreboard objectives remove focusedRageDuration
+scoreboard objectives remove auraDuration
+
+#charges
+scoreboard objectives remove rushCharges
 
 #posts
 scoreboard objectives remove postA
@@ -79,17 +95,13 @@ scoreboard objectives remove thermGlowing
 scoreboard objectives remove leiaGrenades
 scoreboard objectives remove helmGlowing
 scoreboard objectives remove abilitiesBlocked
-scoreboard objectives remove duelDuration
-scoreboard objectives remove insigDuration
-scoreboard objectives remove chokeDuration
-scoreboard objectives remove retribDuration
-scoreboard objectives remove bfocDuration
 scoreboard objectives remove respawnTime
 scoreboard objectives remove respawnTick
 scoreboard objectives remove nearGround
 scoreboard objectives remove fuelTick
 scoreboard objectives remove showDelay
 scoreboard objectives remove secondsHelper
+scoreboard objectives remove unmoveable
 
 #team
 team remove EMP
@@ -107,7 +119,7 @@ bossbar remove battlefront:postd
 bossbar remove battlefront:poste
 
 #knockback
-execute as @a run attribute @s minecraft:knockback_resistance base set 1.0
+execute as @a run attribute @s minecraft:knockback_resistance base reset
 
 #yay!
 tellraw @s {"text":"Successfully uninstalled Battlefront and all its assets.","color":"green"}

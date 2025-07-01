@@ -2,7 +2,7 @@ execute as @a[scores={clickStick=1,wrisCooldown=1..}] if items entity @s weapon 
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..}] if items entity @s weapon *[custom_data~{wristrocket:true}] run tellraw @s {"text":"Cannot use item! Abilities are restricted.","color":"red"}
 execute as @a[scores={clickStick=1,abilitiesBlocked=2..}] if items entity @s weapon *[custom_data~{wristrocket:true}] run scoreboard players set @s clickStick 0
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{wristrocket:true}] at @s positioned 0.0 0 0.0 run summon area_effect_cloud ^ ^ ^2 {Tags:["direction"]}
-execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{wristrocket:true}] at @s positioned ~ ~1 ~ run summon fireball ~ ~ ~ {ExplosionPower:8,Tags:["wrprojectile"]}
+execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{wristrocket:true}] at @s positioned ~ ~1 ~ run summon fireball ~ ~ ~ {ExplosionPower:2,Tags:["wrprojectile"]}
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{wristrocket:true}] run data modify entity @e[type=fireball,tag=wrprojectile,limit=1] Motion set from entity @e[type=area_effect_cloud,tag=direction,limit=1] Pos
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{wristrocket:true}] run data modify entity @e[type=fireball,tag=wrprojectile,limit=1] Owner set from entity @s UUID
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{wristrocket:true}] at @s run playsound minecraft:item.firecharge.use block @a ~ ~ ~
