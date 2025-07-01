@@ -3,7 +3,7 @@ title @a actionbar {"text":""}
 #run nested functions
 
 #weapons
-function battlefront:weapons/grenade/grenadetick
+function battlefront:weapons/detonator/detonatortick
 function battlefront:weapons/pblaster/pblastertick
 function battlefront:weapons/sonic/sonictick
 function battlefront:weapons/minigun/miniguntick
@@ -17,6 +17,7 @@ function battlefront:weapons/leiaalt/leiaalttick
 function battlefront:weapons/repeater/repeatertick
 function battlefront:weapons/lightning/lightningtick
 function battlefront:weapons/spin/spintick
+function battlefront:weapons/imploder/implodertick
 
 #abilities
 function battlefront:abilities/insight/insighttick
@@ -47,6 +48,7 @@ function battlefront:abilities/focusedrage/focusedragetick
 function battlefront:abilities/push/pushtick
 function battlefront:abilities/rush/rushtick
 function battlefront:abilities/darkaura/darkauratick
+function battlefront:abilities/scannerbeacon/scannerbeacontick
 
 #packs 
 function battlefront:jetpack/jetpacktick
@@ -132,6 +134,10 @@ execute as @a[scores={defeated=1}] run scoreboard players set @s passCooldown 0
 execute as @a[scores={defeated=1}] run scoreboard players set @s pbatCooldown 0
 execute as @a[scores={defeated=1}] run scoreboard players set @s trunCooldown 0
 execute as @a[scores={defeated=1}] run scoreboard players set @s spinCooldown 0
+execute as @a[scores={defeated=1}] run scoreboard players set @s auraDuration 0
+execute as @a[scores={defeated=1}] run scoreboard players set @s grenadeCooldown 0
+execute as @a[scores={defeated=1}] run tag @s remove leia
+execute as @a[scores={defeated=1}] run tag @s remove caphexspy
 execute as @a[scores={defeated=1}] run item replace entity @s armor.chest with air
 execute as @a[scores={defeated=1},team=FO] run tellraw @s {"text":"Respawning...","color":"green","underlined": true,"click_event":{action:"run_command",command:"/dialog show @s battlefront:firstorderdialog"},"hover_event":{action:"show_text",value:{"text":"Click here to show spawn dialog"}}}
 execute as @a[scores={defeated=1},team=EMP] run tellraw @s {"text":"Respawning...","color":"green","underlined": true,"click_event":{action:"run_command",command:"/dialog show @s battlefront:empiredialog"},"hover_event":{action:"show_text",value:{"text":"Click here to show spawn dialog"}}}

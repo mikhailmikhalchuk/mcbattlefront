@@ -1,7 +1,7 @@
 execute if entity @s[scores={defeated=2}] run clear @s
-execute if entity @s[scores={defeated=2}] run give @s minecraft:crossbow[item_name={"color":"red","italic":false,"text":"Blaster"},unbreakable={},enchantments={"minecraft:quick_charge":2}] 1
-execute if entity @s[scores={defeated=2}] run give @s minecraft:lingering_potion[potion_contents={potion:"minecraft:luck",custom_color:9934743},custom_name={"color":"red","italic":false,"text":"Thermal Detonator"},custom_data={detonator:true}] 1
-execute if entity @s[scores={defeated=2}] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 64
+execute if entity @s[scores={defeated=2}] run give @s minecraft:crossbow[item_name={"color":"red","italic":false,"text":"Blaster"},tooltip_display={hidden_components:["enchantments","unbreakable"]},unbreakable={},enchantments={"minecraft:quick_charge":2}] 1
+execute if entity @s[scores={defeated=2}] run give @s minecraft:lingering_potion[potion_contents={potion:"minecraft:luck",custom_color:9934743},tooltip_display={hidden_components:["potion_contents"]},custom_name={"color":"red","italic":false,"text":"Thermal Detonator"},custom_data={detonator:true}] 1
+execute if entity @s[scores={defeated=2}] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"}] 64
 execute if entity @s[scores={defeated=2}] run give @s minecraft:spectral_arrow[item_name={"color":"red","italic":false,"text":"Scan Dart"},lore=[{"italic":false,"text":"Temporarily reveals enemies hit with the dart"}]] 3
 
 #fo stormtrooper

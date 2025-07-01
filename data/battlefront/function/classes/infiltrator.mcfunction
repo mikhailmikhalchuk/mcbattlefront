@@ -14,9 +14,10 @@ execute if entity @s[scores={defeated=2},team=FO] run give @s minecraft:carrot_o
 execute if entity @s[scores={defeated=2},team=RES] run give @s minecraft:bow[item_name={"color":"red","italic":false,"text":"Modified GLIE-44"},unbreakable={},enchantments={"minecraft:infinity":1,"minecraft:power":1}] 1
 execute if entity @s[scores={defeated=2},team=RES] run give @s minecraft:stone_sword[item_name={"color":"red","italic":false,"text":"Truncheon"},unbreakable={},custom_data={trunch:true}] 1
 execute if entity @s[scores={defeated=2},team=RES] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 1
+execute if entity @s[scores={defeated=2},team=RES] run give @s minecraft:lingering_potion[potion_contents={potion:"minecraft:luck",custom_color:16777215},custom_name={"color":"red","italic":false,"text":"Scanner Beacon"},tooltip_display={hidden_components:["potion_contents"]},lore=[{"italic":false,"text":"Relays enemy locations within range"},{"italic":false,"text":"When outside, turns into an orbital strike"}],custom_data={scannerbeacon:true}]
+execute if entity @s[scores={defeated=2},team=RES] run tag @s add caphexspy
 
 #isb agent
-
 execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s armor.head with minecraft:player_head[item_name="ISB Agent Helmet",unbreakable={},profile={id:[I;1606003379,1377976515,-1200963510,-1064339879],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTM0OWM3Njk5OGQ4MGQyODk3YWM3MDczMmY2MTZhMGQzZTU4ZThjNTBmMzBmN2JiMTM5MjA1NTk5OGE1OTZkOSJ9fX0="}]},enchantments={"minecraft:binding_curse":1},tooltip_display={hide_tooltip:true}] 1
 execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s armor.chest with minecraft:leather_chestplate[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=1908001,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
 execute if entity @s[scores={defeated=2},team=EMP] run item replace entity @s armor.legs with minecraft:leather_leggings[item_name={"color":"yellow","italic":false,"text":"Armor"},dyed_color=1908001,tooltip_display={hide_tooltip:true},enchantments={"minecraft:binding_curse":1}] 1
@@ -48,7 +49,7 @@ execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:crossbo
 execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:stone_sword[item_name={"color":"red","italic":false,"text":"Vibrosword"},lore=[{"italic":false,"text":"Gains bonus damage on third strike"}],unbreakable={},custom_data={vibrosword:true}]
 execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:carrot_on_a_stick[item_name={"color":"red","italic":false,"text":"Thermal Vision"},lore=[{"italic":false,"text":"Reveals enemies in the vicinity"}],unbreakable={},custom_data={thermvision:true}] 1
 execute if entity @s[scores={defeated=2},team=CIS] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 64
-execute if entity @s[scores={defeated=2},team=CIS] run effect give @s speed 10000 0 true
+execute if entity @s[scores={defeated=2},team=CIS] run effect give @s speed infinite 0 true
 
 execute unless entity @s[scores={defeated=2}] run tellraw @s {"text":"Nice try...\nYou can only spawn in as a new class if you have been defeated!","color":"red"}
 execute if score @s respawnTick < @s respawnTime unless entity @s[scores={defeated=0}] run tellraw @s {"text":"Nice try...\nYou must wait until the respawn timer has finished counting down!","color":"red"}

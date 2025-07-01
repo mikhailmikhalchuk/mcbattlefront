@@ -45,6 +45,8 @@ scoreboard objectives add focusedRageCooldown dummy
 scoreboard objectives add pushCooldown dummy
 scoreboard objectives add comRushCooldown dummy
 scoreboard objectives add auraCooldown dummy
+scoreboard objectives add grenadeCooldown dummy
+scoreboard objectives add scannerBeaconCooldown dummy
 
 #durations
 scoreboard objectives add duelDuration dummy
@@ -54,6 +56,9 @@ scoreboard objectives add retribDuration dummy
 scoreboard objectives add bfocDuration dummy
 scoreboard objectives add focusedRageDuration dummy
 scoreboard objectives add auraDuration dummy
+scoreboard objectives add freezeDuration dummy
+scoreboard objectives add scannerBeaconStrikeDuration dummy
+scoreboard objectives add scannerBeaconScanDuration dummy
 
 #charges
 scoreboard objectives add rushCharges dummy
@@ -92,7 +97,6 @@ scoreboard objectives add saberBlocked minecraft.used:shield
 
 #misc
 scoreboard objectives add thermGlowing dummy
-scoreboard objectives add leiaGrenades dummy
 scoreboard objectives add helmGlowing dummy
 scoreboard objectives add abilitiesBlocked dummy
 scoreboard objectives add respawnTime dummy
@@ -101,8 +105,8 @@ scoreboard objectives add nearGround dummy
 scoreboard objectives add fuelTick dummy
 scoreboard objectives add showDelay dummy
 scoreboard objectives add secondsHelper dummy
-scoreboard objectives add unmoveable dummy
 scoreboard objectives add skip dummy
+scoreboard objectives add rushJumpStopper dummy
 
 #init objective default values
 scoreboard players set @a hoverpackFuel 0
@@ -142,6 +146,8 @@ scoreboard players set @a focusedRageCooldown 0
 scoreboard players set @a pushCooldown 0
 scoreboard players set @a comRushCooldown 0
 scoreboard players set @a auraCooldown 0
+scoreboard players set @a grenadeCooldown 0
+scoreboard players set @a scannerBeaconCooldown 0
 execute if score @p respawnTime matches 0 run scoreboard players set @a respawnTime 20
 
 #init teams

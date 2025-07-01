@@ -1,7 +1,7 @@
 execute if entity @s[scores={defeated=2}] run clear @s
-execute if entity @s[scores={defeated=2}] run give @s minecraft:crossbow[item_name={"italic":false,"text":"A180 Sniper"},unbreakable={},enchantments={"minecraft:piercing":1},custom_data={sniper:true}] 1
-execute if entity @s[scores={defeated=2}] run give @s minecraft:carrot_on_a_stick[item_name={"color":"blue","italic":false,"text":"Trip Mine"},lore=[{"italic":false,"text":"Places a trip mine at your feet"},{"italic":false,"text":"The placed mine will explode when near an enemy"}],unbreakable={},custom_data={trip:true}] 1
-execute if entity @s[scores={defeated=2}] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"},unbreakable={}] 64
+execute if entity @s[scores={defeated=2}] run give @s minecraft:crossbow[item_name={"italic":false,"text":"A180 Sniper"},tooltip_display={hidden_components:["enchantments","unbreakable"]},unbreakable={},enchantments={"minecraft:piercing":1},custom_data={sniper:true}] 1
+execute if entity @s[scores={defeated=2}] run give @s minecraft:carrot_on_a_stick[item_name={"color":"blue","italic":false,"text":"Trip Mine"},tooltip_display={hidden_components:["unbreakable"]},lore=[{"italic":false,"text":"Places a trip mine at your feet"},{"italic":false,"text":"The placed mine will explode when near an enemy"}],unbreakable={},custom_data={trip:true}] 1
+execute if entity @s[scores={defeated=2}] run give @s minecraft:arrow[item_name={"color":"red","italic":false,"text":"Blaster Bolt"}] 64
 
 #fo stormtrooper
 

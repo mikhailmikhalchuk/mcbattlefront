@@ -8,8 +8,8 @@ execute as @a[scores={clickStick=1},team=REB] if items entity @s weapon *[custom
 execute as @a[scores={clickStick=1},team=EMP] if items entity @s weapon *[custom_data~{trip:true}] at @s run team join EMP @e[type=creeper,tag=tripmine,distance=..2]
 execute as @a[scores={clickStick=1},team=REP] if items entity @s weapon *[custom_data~{trip:true}] at @s run team join REP @e[type=creeper,tag=tripmine,distance=..2]
 execute as @a[scores={clickStick=1},team=CIS] if items entity @s weapon *[custom_data~{trip:true}] at @s run team join CIS @e[type=creeper,tag=tripmine,distance=..2]
-execute as @e[type=creeper,tag=tripmine] run effect give @s invisibility 10000 1 true
-execute as @e[type=creeper,tag=tripmine] run effect give @s slowness 10000 255 true
+execute as @e[type=creeper,tag=tripmine] run effect give @s invisibility infinite 0 true
+execute as @e[type=creeper,tag=tripmine] run effect give @s slowness infinite 255 true
 execute at @e[type=creeper,tag=tripmine] run particle minecraft:sneeze ~ ~ ~
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{trip:true}] run scoreboard players set @s mineCooldown 1
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{trip:true}] run scoreboard players set @s clickStick 0

@@ -34,9 +34,10 @@ execute as @a[scores={auraDuration=140}] at @s run effect give @a[team=REB,dista
 execute as @a[scores={auraDuration=160}] at @s run effect give @a[team=REB,distance=..10] wither 1 1 true
 execute as @a[scores={auraDuration=1..}] at @s rotated 0 ~ run tp @e[tag=auraCircleGen,limit=1] ~ ~ ~
 execute as @e[type=armor_stand,tag=auraCircleGen] rotated 0 ~ at @s run tp @s ~ ~ ~ ~10 ~
-execute as @a[scores={auraDuration=160..}] run kill @e[type=armor_stand,tag=auraCircleGen]
 execute as @a[scores={auraDuration=160..}] run scoreboard players set @s auraDuration 0
 execute as @a[scores={auraCooldown=500..}] run scoreboard players set @s auraCooldown 0
+
+execute unless entity @a[scores={auraDuration=1..}] run kill @e[type=armor_stand,tag=auraCircleGen]
 
 #show cooldown on actionbar
 execute as @a[scores={auraCooldown=1..}] if items entity @s weapon *[custom_data~{darkaura:true}] run scoreboard players operation @s secondsHelper = @s auraCooldown

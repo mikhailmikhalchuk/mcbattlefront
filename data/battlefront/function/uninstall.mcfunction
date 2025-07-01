@@ -45,6 +45,8 @@ scoreboard objectives remove focusedRageCooldown
 scoreboard objectives remove pushCooldown
 scoreboard objectives remove comRushCooldown
 scoreboard objectives remove auraCooldown
+scoreboard objectives remove grenadeCooldown
+scoreboard objectives remove scannerBeaconCooldown
 
 #durations
 scoreboard objectives remove duelDuration
@@ -54,6 +56,9 @@ scoreboard objectives remove retribDuration
 scoreboard objectives remove bfocDuration
 scoreboard objectives remove focusedRageDuration
 scoreboard objectives remove auraDuration
+scoreboard objectives remove freezeDuration
+scoreboard objectives remove scannerBeaconStrikeDuration
+scoreboard objectives remove scannerBeaconScanDuration
 
 #charges
 scoreboard objectives remove rushCharges
@@ -92,7 +97,6 @@ scoreboard objectives remove saberBlocked
 
 #misc
 scoreboard objectives remove thermGlowing
-scoreboard objectives remove leiaGrenades
 scoreboard objectives remove helmGlowing
 scoreboard objectives remove abilitiesBlocked
 scoreboard objectives remove respawnTime
@@ -101,7 +105,8 @@ scoreboard objectives remove nearGround
 scoreboard objectives remove fuelTick
 scoreboard objectives remove showDelay
 scoreboard objectives remove secondsHelper
-scoreboard objectives remove unmoveable
+scoreboard objectives remove skip
+scoreboard objectives remove rushJumpStopper
 
 #team
 team remove EMP

@@ -12,9 +12,16 @@ execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{ru
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{rush:true}] at @s run tp @s ~ ~-10000 ~
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{rush:true}] at @s run gamemode adventure @s
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{rush:true}] at @s run playsound minecraft:entity.breeze.wind_burst master @s ~ ~50 ~ 999 1
+execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{rush:true}] run effect clear @s jump_boost
+execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{rush:true}] run attribute @s jump_strength base set 0
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{rush:true}] at @s run scoreboard players remove @s rushCharges 1
+execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{rush:true}] at @s run scoreboard players set @s rushJumpStopper 1
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{rush:true}] at @s run scoreboard players set @s clickStick 0
 execute as @a[scores={rushCooldown=0..,rushCharges=..1}] run scoreboard players add @s rushCooldown 1
+execute as @a[scores={rushJumpStopper=1..}] run scoreboard players add @s rushJumpStopper 1
+execute as @a[scores={rushJumpStopper=15..}] run attribute @s jump_strength base reset
+execute as @a[scores={rushJumpStopper=15..}] run effect give @s jump_boost infinite 2 true
+execute as @a[scores={rushJumpStopper=15..}] run scoreboard players set @s rushJumpStopper 0
 execute as @a[scores={rushCooldown=100..,rushCharges=..2}] run scoreboard players add @s rushCharges 1
 execute as @a[scores={rushCooldown=100..,rushCharges=..2}] run scoreboard players set @s rushCooldown 0
 

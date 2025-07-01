@@ -1,5 +1,5 @@
 execute if entity @s[scores={defeated=2}] run clear @s
-execute if entity @s[scores={defeated=2}] run give @s minecraft:carrot_on_a_stick[item_name={"color":"red","italic":false,"text":"Minigun"},unbreakable={},custom_data={minigun:true}] 1
+execute if entity @s[scores={defeated=2}] run give @s minecraft:carrot_on_a_stick[item_name={"color":"red","italic":false,"text":"Minigun"},tooltip_display={hidden_components:["unbreakable"]},unbreakable={},custom_data={minigun:true}] 1
 
 #fo stormtrooper
 execute if entity @s[scores={defeated=2},team=FO] run item replace entity @s armor.head with minecraft:player_head[item_name="Stormtrooper Helmet",unbreakable={},profile={id:[I;17463700,-1511044720,-1773072435,-845257517],properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmJjMTM1NGVhNzZhZGZiOTNjNjBjY2VjYmNhODU5MzVjMjg4MjhlODk2ODhjMTA2ODFhYzhhMjY4NjJmYjgifX19"}]},enchantments={"minecraft:binding_curse":1},tooltip_display={hide_tooltip:true}] 1
