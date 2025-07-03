@@ -10,6 +10,7 @@ execute as @e[dx=0,type=player] at @s anchored eyes facing entity @a eyes anchor
 
 execute as @e[dx=0,type=player] if entity @e[type=block_display,tag=phasbolt] run damage @s 1 player_attack
 execute as @e[dx=0,type=player] if entity @e[type=block_display,tag=stbolt] run damage @s 1 player_attack
+execute as @e[dx=0,type=player] if entity @e[type=block_display,tag=solobolt] run damage @s 8 player_attack
 #execute as @e[dx=0,type=player] if entity @e[type=block_display,tag=minigunbolt] run damage @s 1 player_attack
 execute as @e[dx=0,type=player] if entity @e[type=block_display,tag=repeaterbolt] run damage @s 1 player_attack
 

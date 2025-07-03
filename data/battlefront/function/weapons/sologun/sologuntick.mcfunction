@@ -1,0 +1,7 @@
+execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{sologun:true}] at @s run summon block_display ~ ~1.5 ~ {Tags:["laser","newlaser","solobolt"],Passengers:[{id:"minecraft:block_display",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.15f,-0.15f,-0.6f],scale:[0.3f,0.3f,1.2f]},block_state:{Name:"minecraft:red_concrete"}}],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[-0.05f,-0.05f,-0.5f],scale:[0.1f,0.1f,1.0f]},block_state:{Name:"minecraft:magma_block"}}
+execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{sologun:true}] as @e[tag=newlaser] at @s run function battlefront:setupblastershot
+execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{sologun:true}] at @s run playsound entity.allay.hurt
+execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{sologun:true}] at @s run playsound minecraft:phasblast block @a ~ ~ ~ 0.4
+execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{sologun:true}] run scoreboard players set @s shotCooldown 1
+execute as @a[scores={clickStick=1,shotCooldown=0}] if items entity @s weapon *[custom_data~{sologun:true}] run scoreboard players set @s clickStick 0
+execute as @a[scores={shotCooldown=10..}] if items entity @s weapon *[custom_data~{sologun:true}] run scoreboard players set @s shotCooldown 0

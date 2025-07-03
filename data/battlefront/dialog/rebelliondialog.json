@@ -44,7 +44,7 @@
     },
     {
       "label": "Enforcer",
-      "tooltip": "Click to spawn in as Enforcer",
+      "tooltip": "Click to spawn in as a Wookie Warrior",
       "width": 125,
       "action": {
         "type": "run_command",
@@ -53,7 +53,7 @@
     },
     {
       "label": "Aerial",
-      "tooltip": "Click to spawn in as Aerial",
+      "tooltip": "Click to spawn in as a Rebel Rocket-Jumper",
       "width": 125,
       "action": {
         "type": "run_command",
@@ -98,6 +98,15 @@
       "action": {
         "type": "run_command",
         "command": "function battlefront:heroes/chewbacca"
+      }
+    },
+    {
+      "label": "Han Solo",
+      "tooltip": "Click to spawn in as Han Solo",
+      "width": 150,
+      "action": {
+        "type": "run_command",
+        "command": "function battlefront:heroes/solo"
       }
     }
   ]

@@ -47,6 +47,7 @@ scoreboard objectives add comRushCooldown dummy
 scoreboard objectives add auraCooldown dummy
 scoreboard objectives add grenadeCooldown dummy
 scoreboard objectives add scannerBeaconCooldown dummy
+scoreboard objectives add detoniteCooldown dummy
 
 #durations
 scoreboard objectives add duelDuration dummy
@@ -107,6 +108,7 @@ scoreboard objectives add showDelay dummy
 scoreboard objectives add secondsHelper dummy
 scoreboard objectives add skip dummy
 scoreboard objectives add rushJumpStopper dummy
+scoreboard objectives add mineBlink dummy
 
 #init objective default values
 scoreboard players set @a hoverpackFuel 0
@@ -148,6 +150,7 @@ scoreboard players set @a comRushCooldown 0
 scoreboard players set @a auraCooldown 0
 scoreboard players set @a grenadeCooldown 0
 scoreboard players set @a scannerBeaconCooldown 0
+scoreboard players set @a detoniteCooldown 0
 execute if score @p respawnTime matches 0 run scoreboard players set @a respawnTime 20
 
 #init teams

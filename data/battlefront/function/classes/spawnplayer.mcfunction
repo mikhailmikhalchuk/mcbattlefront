@@ -34,6 +34,13 @@ scoreboard players set @s shotCooldown 0
 scoreboard players set @s intelCooldown 0
 scoreboard players set @s doubCooldown 0
 scoreboard players set @s pullCooldown 0
+scoreboard players set @s focusedRageCooldown 0
+scoreboard players set @s pushCooldown 0
+scoreboard players set @s comRushCooldown 0
+scoreboard players set @s auraCooldown 0
+scoreboard players set @s grenadeCooldown 0
+scoreboard players set @s scannerBeaconCooldown 0
+scoreboard players set @s detoniteCooldown 0
 
 #misc
 scoreboard players set @s damageTaken 0

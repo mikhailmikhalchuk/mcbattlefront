@@ -44,7 +44,7 @@
     },
     {
       "label": "Enforcer",
-      "tooltip": "Click to spawn in as Enforcer",
+      "tooltip": "Click to spawn in as a Clone Commando",
       "width": 125,
       "action": {
         "type": "run_command",
@@ -53,7 +53,7 @@
     },
     {
       "label": "Aerial",
-      "tooltip": "Click to spawn in as Aerial",
+      "tooltip": "Click to spawn in as a Jet Trooper",
       "width": 125,
       "action": {
         "type": "run_command",
@@ -62,7 +62,7 @@
     },
     {
       "label": "Infiltrator",
-      "tooltip": "Click to spawn in as Infiltrator",
+      "tooltip": "Click to spawn in as an ARC Trooper",
       "width": 125,
       "action": {
         "type": "run_command",

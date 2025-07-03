@@ -47,6 +47,7 @@ scoreboard objectives remove comRushCooldown
 scoreboard objectives remove auraCooldown
 scoreboard objectives remove grenadeCooldown
 scoreboard objectives remove scannerBeaconCooldown
+scoreboard objectives remove detoniteCooldown
 
 #durations
 scoreboard objectives remove duelDuration
@@ -107,6 +108,7 @@ scoreboard objectives remove showDelay
 scoreboard objectives remove secondsHelper
 scoreboard objectives remove skip
 scoreboard objectives remove rushJumpStopper
+scoreboard objectives remove mineBlink
 
 #team
 team remove EMP

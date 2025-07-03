@@ -18,6 +18,8 @@ function battlefront:weapons/repeater/repeatertick
 function battlefront:weapons/lightning/lightningtick
 function battlefront:weapons/spin/spintick
 function battlefront:weapons/imploder/implodertick
+function battlefront:weapons/sologun/sologuntick
+function battlefront:weapons/detonitecharge/detonitechargetick
 
 #abilities
 function battlefront:abilities/insight/insighttick
@@ -109,6 +111,8 @@ execute as @a[scores={showDelay=1..}] run scoreboard players remove @s showDelay
 execute as @e[tag=laser] at @s run function battlefront:moveblastershot
 execute as @e[tag=laser] at @s run function battlefront:moveblastershot
 
+execute as @e if predicate {condition:"entity_properties",entity:this,predicate:{components:{custom_data:{"specbolt":true}}}} run data modify entity @s NoGravity set value true
+
 #death handler
 
 #first stage - scoreboard reset
@@ -123,6 +127,7 @@ execute as @a[scores={defeated=1,REPhero=1}] run attribute @s minecraft:max_heal
 execute as @a[scores={defeated=1,CIShero=1}] run attribute @s minecraft:max_health base reset
 execute as @a[scores={defeated=1}] run attribute @s minecraft:attack_damage base reset
 execute as @a[scores={defeated=1}] run attribute @s minecraft:attack_speed base reset
+execute as @a[scores={defeated=1}] run attribute @s minecraft:fall_damage_multiplier base reset
 execute as @a[scores={defeated=1,EMPhero=1}] run scoreboard players set @s chokeDuration 0
 execute as @a[scores={defeated=1,FOhero=1}] run scoreboard players set @s FOhero 0
 execute as @a[scores={defeated=1,REShero=1}] run scoreboard players set @s REShero 0
@@ -137,6 +142,8 @@ execute as @a[scores={defeated=1}] run scoreboard players set @s spinCooldown 0
 execute as @a[scores={defeated=1}] run scoreboard players set @s auraDuration 0
 execute as @a[scores={defeated=1}] run scoreboard players set @s grenadeCooldown 0
 execute as @a[scores={defeated=1}] run tag @s remove leia
+execute as @a[scores={defeated=1},tag=solo] run data modify entity @e[tag=detonitecharge,limit=1] ignited set value true
+execute as @a[scores={defeated=1}] run tag @s remove solo
 execute as @a[scores={defeated=1}] run tag @s remove caphexspy
 execute as @a[scores={defeated=1}] run item replace entity @s armor.chest with air
 execute as @a[scores={defeated=1},team=FO] run tellraw @s {"text":"Respawning...","color":"green","underlined": true,"click_event":{action:"run_command",command:"/dialog show @s battlefront:firstorderdialog"},"hover_event":{action:"show_text",value:{"text":"Click here to show spawn dialog"}}}
@@ -153,12 +160,14 @@ execute as @a[scores={defeated=2}] run scoreboard players add @s respawnTick 1
 
 #execute as @a[scores={defeated=2},team=FO] if score @s respawnTick >= @s respawnTime unless score @s showDelay matches 1.. run tellraw @s ["",{"text":"\n"},{"text":"[Phasma] ","color":"gray","click_event":{action:"run_command",command:"/function battlefront:heroes/phasma"},"hover_event":{"action":"show_text",value:{"text":"Click to spawn in as Phasma"}}},{"text":"[Kylo Ren] ","color":"gray","click_event":{action:"run_command",command:"/function battlefront:heroes/kylo"},"hover_event":{"action":"show_text",value:{"text":"Click to spawn in as Kylo Ren"}}}]
 
-execute as @a[scores={defeated=2},team=FO] if score @s respawnTick = @s respawnTime unless score @s showDelay matches 1.. run dialog show @s battlefront:firstorderdialog
-execute as @a[scores={defeated=2},team=EMP] if score @s respawnTick = @s respawnTime unless score @s showDelay matches 1.. run dialog show @s battlefront:empiredialog
-execute as @a[scores={defeated=2},team=REB] if score @s respawnTick = @s respawnTime unless score @s showDelay matches 1.. run dialog show @s battlefront:rebelliondialog
-execute as @a[scores={defeated=2},team=RES] if score @s respawnTick = @s respawnTime unless score @s showDelay matches 1.. run dialog show @s battlefront:resistancedialog
-execute as @a[scores={defeated=2},team=REP] if score @s respawnTick = @s respawnTime unless score @s showDelay matches 1.. run dialog show @s battlefront:republicdialog
-execute as @a[scores={defeated=2},team=CIS] if score @s respawnTick = @s respawnTime unless score @s showDelay matches 1.. run dialog show @s battlefront:separatistdialog
+execute as @a[scores={showDelay=1}] if score @s respawnTick > @s respawnTime run scoreboard players operation @s respawnTick = @s respawnTime
+
+execute as @a[scores={defeated=2},team=FO] if score @s respawnTick = @s respawnTime run dialog show @s battlefront:firstorderdialog
+execute as @a[scores={defeated=2},team=EMP] if score @s respawnTick = @s respawnTime run dialog show @s battlefront:empiredialog
+execute as @a[scores={defeated=2},team=REB] if score @s respawnTick = @s respawnTime run dialog show @s battlefront:rebelliondialog
+execute as @a[scores={defeated=2},team=RES] if score @s respawnTick = @s respawnTime run dialog show @s battlefront:resistancedialog
+execute as @a[scores={defeated=2},team=REP] if score @s respawnTick = @s respawnTime run dialog show @s battlefront:republicdialog
+execute as @a[scores={defeated=2},team=CIS] if score @s respawnTick = @s respawnTime run dialog show @s battlefront:separatistdialog
 
 execute as @a[scores={defeated=2}] if entity @e[type=armor_stand,tag=deathspec] if entity @e[type=armor_stand,tag=facespec] at @e[type=armor_stand,tag=deathspec] run tp @s ~ ~-10000 ~ facing entity @e[type=armor_stand,tag=facespec,limit=1]
 execute as @a[scores={defeated=3..}] run scoreboard players set @s respawnTick 0
