@@ -6,13 +6,13 @@ execute as @a if items entity @s armor.chest *[custom_data={hoverpack:true}] run
 #fuel ticker
 execute as @a if items entity @s armor.chest *[custom_data={hoverpack:true}] run scoreboard players add @s hoverpackTick 1
 execute as @a[scores={hoverpackEquipped=1,jump=1}] run scoreboard players set @s hoverpackTick 0
-execute as @a[scores={hoverpackTick=20..,hoverpackFuel=..9},gamemode=!creative,nbt=!{OnGround:1b}] run scoreboard players add @s hoverpackFuel 1
-execute as @a[scores={hoverpackTick=10..,hoverpackFuel=1..,fuelTick=1},nbt={OnGround:1b}] run scoreboard players remove @s hoverpackFuel 1
-execute as @a[scores={hoverpackTick=100..,hoverpackFuel=1..,fuelTick=0},nbt={OnGround:1b}] run scoreboard players remove @s hoverpackFuel 1
-execute as @a[scores={hoverpackEquipped=1,hoverpackTick=10..,fuelTick=1},nbt={OnGround:1b}] run scoreboard players set @s hoverpackTick 0
-execute as @a[scores={hoverpackEquipped=1,hoverpackTick=20..},nbt=!{OnGround:1b}] run scoreboard players set @s hoverpackTick 0
+execute as @a[scores={hoverpackTick=20..,hoverpackFuel=..9},gamemode=!creative] if predicate {condition:"entity_properties",entity:this,predicate:{flags:{is_on_ground:false}}} run scoreboard players add @s hoverpackFuel 1
+execute as @a[scores={hoverpackTick=10..,hoverpackFuel=1..,fuelTick=1}] if predicate {condition:"entity_properties",entity:this,predicate:{flags:{is_on_ground:false}}} run scoreboard players remove @s hoverpackFuel 1
+execute as @a[scores={hoverpackTick=100..,hoverpackFuel=1..,fuelTick=0}] if predicate {condition:"entity_properties",entity:this,predicate:{flags:{is_on_ground:false}}} run scoreboard players remove @s hoverpackFuel 1
+execute as @a[scores={hoverpackEquipped=1,hoverpackTick=10..,fuelTick=1}] if predicate {condition:"entity_properties",entity:this,predicate:{flags:{is_on_ground:false}}} run scoreboard players set @s hoverpackTick 0
+execute as @a[scores={hoverpackEquipped=1,hoverpackTick=20..}] if predicate {condition:"entity_properties",entity:this,predicate:{flags:{is_on_ground:false}}} run scoreboard players set @s hoverpackTick 0
 execute as @a[scores={hoverpackEquipped=1,hoverpackTick=100..}] run scoreboard players set @s fuelTick 1
-execute as @a[scores={hoverpackEquipped=1},nbt=!{OnGround:1b}] run scoreboard players set @s fuelTick 0
+execute as @a[scores={hoverpackEquipped=1}] if predicate {condition:"entity_properties",entity:this,predicate:{flags:{is_on_ground:false}}} run scoreboard players set @s fuelTick 0
 execute as @a[scores={hoverpackEquipped=1,hoverpackTick=100..}] run scoreboard players set @s hoverpackTick 0
 execute as @a[scores={hoverpackEquipped=1}] run effect clear @s levitation
 execute as @a[scores={hoverpackEquipped=1}] run attribute @s minecraft:gravity base reset
@@ -29,9 +29,9 @@ execute as @a[scores={hoverpackEquipped=1,clickHover=3}] run scoreboard players 
 execute as @a[scores={hoverpackDead=1}] run scoreboard players set @s clickHover 0
 execute as @a[scores={hoverpackDead=1}] run scoreboard players set @s stopMove 0
 execute as @a[scores={hoverpackEquipped=0}] run scoreboard players set @s clickHover 0
-execute as @a[scores={sneak=1},nbt=!{OnGround:1b}] run scoreboard players set @s stopMove 0
-execute as @a[scores={sneak=1},nbt=!{OnGround:1b}] run scoreboard players set @s clickHover 0
-execute as @a[scores={sneak=1},nbt=!{OnGround:1b}] run scoreboard players set @s stopMove 0
+execute as @a[scores={sneak=1}] if predicate {condition:"entity_properties",entity:this,predicate:{flags:{is_on_ground:false}}} run scoreboard players set @s stopMove 0
+execute as @a[scores={sneak=1}] if predicate {condition:"entity_properties",entity:this,predicate:{flags:{is_on_ground:false}}} run scoreboard players set @s clickHover 0
+execute as @a[scores={sneak=1}] if predicate {condition:"entity_properties",entity:this,predicate:{flags:{is_on_ground:false}}} run scoreboard players set @s stopMove 0
 
 #fuel indicators
 execute as @a[scores={hoverpackFuel=0,hoverpackEquipped=1}] run title @s actionbar {"text":"Fuel: [⬛⬛⬛⬛⬛⬛⬛⬛⬛⬛]"}
@@ -52,11 +52,11 @@ execute at @a[scores={hoverpackDead=1,hoverpackEquipped=1,soundTick=3..}] run pl
 execute as @a[scores={soundTick=3..}] run scoreboard players set @s soundTick 0
 
 #jetpack up
-execute as @a[scores={sneak=1,hoverpackDead=0,hoverpackEquipped=1,abilitiesBlocked=0},nbt=!{OnGround:1b}] run effect give @s minecraft:levitation 1 9 true
+execute as @a[scores={sneak=1,hoverpackDead=0,hoverpackEquipped=1,abilitiesBlocked=0}] if predicate {condition:"entity_properties",entity:this,predicate:{flags:{is_on_ground:false}}} run effect give @s minecraft:levitation 1 9 true
 
 #detect if near ground
 execute at @a[scores={hoverpackEquipped=1,nearGround=0}] unless block ~ ~-10 ~ minecraft:air as @a[scores={hoverpackEquipped=1,nearGround=0,sneak=0}] run scoreboard players set @s nearGround 1
-execute as @a[scores={hoverpackEquipped=1,nearGround=1},nbt={OnGround:1b}] run scoreboard players set @s nearGround 0
+execute as @a[scores={hoverpackEquipped=1,nearGround=1}] if predicate {condition:"entity_properties",entity:this,predicate:{flags:{is_on_ground:true}}} run scoreboard players set @s nearGround 0
 
 execute as @a[scores={hoverpackEquipped=1,nearGround=1,clickHover=0}] at @a[scores={hoverpackEquipped=1,nearGround=1,clickHover=0}] unless predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:levitation":{}}}} rotated ~ 0 positioned ^ ^ ^-0.3 run particle minecraft:poof ~ ~1 ~ 0 0 0 0 0
 
@@ -69,8 +69,8 @@ execute as @a[scores={hoverpackEquipped=1,hoverpackDead=0,clickHover=2,stopMove=
 execute as @a[scores={hoverpackEquipped=1,nearGround=1}] run effect give @s minecraft:slow_falling 1 150 true
 
 #jetpack particle effect
-execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @a[scores={hoverpackDead=0,hoverpackEquipped=1}] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:levitation":{}}}} rotated ~ 0 positioned ^ ^0.2 ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
-execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @a[scores={hoverpackDead=0,hoverpackEquipped=1}] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:levitation":{}}}} rotated ~ 0 positioned ^ ^-0.2 ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
+execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:levitation":{}}}} rotated ~ 0 positioned ^ ^0.2 ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
+execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:levitation":{}}}} rotated ~ 0 positioned ^ ^-0.2 ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
 execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @a[scores={hoverpackDead=0,hoverpackEquipped=1,clickHover=2}] rotated ~ 0 positioned ^ ^0.2 ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
 execute as @a[scores={hoverpackDead=0,hoverpackEquipped=1}] at @a[scores={hoverpackDead=0,hoverpackEquipped=1,clickHover=2}] rotated ~ 0 positioned ^ ^-0.2 ^-0.3 run particle minecraft:soul_fire_flame ~ ~1 ~ 0 0 0 0 0
 

@@ -34,7 +34,7 @@ function battlefront:abilities/survivor/survivortick
 function battlefront:abilities/expose/exposetick
 function battlefront:abilities/duelist/duelisttick
 function battlefront:abilities/pulldom/pulldomtick
-function battlefront:abilities/wristrocket/wristrockettick
+function battlefront:abilities/rocket/rockettick
 function battlefront:abilities/restrict/restricttick
 function battlefront:abilities/helmscan/helmscantick
 function battlefront:abilities/thermalvision/thermalvisiontick
@@ -51,6 +51,7 @@ function battlefront:abilities/push/pushtick
 function battlefront:abilities/rush/rushtick
 function battlefront:abilities/darkaura/darkauratick
 function battlefront:abilities/scannerbeacon/scannerbeacontick
+function battlefront:abilities/jetpackdash/jetpackdashtick
 
 #packs 
 function battlefront:jetpack/jetpacktick
@@ -97,7 +98,6 @@ execute as @e[type=spectral_arrow,nbt={inGround:1b}] run kill @s
 
 #apply damageTaken scores from friendlies to anakin
 execute as @a[scores={REPhero=1}] if items entity @s armor.head *[custom_data={anakin:true}] at @s run scoreboard players operation @s damageTaken += @a[team=REP,distance=1..20] damageTaken
-execute as @a[scores={REPhero=1}] unless items entity @s armor.head *[custom_data={anakin:true}] run scoreboard players set @s damageTaken 0
 
 #slowness to specialists
 execute as @a[scores={defeated=0},nbt={SelectedItem:{components:{"minecraft:charged_projectiles":[{id:"minecraft:arrow"}]}}}] if items entity @s weapon crossbow[custom_data={sniper:true}] unless predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{effects:{"minecraft:slowness":{}}}} run effect give @s slowness 1 5 true
@@ -110,6 +110,9 @@ execute as @a[scores={showDelay=1..}] run scoreboard players remove @s showDelay
 
 execute as @e[tag=laser] at @s run function battlefront:moveblastershot
 execute as @e[tag=laser] at @s run function battlefront:moveblastershot
+
+execute as @a[scores={throwGrenade=1..}] at @s anchored eyes positioned ^ ^ ^ as @e[type=lingering_potion,distance=..2,nbt={Item:{components:{"minecraft:custom_data":{longthrow:true}}}}] run function battlefront:extendthrow
+execute as @a[scores={throwGrenade=1..}] at @s anchored eyes positioned ^ ^ ^ run scoreboard players reset @s throwGrenade
 
 execute as @e if predicate {condition:"entity_properties",entity:this,predicate:{components:{custom_data:{"specbolt":true}}}} run data modify entity @s NoGravity set value true
 
@@ -142,6 +145,7 @@ execute as @a[scores={defeated=1}] run scoreboard players set @s spinCooldown 0
 execute as @a[scores={defeated=1}] run scoreboard players set @s auraDuration 0
 execute as @a[scores={defeated=1}] run scoreboard players set @s grenadeCooldown 0
 execute as @a[scores={defeated=1}] run tag @s remove leia
+execute as @a[scores={defeated=1}] run tag @s remove assault
 execute as @a[scores={defeated=1},tag=solo] run data modify entity @e[tag=detonitecharge,limit=1] ignited set value true
 execute as @a[scores={defeated=1}] run tag @s remove solo
 execute as @a[scores={defeated=1}] run tag @s remove caphexspy
@@ -175,3 +179,5 @@ execute as @a[scores={defeated=3..}] run scoreboard players set @s defeated 2
 execute as @a[scores={clickStick=1..}] run scoreboard players set @s clickStick 0
 scoreboard players set @a killedPlayer 0
 scoreboard players set @a saberBlocked 0
+
+execute as @a unless items entity @s armor.head *[custom_data={anakin:true}] run scoreboard players set @s damageTaken 0

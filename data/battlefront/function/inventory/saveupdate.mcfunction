@@ -1,0 +1,2 @@
+$execute unless data storage battlefront:inv players[{ID:$(ID)}] run data modify storage battlefront:inv players append {ID:$(ID)}
+$data modify storage battlefront:inv players[{ID:$(ID)}] merge from storage battlefront:inv this

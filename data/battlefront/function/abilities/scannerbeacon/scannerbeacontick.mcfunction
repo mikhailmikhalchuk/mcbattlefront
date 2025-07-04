@@ -1,7 +1,7 @@
-execute as @e[type=area_effect_cloud] if predicate {condition:entity_properties, entity:this,predicate:{components:{custom_data:{scannerbeacon:true}}}} at @s run summon armor_stand ~ ~ ~ {Tags:["scannerBeaconCircleGen"],Invisible:true,Invulnerable:true}
-execute as @e[type=area_effect_cloud] if predicate {condition:entity_properties, entity:this,predicate:{components:{custom_data:{scannerbeacon:true}}}} run kill @s
-execute as @e[tag=scannerBeaconCircleGen] at @s positioned over motion_blocking if entity @s[dy=320] run scoreboard players add @s scannerBeaconScanDuration 1
-execute as @e[tag=scannerBeaconCircleGen] at @s positioned over motion_blocking unless entity @s[dy=320] run scoreboard players add @s scannerBeaconStrikeDuration 1
+execute as @e[type=area_effect_cloud] if predicate {condition:entity_properties, entity:this,predicate:{components:{custom_data:{scannerbeacon:true,longthrow:true}}}} at @s run summon armor_stand ~ ~ ~ {Tags:["scannerBeaconCircleGen"],Invisible:true,Invulnerable:true}
+execute as @e[type=area_effect_cloud] if predicate {condition:entity_properties, entity:this,predicate:{components:{custom_data:{scannerbeacon:true,longthrow:true}}}} run kill @s
+execute as @e[tag=scannerBeaconCircleGen] at @s positioned over motion_blocking unless entity @s[dy=320] run scoreboard players add @s scannerBeaconScanDuration 1
+execute as @e[tag=scannerBeaconCircleGen] at @s positioned over motion_blocking if entity @s[dy=320] run scoreboard players add @s scannerBeaconStrikeDuration 1
 
 
 execute as @e[scores={scannerBeaconStrikeDuration=100..}] run kill @s
@@ -75,7 +75,7 @@ execute as @e[scores={scannerBeaconScanDuration=180}] at @s run effect give @a[d
 execute as @e[scores={scannerBeaconScanDuration=180}] at @s run playsound minecraft:block.bell.resonate block @a[distance=..10] ~ ~ ~ 50 2
 
 #cooldown
-execute as @a[scores={scannerBeaconCooldown=500..}] run give @s minecraft:lingering_potion[potion_contents={potion:"minecraft:luck",custom_color:16777215},custom_name={"color":"red","italic":false,"text":"Scanner Beacon"},tooltip_display={hidden_components:["potion_contents"]},lore=[{"italic":false,"text":"Relays enemy locations within range"},{"italic":false,"text":"When outside, turns into an orbital strike"}],custom_data={scannerbeacon:true}]
+execute as @a[scores={scannerBeaconCooldown=500..}] run give @s minecraft:lingering_potion[potion_contents={potion:"minecraft:luck",custom_color:16777215},custom_name={"color":"red","italic":false,"text":"Scanner Beacon"},tooltip_display={hidden_components:["potion_contents"]},lore=[{"italic":false,"text":"Relays enemy locations within range"},{"italic":false,"text":"When outside, turns into an orbital strike"}],custom_data={scannerbeacon:true,longthrow:true}]
 execute as @a[scores={scannerBeaconCooldown=500..}] run scoreboard players set @s scannerBeaconCooldown 0
-execute as @a[tag=caphexspy,scores={scannerBeaconCooldown=0}] unless items entity @s container.* *[custom_data~{scannerbeacon:true}] run scoreboard players set @s scannerBeaconCooldown 1
+execute as @a[tag=caphexspy,scores={scannerBeaconCooldown=0}] unless items entity @s container.* *[custom_data~{scannerbeacon:true,longthrow:true}] run scoreboard players set @s scannerBeaconCooldown 1
 execute as @a[scores={scannerBeaconCooldown=1..}] run scoreboard players add @s scannerBeaconCooldown 1

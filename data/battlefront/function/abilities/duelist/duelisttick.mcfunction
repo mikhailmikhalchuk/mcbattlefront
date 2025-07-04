@@ -9,9 +9,9 @@ execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{du
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{duel:true}] at @s run scoreboard players set @s clickStick 0
 execute as @a[scores={duelCooldown=1..}] run scoreboard players add @s duelCooldown 1
 execute as @a[scores={duelDuration=1..}] run scoreboard players add @s duelDuration 1
-execute as @a[scores={duelDuration=100..}] run attribute @s minecraft:attack_speed base reset
-execute as @a[scores={duelDuration=100..}] run tellraw @s {"text":"Duelist ability expired.","color":"red"}
-execute as @a[scores={duelDuration=100..}] run scoreboard players set @s duelDuration 0
+execute as @a[scores={duelDuration=200..}] run attribute @s minecraft:attack_speed base reset
+execute as @a[scores={duelDuration=200..}] run tellraw @s {"text":"Duelist ability expired.","color":"red"}
+execute as @a[scores={duelDuration=200..}] run scoreboard players set @s duelDuration 0
 execute as @a[scores={duelCooldown=500..}] run scoreboard players set @s duelCooldown 0
 
 #show cooldown on actionbar

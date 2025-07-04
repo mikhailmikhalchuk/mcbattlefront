@@ -27,7 +27,7 @@ scoreboard objectives add weakCooldown dummy
 scoreboard objectives add duelCooldown dummy
 scoreboard objectives add passCooldown dummy
 scoreboard objectives add domiCooldown dummy
-scoreboard objectives add wrisCooldown dummy
+scoreboard objectives add rocketCooldown dummy
 scoreboard objectives add restrCooldown dummy
 scoreboard objectives add helmCooldown dummy
 scoreboard objectives add thermCooldown dummy
@@ -48,6 +48,7 @@ scoreboard objectives add auraCooldown dummy
 scoreboard objectives add grenadeCooldown dummy
 scoreboard objectives add scannerBeaconCooldown dummy
 scoreboard objectives add detoniteCooldown dummy
+scoreboard objectives add jetpackDashCooldown dummy
 
 #durations
 scoreboard objectives add duelDuration dummy
@@ -109,6 +110,8 @@ scoreboard objectives add secondsHelper dummy
 scoreboard objectives add skip dummy
 scoreboard objectives add rushJumpStopper dummy
 scoreboard objectives add mineBlink dummy
+scoreboard objectives add Slot dummy
+scoreboard objectives add throwGrenade used:lingering_potion
 
 #init objective default values
 scoreboard players set @a hoverpackFuel 0
@@ -151,6 +154,7 @@ scoreboard players set @a auraCooldown 0
 scoreboard players set @a grenadeCooldown 0
 scoreboard players set @a scannerBeaconCooldown 0
 scoreboard players set @a detoniteCooldown 0
+scoreboard players set @a jetpackDashCooldown 0
 execute if score @p respawnTime matches 0 run scoreboard players set @a respawnTime 20
 
 #init teams
@@ -159,7 +163,7 @@ team add RES {"text":"The Resistance","color":"yellow"}
 team add EMP {"text":"The Empire","color":"dark_red"}
 team add REB {"text":"The Rebellion","color":"yellow"}
 team add REP {"text":"Galactic Republic","color":"aqua"}
-team add CIS {"text":"The Confederacy","color":"gold"}
+team add CIS {"text":"Separatist Alliance","color":"gold"}
 team modify FO friendlyFire false
 team modify RES friendlyFire false
 team modify EMP friendlyFire false

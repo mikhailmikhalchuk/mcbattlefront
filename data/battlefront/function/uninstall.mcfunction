@@ -27,7 +27,7 @@ scoreboard objectives remove weakCooldown
 scoreboard objectives remove duelCooldown
 scoreboard objectives remove passCooldown
 scoreboard objectives remove domiCooldown
-scoreboard objectives remove wrisCooldown
+scoreboard objectives remove rocketCooldown
 scoreboard objectives remove restrCooldown
 scoreboard objectives remove helmCooldown
 scoreboard objectives remove thermCooldown
@@ -48,6 +48,7 @@ scoreboard objectives remove auraCooldown
 scoreboard objectives remove grenadeCooldown
 scoreboard objectives remove scannerBeaconCooldown
 scoreboard objectives remove detoniteCooldown
+scoreboard objectives remove jetpackDashCooldown
 
 #durations
 scoreboard objectives remove duelDuration
@@ -109,6 +110,8 @@ scoreboard objectives remove secondsHelper
 scoreboard objectives remove skip
 scoreboard objectives remove rushJumpStopper
 scoreboard objectives remove mineBlink
+scoreboard objectives remove Slot
+scoreboard objectives remove throwGrenade
 
 #team
 team remove EMP

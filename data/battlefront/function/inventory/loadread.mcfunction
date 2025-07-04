@@ -1,0 +1,1 @@
+$data modify storage battlefront:inv this set from storage battlefront:inv players[{ID:$(ID)}]

@@ -20,7 +20,7 @@ scoreboard players set @s weakCooldown 0
 scoreboard players set @s duelCooldown 0
 scoreboard players set @s passCooldown 0
 scoreboard players set @s domiCooldown 0
-scoreboard players set @s wrisCooldown 0
+scoreboard players set @s rocketCooldown 0
 scoreboard players set @s restrCooldown 0
 scoreboard players set @s helmCooldown 0
 scoreboard players set @s thermCooldown 0
@@ -41,6 +41,7 @@ scoreboard players set @s auraCooldown 0
 scoreboard players set @s grenadeCooldown 0
 scoreboard players set @s scannerBeaconCooldown 0
 scoreboard players set @s detoniteCooldown 0
+scoreboard players set @s jetpackDashCooldown 0
 
 #misc
 scoreboard players set @s damageTaken 0

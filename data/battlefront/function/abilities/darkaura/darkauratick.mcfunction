@@ -1,5 +1,4 @@
 execute as @a[scores={clickStick=1,auraCooldown=1..}] if items entity @s weapon *[custom_data~{darkaura:true}] run scoreboard players set @s clickStick 0
-execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{darkaura:true}] run scoreboard players set @s damageTaken 0
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{darkaura:true}] run scoreboard players set @s auraDuration 1
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{darkaura:true}] at @s run summon armor_stand ~ ~ ~ {Tags:["auraCircleGen"],Invisible:true,Invulnerable:true}
 execute as @a[scores={clickStick=1}] if items entity @s weapon *[custom_data~{darkaura:true}] run scoreboard players set @s auraCooldown 1
